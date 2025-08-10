@@ -1,0 +1,52 @@
+:root{
+  --honey:#F2C14E; /* honing */
+  --amber:#E08A14; /* amber */
+  --brown:#5A3E2B; /* bijenwas/raam */
+  --cream:#FFF8E6;
+  --green:#2E7D32;
+  --red:#C62828;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:var(--cream);
+  color:#1c160f;
+}
+.app-header{
+  display:flex;align-items:center;gap:.75rem;
+  padding:.75rem 1rem; background:linear-gradient(90deg,var(--honey),var(--amber));
+  color:#210; position:sticky; top:0; z-index:10;
+  box-shadow:0 2px 8px rgba(0,0,0,.08)
+}
+.app-header h1{font-size:1.25rem;margin:0}
+.ghost{background:transparent;border:none;font-size:1.25rem;cursor:pointer}
+.container{max-width:720px;margin:0 auto;padding:1rem}
+.view{display:none}
+.view.active{display:block}
+.intro{opacity:.85}
+.btn{border:none;border-radius:14px;padding:.9rem 1.1rem;cursor:pointer;background:#fff;color:#1c160f;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.btn.primary{background:var(--amber);color:#231408;font-weight:600}
+.btn:focus{outline:3px solid #0004;outline-offset:2px}
+.btn-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.btn-row{display:flex;gap:.75rem;justify-content:space-between;margin-top:1rem}
+.card{background:#fff;border-radius:16px;padding:1rem;box-shadow:0 2px 8px rgba(0,0,0,.08);margin:.75rem 0}
+.theme-list{display:grid;grid-template-columns:1fr;gap:.25rem}
+@media (min-width:520px){.theme-list{grid-template-columns:1fr 1fr}}
+.check{display:flex;align-items:center;gap:.5rem}
+.check input{width:1.15rem;height:1.15rem}
+.quiz-header{display:flex;flex-direction:column;gap:.5rem}
+.progress{height:10px;background:#00000011;border-radius:999px;overflow:hidden}
+#progress-bar{height:100%;width:0;background:var(--green);transition:width .25s ease}
+.status{font-size:.9rem;color:#3b2a1d}
+.q-meta{font-size:.85rem;color:#654}
+.q-text{margin:.25rem 0 1rem}
+.choices{display:grid;gap:.5rem}
+.option{display:flex;align-items:flex-start;gap:.5rem;padding:.75rem;border-radius:12px;border:2px solid #0000;background:#fff;cursor:pointer}
+.option[data-state="correct"]{border-color:var(--green);background:#E6F4EA}
+.option[data-state="wrong"]{border-color:var(--red);background:#FDECEA}
+.option input{margin-top:.2rem}
+.explanation{margin-top:.75rem;padding:.75rem;border-left:4px solid var(--amber);background:#FFF4DD;border-radius:8px}
+.app-footer{position:sticky;bottom:0;padding:.5rem 1rem;background:#fff9;backdrop-filter:blur(8px);display:flex;justify-content:center}
+.hidden{display:none!important}
