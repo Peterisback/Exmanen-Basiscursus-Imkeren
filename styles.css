@@ -96,23 +96,14 @@ table.history tr:hover { background: #fafafa; }
 
 
 
-/* Keep heading icons square and non-stretching */
-.icon{
-  width: 28px;
-  height: 28px;
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
-  vertical-align: -6px;
-  margin-right: .4rem;
-  flex: 0 0 auto;
-}
+
 @media (min-width: 640px){
   .icon{ width: 32px; height: 32px; vertical-align: -8px; }
 }
 
 
 
-/* Theme-specific icons (target generated input IDs → sibling span) */
+
 label.check input[id*="biologie"] + span::before,
 label.check input[id*="biologie-en"] + span::before{
   content: ""; display:inline-block; width:24px; height:24px; margin-right:.4rem;
@@ -147,5 +138,55 @@ label.check input[id*="regel"] + span::before{
 
 @media (max-width: 420px){
   .hero-img{ max-height: 180px; }
+}
+
+
+
+/* Uniform heading icons */
+.icon{
+  width: 28px;
+  height: 28px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  vertical-align: -6px;
+  margin-right: .45rem;
+  flex: 0 0 auto;
+}
+@media (min-width: 640px){
+  .icon{ width: 32px; height: 32px; vertical-align: -8px; }
+}
+
+
+/* Theme icons for checklist */
+.theme-list .check{ align-items: center; }
+.theme-list .check span{ display: inline-flex; align-items: center; }
+
+label.check input[id*="biologie"] + span::before{
+  content:""; width:24px; height:24px; margin-right:.4rem;
+  background: url('assets/image/biologie.webp') no-repeat center/contain;
+}
+label.check input[id*="jaarcyclus"] + span::before{
+  content:""; width:24px; height:24px; margin-right:.4rem;
+  background: url('assets/image/jaarcyclus.webp') no-repeat center/contain;
+}
+label.check input[id*="praktisch"] + span::before,
+label.check input[id*="handelingen"] + span::before{
+  content:""; width:24px; height:24px; margin-right:.4rem;
+  background: url('assets/image/praktisch.webp') no-repeat center/contain;
+}
+label.check input[id*="ziekten"] + span::before,
+label.check input[id*="plagen"] + span::before{
+  content:""; width:24px; height:24px; margin-right:.4rem;
+  background: url('assets/image/ziekten.webp') no-repeat center/contain;
+}
+label.check input[id*="honing"] + span::before,
+label.check input[id*="producten"] + span::before{
+  content:""; width:24px; height:24px; margin-right:.4rem;
+  background: url('assets/image/honing.webp') no-repeat center/contain;
+}
+label.check input[id*="wet"] + span::before,
+label.check input[id*="regel"] + span::before{
+  content:""; width:24px; height:24px; margin-right:.4rem;
+  background: url('assets/image/wetgeving.webp') no-repeat center/contain;
 }
 
