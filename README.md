@@ -34,8 +34,8 @@ Adapter in app:
 - Themakeuze + aantal vragen (5–50).
 - **Feedback:** direct zichtbaar.
 - **Gedrag na antwoord:**
-  - **Goed:** automatische doorgang na ~0,5s.
-  - **Fout:** feedback zichtbaar **en vraag vergrendeld** (antwoord niet meer aanpasbaar); ga handmatig door met *Volgende*.
+  - **Goed:** antwoord wordt vergrendeld; ga handmatig door met *Volgende*
+  - **Fout:** antwoord wordt vergrendeld; ga handmatig door met *Volgende*
 - Uitleg wordt getoond indien beschikbaar.
 - Voortgangsbalk + tussenscore zichtbaar.
 - Hervatten van een oefensessie is mogelijk (zelfde apparaat/browser).
