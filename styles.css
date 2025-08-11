@@ -50,3 +50,31 @@ body{
 .explanation{margin-top:.75rem;padding:.75rem;border-left:4px solid var(--amber);background:#FFF4DD;border-radius:8px}
 .app-footer{position:sticky;bottom:0;padding:.5rem 1rem;background:#fff9;backdrop-filter:blur(8px);display:flex;justify-content:center}
 .hidden{display:none!important}
+
+
+/* Honeycomb background for start page */
+#view-home {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(242, 193, 78, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Amber accentline for quiz container */
+#view-quiz .container {
+  border-left: 6px solid var(--amber);
+  padding-left: 1rem;
+}
+
+
+/* Bee wiggle animation for headings */
+@keyframes bee-wiggle {
+  0% { transform: rotate(0deg) translateY(0px); }
+  25% { transform: rotate(-8deg) translateY(-1px); }
+  50% { transform: rotate(8deg) translateY(1px); }
+  75% { transform: rotate(-8deg) translateY(-1px); }
+  100% { transform: rotate(0deg) translateY(0px); }
+}
+h1:hover, h2:hover {
+  animation: bee-wiggle 0.4s ease-in-out 1;
+  display: inline-block;
+}
