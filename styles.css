@@ -53,7 +53,7 @@ body{
 
 body{font-family:'Nunito',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
 
-#view-home{background-image:radial-gradient(circle at 1px 1px, rgba(242,193,78,.08) 1px, transparent 0);background-size:24px 24px;}
+
 
 .check span::before{
   content:''; display:inline-block; width:16px; height:14px; margin-right:.4rem;
@@ -75,7 +75,7 @@ body{font-family:'Nunito',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-ser
 table.history { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
 table.history th, table.history td { padding: .5rem .6rem; border-bottom: 1px solid #eee; text-align: left; }
 table.history th { font-weight: 600; }
-table.history tr:hover { background: #fafafa; }
+table.history tr:hover { background: #faf7ee; }
 
 
 /* Zwarte selectiebol voor gekozen antwoord */
@@ -138,24 +138,7 @@ h2, h3 { letter-spacing: .2px; }
 }
 
 /* Large, very light honeycomb watermark on wide viewports */
-@media (min-width: 900px){
-  .container::after{
-    content:"";
-    position: fixed;
-    right: 2vw;
-    bottom: 6vh;
-    width: 320px; height: 280px;
-    opacity: .06;
-    pointer-events: none;
-    background:
-      linear-gradient(30deg, rgba(0,0,0,.12) 1px, transparent 1px),
-      linear-gradient(150deg, rgba(0,0,0,.12) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,0,0,.12) 1px, transparent 1px);
-    background-size: 22px 12px, 22px 12px, 22px 22px;
-    background-position: 0 0, 0 0, 0 0;
-    mask-image: radial-gradient(closest-side, #000 70%, transparent 100%);
-  }
-}
+
 
 /* History table refinements */
 table.history tr:hover { background: #faf7ee; }
@@ -169,5 +152,89 @@ table.history td:nth-child(2){
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce){
   * { transition: none !important; }
+}
+
+
+
+/* Consistent end-aligned button row */
+.btn-row--end { justify-content: flex-end; margin-top: .25rem; }
+
+/* Card subtle border for contrast */
+.card { border: 1px solid #0001; }
+
+/* Honeycomb pattern for start screen */
+#view-home {
+  background-color: var(--cream);
+  background-image: 
+    linear-gradient(30deg, rgba(242,193,78,0.15) 12%, transparent 12.5%, transparent 87%, rgba(242,193,78,0.15) 87.5%, rgba(242,193,78,0.15)),
+    linear-gradient(150deg, rgba(242,193,78,0.15) 12%, transparent 12.5%, transparent 87%, rgba(242,193,78,0.15) 87.5%, rgba(242,193,78,0.15)),
+    linear-gradient(90deg, rgba(242,193,78,0.15) 12%, transparent 12.5%, transparent 87%, rgba(242,193,78,0.15) 87.5%, rgba(242,193,78,0.15));
+  background-size: 20px 35px;
+  background-position: 0 0, 0 0, 10px 17.5px;
+}
+
+/* Honeycomb watermark for wide screens in quiz/results */
+@media (min-width: 900px) {
+  #view-quiz::before, #view-results::before {
+    content: "";
+    position: fixed;
+    top: 15%;
+    right: 5%;
+    width: 300px;
+    height: 260px;
+    opacity: .08;
+    background-image: 
+      linear-gradient(30deg, rgba(0,0,0,0.25) 12%, transparent 12.5%, transparent 87%, rgba(0,0,0,0.25) 87.5%, rgba(0,0,0,0.25)),
+      linear-gradient(150deg, rgba(0,0,0,0.25) 12%, transparent 12.5%, transparent 87%, rgba(0,0,0,0.25) 87.5%, rgba(0,0,0,0.25)),
+      linear-gradient(90deg, rgba(0,0,0,0.25) 12%, transparent 12.5%, transparent 87%, rgba(0,0,0,0.25) 87.5%, rgba(0,0,0,0.25));
+    background-size: 22px 38px;
+    background-position: 0 0, 0 0, 11px 19px;
+    z-index: 0;
+    pointer-events: none;
+  }
+}
+
+/* Progress complete accent */
+.progress.complete #progress-bar { background: var(--amber); }
+
+
+
+
+/* Utility to replace inline style on history action row */
+.btn-row--end { justify-content: flex-end; margin-top: .25rem; }
+
+/* Subtle 1px border for cards to improve separation on cream background */
+.card { border: 1px solid #0001; }
+
+/* Visible honeycomb on start screen */
+#view-home {
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(30deg, rgba(224,165,60,.12) 12%, transparent 12.5%, transparent 87%, rgba(224,165,60,.12) 87.5%, rgba(224,165,60,.12)),
+    linear-gradient(150deg, rgba(224,165,60,.12) 12%, transparent 12.5%, transparent 87%, rgba(224,165,60,.12) 87.5%, rgba(224,165,60,.12)),
+    linear-gradient(90deg, rgba(224,165,60,.12) 12%, transparent 12.5%, transparent 87%, rgba(224,165,60,.12) 87.5%, rgba(224,165,60,.12));
+  background-size: 22px 38px, 22px 38px, 22px 38px;
+  background-position: 0 0, 0 0, 0 0;
+}
+
+/* Large, subtle honeycomb watermark on wide viewports, anchored bottom-right */
+@media (min-width: 900px){
+  .container::after{
+    content:"";
+    position: fixed;
+    right: 2vw;
+    bottom: 6vh;
+    width: 360px; height: 310px;
+    opacity: .10;
+    pointer-events: none;
+    background-image:
+      linear-gradient(30deg, rgba(224,165,60,.4) 12%, transparent 12.5%, transparent 87%, rgba(224,165,60,.4) 87.5%, rgba(224,165,60,.4)),
+      linear-gradient(150deg, rgba(224,165,60,.4) 12%, transparent 12.5%, transparent 87%, rgba(224,165,60,.4) 87.5%, rgba(224,165,60,.4)),
+      linear-gradient(90deg, rgba(224,165,60,.4) 12%, transparent 12.5%, transparent 87%, rgba(224,165,60,.4) 87.5%, rgba(224,165,60,.4));
+    background-size: 28px 48px, 28px 48px, 28px 48px;
+    background-position: 0 0, 0 0, 0 0;
+    filter: saturate(.9);
+    mask-image: radial-gradient(closest-side, #000 70%, transparent 100%);
+  }
 }
 
