@@ -29,16 +29,46 @@ Adapter in app:
 **Dedup:** (thema+vraag). **Thema-lijst:** uniek, alfabetisch. **Laden:** JSON pas na keuze.
 
 ## Gebruik
-- **Oefenen (10):** themakeuze, directe feedback, voortgang, live score, analyse + advies.
-- **Proefexamen (30):** alle thema’s, feedback na afloop + volledige lijst.
-- **Retry:** Oefenen → opnieuw met zelfde/andere selectie. Examen → start nieuw examen.
+
+### Oefenen
+- Themakeuze + aantal vragen (5–50).
+- **Feedback:** direct zichtbaar.
+- **Gedrag na antwoord:**
+  - **Goed:** automatische doorgang na ~0,5s.
+  - **Fout:** feedback zichtbaar **en vraag vergrendeld** (antwoord niet meer aanpasbaar); ga handmatig door met *Volgende*.
+- Uitleg wordt getoond indien beschikbaar.
+- Voortgangsbalk + tussenscore zichtbaar.
+- Hervatten van een oefensessie is mogelijk (zelfde apparaat/browser).
+
+### Proefexamen
+- 30 vragen uit **alle** thema’s, gewogen via *Largest Remainder*.
+- **Tijdens het invullen géén feedback** (geen groen/rood, geen uitleg, geen score).
+- Resultatenpagina toont:
+  - Totale score + advies per zwakste thema’s.
+  - **Alleen fout beantwoorde vragen**, gegroepeerd per thema, met jouw antwoord en het juiste antwoord (voluit).
+
+### Startscherm en historie
+- Startscherm toont **alleen** het resultatenoverzicht (historie) van dit apparaat.
+- Vorige “laatste resultaat”-regel is verwijderd.
+- **Reset-knop** aanwezig om het resultatenoverzicht te wissen.
 
 ## Verdeling vragen
 Evenredig met verdeling in JSON per (geselecteerd) thema via *Largest Remainder*.
 
-## Persistentie
-- `imker:last` → laatste resultaat (string)
-- `imker:sessions` → lijst sessies (id, mode, dateISO, themes, questionCount, answers[], score)
+## Persistentie (localStorage)
+- `imker:practiceCount` → voorkeursaantal oefenvragen.
+- `imker:resume` → snapshot om oefensessie te hervatten.
+- `imker:sessions` → resultatenoverzicht (alle sessies).
+- **Verwijderd:** `imker:last` wordt niet meer gebruikt.
+
+### Reset
+- Via de knop **Reset resultaten** (startscherm) wordt alleen `imker:sessions` gewist.
+- Handmatig herstellen:
+  ```js
+  localStorage.removeItem('imker:sessions');   // reset overzicht
+  localStorage.removeItem('imker:resume');     // verwijder hervat-snapshot
+  localStorage.removeItem('imker:practiceCount');
+  ```
 
 ## Lokaal starten
 1) Plaats bestanden in map → 2) Dubbelklik `index.html`.
@@ -46,18 +76,8 @@ Evenredig met verdeling in JSON per (geselecteerd) thema via *Largest Remainder*
 ## Deploy (Vercel)
 GitHub → New Project → **Other/Static**. Build command: leeg. Output dir: `/`.
 
-## Reset localStorage
-```js
-localStorage.removeItem('imker:last');
-localStorage.removeItem('imker:sessions');
-```
-
-
-## Nieuw in deze versie
-
-- **Oefenmodus**: Bij een goed antwoord wordt direct feedback getoond en automatisch naar de volgende vraag gegaan (na ±0,5s). Bij een fout antwoord wordt feedback getoond en moet je zelf op *Volgende* klikken om door te gaan.
-- **Proefexamen**: Tijdens het examen wordt geen live score getoond; alleen de vraagnummer-voortgang. Op de resultatenpagina zie je uitsluitend de fout beantwoorde vragen, gesorteerd per thema, inclusief je gegeven antwoord en het juiste antwoord (voluit).
-- **Tijdens het maken van vragen** (in beide modi): Eerdere sessieresultaten worden niet getoond onder de vraagweergave.
-- **Sessiehistorie**: Op het startscherm wordt een overzicht getoond van eerdere sessies (per browser), met type (Oefenen/Proefexamen), score en datum/tijd.
-- **Lichte stijl**: De app gebruikt altijd het lichte thema, geschikt voor gebruik binnen GitHub Pages, Hobby, of Vercel.
-
+## Changelog (relevant)
+- **Oefenmodus**: bij fout antwoord vergrendeling; goed = auto door.
+- **Proefexamen**: geen live feedback; spanning pas breekt op resultatenpagina.
+- **Startscherm**: alleen historie zichtbaar; reset-knop toegevoegd.
+- **Opslag**: `imker:last` uitgefaseerd.
