@@ -101,6 +101,7 @@
 
   async function enterPracticeSettings(){
     state.mode = 'practice';
+    if (els.allThemes) els.allThemes.checked = false;
     await ensureDataLoaded();
     renderThemeList();
     updatePracticeAvailability();
@@ -185,6 +186,7 @@
     els.qText.textContent = q.question;
 
     els.btnNext.disabled = true;
+    els.btnNext.classList.remove('primary');
     els.qForm.innerHTML = '';
     q.choices.forEach((choice, idx)=>{
       const id = `opt-${i}-${idx}`;
@@ -211,6 +213,7 @@
       if (ans.locked){
         lockOptions();
         els.btnNext.disabled = false;
+      els.btnNext.classList.add('primary');
       }
     }
 
@@ -252,17 +255,19 @@
         correctIndex: q.answer,
         correct,
         theme: q.category,
-        locked: true // altijd vergrendeld na antwoord
+        locked: !correct // vergrendel bij fout
       };
       // Feedback direct tonen
       markFeedback(idx, q.answer);
       els.btnNext.disabled = false;
+      els.btnNext.classList.add('primary');
       if (q.explanation){ els.qExpl.hidden = false; els.qExpl.textContent = q.explanation; }
       if (!correct){
         // bij fout: vergrendel zodat niet meer aangepast kan worden
         lockOptions();
       } else {
-        lockOptions();
+        // bij goed: korte delay en door
+        setTimeout(()=>{ next(); }, 500);
       }
       return;
     }
@@ -280,6 +285,7 @@
     // UI: geen markFeedback, geen uitleg
     els.qExpl.hidden = true;
     els.btnNext.disabled = false;
+      els.btnNext.classList.add('primary');
   }
 
   function next(){

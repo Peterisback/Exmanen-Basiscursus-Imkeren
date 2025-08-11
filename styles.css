@@ -76,3 +76,7 @@ table.history { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
 table.history th, table.history td { padding: .5rem .6rem; border-bottom: 1px solid #eee; text-align: left; }
 table.history th { font-weight: 600; }
 table.history tr:hover { background: #fafafa; }
+
+
+/* Zwarte selectiebol voor gekozen antwoord */
+.choices input[type="radio"]{ accent-color:#000; }
