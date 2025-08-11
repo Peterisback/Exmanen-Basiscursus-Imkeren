@@ -1,4 +1,3 @@
-console.log('Imkertrainer build 2025-08-11c');
 (function(){
   'use strict';
   // ---------- State ----------
@@ -30,6 +29,11 @@ console.log('Imkertrainer build 2025-08-11c');
     themesWrap: $('#themes'),
     allThemes: $('#all-themes'),
     startPractice: $('#start-practice'),
+    lastHome: $('#last-home'),
+    resumeWrap: $('#resume-wrap'),
+    resumeBtn: $('#resume-practice'),
+    practiceAvailability: $('#practice-availability'),
+    practiceCount: $('#practice-count'),
     startExam: $('#start-exam'),
     progress: $('#progress-bar'),
     status: $('#status'),
@@ -47,7 +51,50 @@ console.log('Imkertrainer build 2025-08-11c');
     btnRetryNew: $('#btn-retry-new'),
   };
 
-  // ---------- Utilities ----------
+  
+function updatePracticeAvailability(){
+  if (!state.dataset || !state.themes) return;
+  const themes = (typeof selectedThemes==='function') ? selectedThemes() : state.themes;
+  const pool = state.dataset.filter(q=>themes.includes(q.category));
+  const n = pool.length;
+  const want = parseInt(els.practiceCount?.value||'10',10);
+  if (els.practiceAvailability){
+    els.practiceAvailability.textContent = themes.length? `Beschikbaar in selectie: ${n} vragen` : 'Kies één of meer thema’s (of Alle thema’s)';
+  }
+  if (els.startPractice){
+    els.startPractice.textContent = `Start Oefenen (${want})`;
+    els.startPractice.disabled = !themes.length || n===0;
+  }
+  try{ localStorage.setItem('imker:practiceCount', String(want)); }catch{}
+}
+function saveResumeIfPractice(){
+  if (state.mode!=='practice' || !state.questions?.length) return;
+  const snapshot = {
+    ts: Date.now(),
+    mode: 'practice',
+    index: state.index,
+    answers: state.answers,
+    qIds: state.questions.map(q=>q.__id),
+    themes: state.lastSelection?.themes || []
+  };
+  try{ localStorage.setItem('imker:resume', JSON.stringify(snapshot)); }catch{}
+}
+function clearResume(){ try{ localStorage.removeItem('imker:resume'); }catch{} }
+function hasResume(){ try{ return !!localStorage.getItem('imker:resume'); }catch{ return false; } }
+function loadResume(){
+  try{
+    const raw = localStorage.getItem('imker:resume');
+    if (!raw) return null;
+    const snap = JSON.parse(raw);
+    if (snap?.mode!=='practice' || !Array.isArray(snap.qIds)) return null;
+    return snap;
+  }catch{ return null; }
+}
+function showResumeCTA(){
+  const ok = hasResume();
+  if (els.resumeWrap){ els.resumeWrap.style.display = ok ? '' : 'none'; }
+}
+// ---------- Utilities ----------
   const fmtDate = (d=new Date()) => {
     const pad=n=>String(n).padStart(2,'0');
     return `${pad(d.getDate())}-${pad(d.getMonth()+1)}-${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
@@ -105,6 +152,8 @@ console.log('Imkertrainer build 2025-08-11c');
     state.mode = 'practice';
     await ensureDataLoaded();
     renderThemeList();
+    updatePracticeAvailability();
+    showResumeCTA();
     show(views.practiceSettings);
   }
   async function enterExamSettings(){
@@ -166,6 +215,7 @@ console.log('Imkertrainer build 2025-08-11c');
     els.qMeta.textContent = `${state.mode==='exam' ? 'Examen' : 'Oefenen'} · Thema: ${q.category}`;
     els.qText.textContent = q.question;
 
+    els.btnNext.disabled = true;
     els.qForm.innerHTML = '';
     q.choices.forEach((choice, idx)=>{
       const id = `opt-${i}-${idx}`;
@@ -191,6 +241,7 @@ console.log('Imkertrainer build 2025-08-11c');
     els.btnPrev.disabled = (i===0);
     els.btnNext.textContent = (i === state.questions.length-1) ? 'Afronden' : 'Volgende →';
     updateProgress();
+    saveResumeIfPractice();
   }
 
   function markFeedback(picked, correct){
@@ -203,8 +254,11 @@ console.log('Imkertrainer build 2025-08-11c');
   }
 
   function onPick(idx){
+    els.btnNext.disabled = false;
+
     const i = state.index; const q = state.questions[i];
     const correct = (idx === q.answer);
+    if (correct) { try{ els.btnNext.focus(); }catch{} }
     state.answers[i] = {
       id: q.__id,
       pickedIndex: idx,
@@ -217,6 +271,7 @@ console.log('Imkertrainer build 2025-08-11c');
       if (q.explanation){ els.qExpl.hidden = false; els.qExpl.textContent = q.explanation; }
     }
     updateProgress();
+    saveResumeIfPractice();
   }
 
   function next(){
@@ -226,6 +281,7 @@ console.log('Imkertrainer build 2025-08-11c');
   function prev(){ if (state.index>0){ state.index--; renderQuestion(); } }
 
   function finish(){
+    clearResume();
     const total = state.questions.length;
     const correct = state.answers.filter(a=>a && a.correct).length;
     const pct = Math.round((correct/total)*100);
@@ -342,7 +398,7 @@ console.log('Imkertrainer build 2025-08-11c');
   els.startPractice.addEventListener('click', ()=>{
     const themes = selectedThemes();
     if (!themes.length){ alert('Selecteer minimaal één thema (of kies Alle thema’s).'); return; }
-    buildSession({mode:'practice', themes, count:10});
+    buildSession({mode:'practice', themes, count: parseInt(els.practiceCount?.value||'10',10)});
     show(views.quiz); renderQuestion();
   });
 
@@ -353,6 +409,35 @@ console.log('Imkertrainer build 2025-08-11c');
 
   els.btnNext.addEventListener('click', next);
   els.btnPrev.addEventListener('click', prev);
+if (els.themesWrap){ els.themesWrap.addEventListener('change', updatePracticeAvailability); }
+if (els.allThemes){
+  els.allThemes.addEventListener('change', ()=>{
+    const cbs = els.themesWrap.querySelectorAll('input[type="checkbox"]');
+    cbs.forEach(cb=> cb.checked = els.allThemes.checked);
+    updatePracticeAvailability();
+  });
+}
+if (els.practiceCount){
+  const savedCount = localStorage.getItem('imker:practiceCount');
+  if (savedCount) els.practiceCount.value = savedCount;
+  els.practiceCount.addEventListener('change', updatePracticeAvailability);
+}
+if (els.resumeBtn){
+  els.resumeBtn.addEventListener('click', async ()=>{
+    await ensureDataLoaded();
+    const snap = loadResume();
+    if (!snap) return;
+    const idToQ = new Map(state.dataset.map(q=>[q.__id, q]));
+    const qs = snap.qIds.map(id=> ({...idToQ.get(id)}));
+    state.mode = 'practice';
+    state.questions = qs;
+    state.index = Math.min(snap.index || 0, qs.length-1);
+    state.answers = Array.isArray(snap.answers)? snap.answers : new Array(qs.length).fill(null);
+    state.lastSelection = { mode:'practice', themes: snap.themes || [] };
+    show(views.quiz); renderQuestion();
+  });
+}
+
 
   els.btnRetrySame.addEventListener('click', ()=>{
     if (!state.lastSelection){ resetToHome(); return; }

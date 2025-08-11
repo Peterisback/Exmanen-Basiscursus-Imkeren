@@ -51,30 +51,21 @@ body{
 .app-footer{position:sticky;bottom:0;padding:.5rem 1rem;background:#fff9;backdrop-filter:blur(8px);display:flex;justify-content:center}
 .hidden{display:none!important}
 
+body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
 
-/* Honeycomb background for start page */
-#view-home {
-  background-image: 
-    radial-gradient(circle at 1px 1px, rgba(242, 193, 78, 0.08) 1px, transparent 0);
-  background-size: 24px 24px;
+#view-home{background-image:radial-gradient(circle at 1px 1px, rgba(242,193,78,.08) 1px, transparent 0);background-size:24px 24px;}
+
+.check span::before{
+  content:''; display:inline-block; width:16px; height:14px; margin-right:.4rem;
+  background:#f8d56b;
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  box-shadow: inset 0 -1px 0 #e3b33a;
 }
 
-/* Amber accentline for quiz container */
-#view-quiz .container {
-  border-left: 6px solid var(--amber);
-  padding-left: 1rem;
-}
-
-
-/* Bee wiggle animation for headings */
-@keyframes bee-wiggle {
-  0% { transform: rotate(0deg) translateY(0px); }
-  25% { transform: rotate(-8deg) translateY(-1px); }
-  50% { transform: rotate(8deg) translateY(1px); }
-  75% { transform: rotate(-8deg) translateY(-1px); }
-  100% { transform: rotate(0deg) translateY(0px); }
-}
-h1:hover, h2:hover {
-  animation: bee-wiggle 0.4s ease-in-out 1;
-  display: inline-block;
+@media (max-width:640px){
+  #view-quiz .btn-row{
+    position:sticky; bottom:0; z-index:3;
+    background:linear-gradient(180deg,#fff0 0%,#fff8 40%,#fff 100%);
+    padding:.75rem .5rem; backdrop-filter:blur(6px);
+  }
 }

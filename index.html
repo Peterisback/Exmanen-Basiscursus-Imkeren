@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>🐝 Imkertrainer 🐝</title>
   <meta name="description" content="Oefenen en proefexamens voor de NBV basiscursus imkeren" />
-<link rel="stylesheet" href="./styles.css?v=2025-08-11c" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 36 36%22><text y=%2232%22 font-size=%2232%22>🐝</text></svg>">
 </head>
 <body>
@@ -23,6 +26,11 @@
         <button id="go-practice" class="btn primary" data-nav="practice-settings">Oefenen</button>
         <button id="go-exam" class="btn" data-nav="exam-settings">Proefexamen</button>
       </div>
+      <p id="last-home" class="muted" aria-live="polite"></p>
+      <div id="resume-wrap" class="btn-row" style="display:none">
+        <button id="resume-practice" class="btn">Hervat oefensessie</button>
+      </div>
+
     </section>
 
     <!-- Oefeninstellingen -->
@@ -36,7 +44,21 @@
         </label>
         <div id="themes" class="theme-list" aria-live="polite"></div>
       </div>
-      <div class="btn-row">
+      
+      <div id="practice-controls" class="card">
+        <label for="practice-count">Aantal oefenvragen</label>
+        <select id="practice-count" style="margin-left:.5rem">
+          <option>5</option>
+          <option selected>10</option>
+          <option>15</option>
+          <option>20</option>
+          <option>30</option>
+          <option>40</option>
+          <option>50</option>
+        </select>
+        <p id="practice-availability" class="muted" style="margin-top:.5rem"></p>
+      </div>
+<div class="btn-row">
         <button class="btn" data-nav="home">Terug</button>
         <button id="start-practice" class="btn primary">Start Oefenen (10)</button>
       </div>
@@ -45,7 +67,7 @@
     <!-- Exameninstellingen -->
     <section id="view-exam-settings" class="view" aria-labelledby="exam-settings-title">
       <h2 id="exam-settings-title">Proefexamen</h2>
-      <p>30 vragen uit alle thema’s. Timer is optioneel en standaard uit.</p>
+      <p>Het proefexamen bestaat uit 30 vragen uit alle thema's die in de basiscursus aan bod komen.</p>
       <div class="btn-row">
         <button class="btn" data-nav="home">Terug</button>
         <button id="start-exam" class="btn primary">Start Proefexamen (30)</button>
@@ -88,5 +110,6 @@
     <span id="last-result" aria-live="polite"></span>
   </footer>
 
-<script src="./app.js?v=2025-08-11c" defer></script></body>
+  <script src="./app.js" defer></script>
+</body>
 </html>
