@@ -133,7 +133,7 @@
   function renderThemeList(){
     const wrap = els.themesWrap; wrap.innerHTML = '';
     state.themes.forEach(theme => {
-      const id = `th-${theme.replace(/[^a-z0-9]+/gi,'-')}`;
+      const id = `th-${theme.toLowerCase().replace(/[^a-z0-9]+/gi, '-')}`;
       const label = document.createElement('label');
       label.className = 'check';
       label.innerHTML = `

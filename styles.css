@@ -98,7 +98,7 @@ table.history tr:hover { background: #fafafa; }
 
 
 @media (min-width: 640px){
-  .icon{ width: 32px; height: 32px; vertical-align: -8px; }
+  .icon{ height: 32px; width: auto; vertical-align: -8px; }
 }
 
 
@@ -144,16 +144,15 @@ label.check input[id*="regel"] + span::before{
 
 /* Uniform heading icons */
 .icon{
-  width: 28px;
   height: 28px;
-  aspect-ratio: 1 / 1;
+  width: auto;
   object-fit: contain;
   vertical-align: -6px;
   margin-right: .45rem;
   flex: 0 0 auto;
 }
 @media (min-width: 640px){
-  .icon{ width: 32px; height: 32px; vertical-align: -8px; }
+  .icon{ height: 32px; width: auto; vertical-align: -8px; }
 }
 
 
