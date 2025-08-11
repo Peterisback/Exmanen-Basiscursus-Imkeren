@@ -1,17 +1,8 @@
 :root{
-  /* Warm palette (less saturated) */
-  --honey:#E9B94D;    /* was #F2C14E */
-  --amber:#D6811B;    /* was #E08A14 */
-  --brown:#4B3829;    /* was #5A3E2B */
-  --cream:#FFF7E9;
-
-  /* Neutrals */
-  --ink-900:#1E1913;
-  --ink-700:#3A2E22;
-  --ink-500:#6F5C47;
-  --ink-300:#B9A992;
-  --ink-100:#EFE7DC;
-
+  --honey:#F2C14E; /* honing */
+  --amber:#E08A14; /* amber */
+  --brown:#5A3E2B; /* bijenwas/raam */
+  --cream:#FFF8E6;
   --green:#2E7D32;
   --red:#C62828;
 }
@@ -21,12 +12,12 @@ body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background:var(--cream);
-  color:var(--ink-900);
+  color:#1c160f;
 }
 .app-header{
   display:flex;align-items:center;gap:.75rem;
-  padding:.75rem 1rem; background: radial-gradient(120% 100% at 100% 0%, rgba(0,0,0,.06), transparent 60%) , var(--honey);
-  color:var(--ink-900); position:sticky; top:0; z-index:10;
+  padding:.75rem 1rem; background:linear-gradient(90deg,var(--honey),var(--amber));
+  color:#210; position:sticky; top:0; z-index:10;
   box-shadow:0 2px 8px rgba(0,0,0,.08)
 }
 .app-header h1{font-size:1.25rem;margin:0}
@@ -35,7 +26,7 @@ body{
 .view{display:none}
 .view.active{display:block}
 .intro{opacity:.85}
-.btn{border:none;border-radius:14px;padding:.9rem 1.1rem;cursor:pointer;background:#fff;color:var(--ink-900);box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.btn{border:none;border-radius:14px;padding:.9rem 1.1rem;cursor:pointer;background:#fff;color:#1c160f;box-shadow:0 2px 6px rgba(0,0,0,.08)}
 .btn.primary{background:var(--amber);color:#231408;font-weight:600}
 .btn:focus{outline:3px solid #0004;outline-offset:2px}
 .btn-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
@@ -62,7 +53,7 @@ body{
 
 body{font-family:'Nunito',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
 
-
+#view-home{background-image:radial-gradient(circle at 1px 1px, rgba(242,193,78,.08) 1px, transparent 0);background-size:24px 24px;}
 
 .check span::before{
   content:''; display:inline-block; width:16px; height:14px; margin-right:.4rem;
@@ -84,7 +75,7 @@ body{font-family:'Nunito',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-ser
 table.history { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
 table.history th, table.history td { padding: .5rem .6rem; border-bottom: 1px solid #eee; text-align: left; }
 table.history th { font-weight: 600; }
-table.history tr:hover { background: #faf7ee; }
+table.history tr:hover { background: #fafafa; }
 
 
 /* Zwarte selectiebol voor gekozen antwoord */
@@ -141,17 +132,30 @@ h2, h3 { letter-spacing: .2px; }
 
 /* Start screen honeycomb (subtle) */
 #view-home {
-  background-color: var(--cream);
-  /* Soft, organic ambience: two very subtle amber blurs */
   background-image:
-    radial-gradient(220px 220px at 12% 10%, rgba(224,138,20,.10), transparent 60%),
-    radial-gradient(360px 280px at 88% 88%, rgba(242,193,78,.12), transparent 65%);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+    radial-gradient(circle at 1px 1px, rgba(242,193,78,.13) 1.2px, transparent 0);
+  background-size: 20px 20px;
 }
 
 /* Large, very light honeycomb watermark on wide viewports */
-
+@media (min-width: 900px){
+  .container::after{
+    content:"";
+    position: fixed;
+    right: 2vw;
+    bottom: 6vh;
+    width: 320px; height: 280px;
+    opacity: .06;
+    pointer-events: none;
+    background:
+      linear-gradient(30deg, rgba(0,0,0,.12) 1px, transparent 1px),
+      linear-gradient(150deg, rgba(0,0,0,.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,.12) 1px, transparent 1px);
+    background-size: 22px 12px, 22px 12px, 22px 22px;
+    background-position: 0 0, 0 0, 0 0;
+    mask-image: radial-gradient(closest-side, #000 70%, transparent 100%);
+  }
+}
 
 /* History table refinements */
 table.history tr:hover { background: #faf7ee; }
@@ -169,250 +173,59 @@ table.history td:nth-child(2){
 
 
 
-/* Consistent end-aligned button row */
-.btn-row--end { justify-content: flex-end; margin-top: .25rem; }
-
-/* Card subtle border for contrast */
-.card { border: 1px solid #0001; }
-
-/* Honeycomb pattern for start screen */
-#view-home {
-  background-color: var(--cream);
-  /* Soft, organic ambience: two very subtle amber blurs */
-  background-image:
-    radial-gradient(220px 220px at 12% 10%, rgba(224,138,20,.10), transparent 60%),
-    radial-gradient(360px 280px at 88% 88%, rgba(242,193,78,.12), transparent 65%);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-/* Honeycomb watermark for wide screens in quiz/results */
-@media (min-width: 900px) {
-  #view-quiz::before, #view-results::before {
-    content: "";
-    position: fixed;
-    top: 15%;
-    right: 5%;
-    width: 300px;
-    height: 260px;
-    opacity: .08;
-    background-image: 
-      linear-gradient(30deg, rgba(0,0,0,0.25) 12%, transparent 12.5%, transparent 87%, rgba(0,0,0,0.25) 87.5%, rgba(0,0,0,0.25)),
-      linear-gradient(150deg, rgba(0,0,0,0.25) 12%, transparent 12.5%, transparent 87%, rgba(0,0,0,0.25) 87.5%, rgba(0,0,0,0.25)),
-      linear-gradient(90deg, rgba(0,0,0,0.25) 12%, transparent 12.5%, transparent 87%, rgba(0,0,0,0.25) 87.5%, rgba(0,0,0,0.25));
-    background-size: 22px 38px;
-    background-position: 0 0, 0 0, 11px 19px;
-    z-index: 0;
-    pointer-events: none;
-  }
-}
-
-/* Progress complete accent */
-.progress.complete #progress-bar { background: var(--amber); }
-
-
-
-
-/* Utility to replace inline style on history action row */
-.btn-row--end { justify-content: flex-end; margin-top: .25rem; }
-
-/* Subtle 1px border for cards to improve separation on cream background */
-.card { border: 1px solid #0001; }
-
-/* Visible honeycomb on start screen */
-#view-home {
-  background-color: var(--cream);
-  /* Soft, organic ambience: two very subtle amber blurs */
-  background-image:
-    radial-gradient(220px 220px at 12% 10%, rgba(224,138,20,.10), transparent 60%),
-    radial-gradient(360px 280px at 88% 88%, rgba(242,193,78,.12), transparent 65%);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-/* Large, subtle honeycomb watermark on wide viewports, anchored bottom-right */
-
-
-
-/* === Premium visual pass === */
-
-h1{ font-weight:700; }
-h2{ font-weight:700; font-size:1.125rem; }
-h3{ font-weight:600; font-size:1rem; }
-.q-text{ font-size:1rem; line-height:1.55; color:var(--ink-900); }
-.muted{ color: var(--ink-500); }
-
-.app-header h1{font-size:1.25rem;margin:0; display:flex; align-items:center; gap:.35rem;}
-.app-header h1 .bee .icon-bee{ display:inline-block; vertical-align:middle; filter: drop-shadow(0 1px 1px rgba(0,0,0,.18)); }
-
-.btn{border:none;border-radius:14px;padding:.9rem 1.1rem;cursor:pointer;background:#fff;color:var(--ink-900);box-shadow:0 2px 6px rgba(0,0,0,.08)}
-.btn.primary{ background: var(--amber); color: #231408; font-weight:700; }
-.btn:not(.primary){ background: transparent; color: var(--ink-900); border:1px solid #0002; }
-.btn:hover{ box-shadow: 0 4px 10px rgba(0,0,0,.12); }
-.btn:active{ transform: translateY(1px) scale(.99); }
-
-.option{ position:relative; display:flex; align-items:flex-start; gap:.5rem; padding:.75rem .75rem .75rem 1rem; border-radius:14px; border:1px solid #0002; background:#fff; box-shadow:0 1px 4px rgba(0,0,0,.05); }
-.option::before{ content:""; position:absolute; left:-1px; top:-1px; bottom:-1px; width:4px; border-radius:14px 0 0 14px; background: transparent; }
-.option:hover{ border-color: var(--amber); background:#FFFBF4; }
-.option[data-state="correct"]{ background:#fff; }
-.option[data-state="correct"]::before{ background: var(--green); }
-.option[data-state="wrong"]{ background:#fff; }
-.option[data-state="wrong"]::before{ background: var(--red); }
-
-.quiz-header{display:flex;flex-direction:column;gap:.5rem}
-.progress{height:8px;background:#00000011;border-radius:999px;overflow:hidden}
-#progress-bar{height:100%;width:0;background:var(--green);transition:width .35s ease-in-out, background-color .3s ease; border-radius:999px;}
-
-.card{background:#fff;border-radius:16px;padding:1rem;box-shadow:0 1px 3px rgba(0,0,0,.06), 0 6px 12px rgba(0,0,0,.06);margin:.75rem 0; border:1px solid #0001;}
-.card:hover { transform: translateY(-2px); box-shadow: 0 2px 6px rgba(0,0,0,.06), 0 10px 20px rgba(0,0,0,.08); }
-
-table.history td:nth-child(2){ font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
-table.history tr:hover { background: #faf7ee; }
-:focus-visible { outline: 3px solid rgba(0,0,0,.3); outline-offset: 2px; }
-#results-summary h3{ margin-top:0; font-size:1rem; font-weight:700; color:var(--ink-700); }
-#results-summary p strong{ font-size:1.25rem; }
-#results-summary{ display:grid; gap:.5rem; }
-#results-details h3{ margin-top:0; }
-#results-details h4{ margin:.75rem 0 .25rem 0; font-weight:700; color:var(--ink-700); }
-
-
-
-/* Ghost variant for secondary actions (no persistent border) */
-.btn.ghost{
-  background: transparent;
-  border-color: transparent !important;
-  box-shadow: none;
-}
-.btn.ghost:hover{
-  background: rgba(0,0,0,.03);
-  border-color: #0001 !important;
-  box-shadow: 0 1px 4px rgba(0,0,0,.06);
-}
-
-/* Focus only when keyboard (accessibility-friendly) */
-.btn:focus{ outline: none; }
-.btn:focus-visible{ outline: 3px solid rgba(0,0,0,.3); outline-offset: 2px; }
-
-
-
-/* === Title & Headings Emphasis === */
-
-/* Header title stronger + responsive */
-.app-header h1{
-  font-weight: 700;
-  font-size: clamp(1.45rem, 1.05rem + 1.4vw, 1.85rem);
-  letter-spacing: .2px;
-  color: var(--ink-900);
-  filter: drop-shadow(0 1px 1px rgba(0,0,0,.18));
-}
-
-/* Section headings (Start, Oefeninstellingen, Vragen, Resultaten) */
-.view > h2{
-  font-weight: 700;
-  font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.6rem);
-  color: var(--ink-900);
-  margin-bottom: .5rem;
-  position: relative;
-}
-
-/* Amber accent underline */
-.view > h2::after{
+/* Theme-specific icons before labels */
+label[for*="biologie"]::before {
   content: "";
-  display: block;
-  width: 48px;
-  height: 4px;
-  border-radius: 999px;
-  margin-top: .35rem;
-  background: linear-gradient(90deg, var(--amber), #f3d289);
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: .4rem;
+  background: url('assets/image/biologie.webp') no-repeat center/contain;
+  vertical-align: middle;
 }
-
-/* Slightly emphasize quiz title too */
-#quiz-title{ font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.6rem); font-weight: 700; }
-
-
-
-/* === SVG decorative assets (lightweight) === */
-
-/* Header hero (subtle, fixed at bottom) */
-.app-header::after{
-  content:"";
-  position:absolute;
-  left:0; right:0; bottom:-10px;
-  height:80px;
-  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20600%2080%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22honeyGrad%22%20x1%3D%220%22%20x2%3D%221%22%20y1%3D%220%22%20y2%3D%220%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23E9B94D%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23D6811B%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3C%21--%20floral%20line%20--%3E%0A%20%20%3Cpath%20d%3D%22M0%2C60%20C80%2C40%20160%2C80%20240%2C60%20C320%2C40%20400%2C80%20480%2C60%20C520%2C50%20560%2C55%20600%2C48%22%20fill%3D%22none%22%20stroke%3D%22%23B98F4A%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3C%21--%20small%20bee%20--%3E%0A%20%20%3Cg%20transform%3D%22translate%28520%2C36%29%22%3E%0A%20%20%20%20%3Cellipse%20cx%3D%2218%22%20cy%3D%2210%22%20rx%3D%2212%22%20ry%3D%228%22%20fill%3D%22%23E9B94D%22%20stroke%3D%22%234B3829%22%20stroke-width%3D%221.4%22/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%2214%22%20cy%3D%226%22%20rx%3D%2210%22%20ry%3D%225%22%20fill%3D%22%23E9F6FF%22%20stroke%3D%22%234B3829%22%20stroke-width%3D%221.2%22/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%2222%22%20cy%3D%227%22%20rx%3D%2210%22%20ry%3D%225%22%20fill%3D%22%23E9F6FF%22%20stroke%3D%22%234B3829%22%20stroke-width%3D%221.2%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%227%22%20cy%3D%2212%22%20r%3D%223%22%20fill%3D%22%234B3829%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M26%2C10%20l8%2C3%20-8%2C3%22%20fill%3D%22%234B3829%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M10%2C8%20c4%2C3%2012%2C3%2016%2C0%22%20stroke%3D%22%234B3829%22%20stroke-width%3D%221.2%22%20fill%3D%22none%22/%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E');
-  background-repeat:no-repeat;
-  background-size: 640px 80px;
-  background-position: right 8px bottom;
-  opacity:.35;
-  pointer-events:none;
+label[for*="jaarcyclus"]::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: .4rem;
+  background: url('assets/image/jaarcyclus.webp') no-repeat center/contain;
+  vertical-align: middle;
 }
-
-/* Section icons */
-.view > h2{
-  padding-left: 36px;
+label[for*="praktisch"]::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: .4rem;
+  background: url('assets/image/praktisch.webp') no-repeat center/contain;
+  vertical-align: middle;
 }
-#home-title::before,
-#practice-settings-title::before,
-#exam-settings-title::before,
-#quiz-title::before,
-#results-title::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:2px;
-  width:24px;height:24px;
-  background-repeat:no-repeat;
-  background-size:24px 24px;
-  opacity:.9;
+label[for*="ziekten"]::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: .4rem;
+  background: url('assets/image/ziekten.webp') no-repeat center/contain;
+  vertical-align: middle;
 }
-#home-title::before{ background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cpath%20d%3D%22M3%2014c5-6%2013-6%2018%200%22%20fill%3D%22none%22%20stroke%3D%22%236F5C47%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2214%22%20r%3D%223.2%22%20fill%3D%22%23E9B94D%22%20stroke%3D%22%234B3829%22%20stroke-width%3D%221.2%22/%3E%0A%3C/svg%3E'); }
-#practice-settings-title::before{ background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Crect%20x%3D%224%22%20y%3D%225%22%20width%3D%2216%22%20height%3D%2212%22%20rx%3D%222%22%20fill%3D%22%23fff%22%20stroke%3D%22%236F5C47%22%20stroke-width%3D%221.4%22/%3E%0A%20%20%3Cpath%20d%3D%22M6%209h8M6%2012h6%22%20stroke%3D%22%236F5C47%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Ccircle%20cx%3D%2217%22%20cy%3D%2212%22%20r%3D%223%22%20fill%3D%22%23E9B94D%22%20stroke%3D%22%234B3829%22%20stroke-width%3D%221.2%22/%3E%0A%3C/svg%3E'); }
-#exam-settings-title::before{ background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cpath%20d%3D%22M6%205h12v14H6z%22%20fill%3D%22%23fff%22%20stroke%3D%22%236F5C47%22%20stroke-width%3D%221.4%22/%3E%0A%20%20%3Cpath%20d%3D%22M8%209h8M8%2012h8M8%2015h5%22%20stroke%3D%22%236F5C47%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M6%205l6%203%206-3%22%20fill%3D%22%23E9B94D%22%20stroke%3D%22%234B3829%22%20stroke-width%3D%221.2%22/%3E%0A%3C/svg%3E'); }
-#quiz-title::before{ background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%228%22%20r%3D%224.2%22%20fill%3D%22%23E9B94D%22%20stroke%3D%22%234B3829%22%20stroke-width%3D%221.2%22/%3E%0A%20%20%3Cpath%20d%3D%22M12%2013v5%22%20stroke%3D%22%236F5C47%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2220%22%20r%3D%221.4%22%20fill%3D%22%236F5C47%22/%3E%0A%3C/svg%3E'); }
-#results-title::before{ background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%228%22%20fill%3D%22%23FFF%22%20stroke%3D%22%236F5C47%22%20stroke-width%3D%221.4%22/%3E%0A%20%20%3Cpath%20d%3D%22M8%2013l2.5%202.5L16%2010%22%20fill%3D%22none%22%20stroke%3D%22%232E7D32%22%20stroke-width%3D%221.8%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%0A%3C/svg%3E'); }
-
-/* Empty state illustration */
-#history-body .muted{
-  position:relative;
-  display:inline-flex;
-  align-items:center;
-  gap:.5rem;
-  padding-left: 28px;
+label[for*="honing"]::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: .4rem;
+  background: url('assets/image/honing.webp') no-repeat center/contain;
+  vertical-align: middle;
 }
-#history-body .muted::before{
-  content:"";
-  position:absolute;
-  left:0; top:50%; transform:translateY(-50%);
-  width:24px; height:24px;
-  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2060%2028%22%3E%0A%20%20%3Cg%20stroke%3D%22%234B3829%22%20stroke-width%3D%221.2%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%0A%20%20%20%20%3Cellipse%20cx%3D%2228%22%20cy%3D%2214%22%20rx%3D%2212%22%20ry%3D%228%22%20fill%3D%22%23E9B94D%22/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%2223%22%20cy%3D%2210%22%20rx%3D%228%22%20ry%3D%224%22%20fill%3D%22%23E9F6FF%22/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%2231%22%20cy%3D%2211%22%20rx%3D%228%22%20ry%3D%224%22%20fill%3D%22%23E9F6FF%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2218%22%20cy%3D%2215%22%20r%3D%223%22%20fill%3D%22%234B3829%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M36%2C14%20l7%2C2.2%20-7%2C2.2%22%20fill%3D%22%234B3829%22/%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E');
-  background-size: 24px 24px;
-  background-repeat:no-repeat;
-  opacity:.7;
-}
-
-/* Results medal */
-#results-summary{
-  position:relative;
-  padding-left: 84px;
-  min-height: 84px;
-}
-#results-summary::before{
-  content:"";
-  position:absolute;
-  left:1rem; top:50%; transform:translateY(-50%);
-  width:72px; height:72px;
-  background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2080%2080%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20x2%3D%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23E9B94D%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23D6811B%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Ccircle%20cx%3D%2240%22%20cy%3D%2240%22%20r%3D%2228%22%20fill%3D%22url%28%23g%29%22%20stroke%3D%22%234B3829%22%20stroke-width%3D%222%22/%3E%0A%20%20%3Cpath%20d%3D%22M28%2044l8%206%2016-18%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%0A%3C/svg%3E');
-  background-size: 72px 72px;
-  background-repeat:no-repeat;
-  opacity:.9;
-}
-
-/* Responsiveness for header hero */
-@media (max-width: 520px){
-  .app-header::after{
-    background-size: 440px 64px;
-    height:64px;
-    opacity:.3;
-  }
+label[for*="wetgeving"]::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: .4rem;
+  background: url('assets/image/wetgeving.webp') no-repeat center/contain;
+  vertical-align: middle;
 }
 
