@@ -45,6 +45,7 @@
     btnPrev: $('#btn-prev'),
     btnNext: $('#btn-next'),
     lastFooter: $('#last-result'),
+    historyBody: $('#history-body'),
     resSummary: $('#results-summary'),
     resDetails: $('#results-details'),
     btnRetrySame: $('#btn-retry-same'),
@@ -144,6 +145,8 @@ function showResumeCTA(){
   // ---------- Views & Navigation ----------
   function show(view){
     Object.values(views).forEach(v=>v.classList.remove('active'));
+    const footer = document.querySelector('footer.app-footer');
+    if (view===views.quiz) { if (footer) footer.style.display='none'; } else { if (footer) footer.style.display=''; }
     view.classList.add('active');
     window.scrollTo({top:0,behavior:'instant'});
   }
@@ -205,7 +208,9 @@ function showResumeCTA(){
     const pct = ((state.index)/state.questions.length)*100;
     els.progress.style.width = `${pct}%`;
     const correctSoFar = state.answers.filter(a=>a && a.correct).length;
-    els.status.textContent = `${state.index} / ${state.questions.length} · goed: ${correctSoFar}`;
+    els.status.textContent = (state.mode==='exam')
+      ? `${state.index} / ${state.questions.length}`
+      : `${state.index} / ${state.questions.length} · goed: ${correctSoFar}`;
   }
 
   function renderQuestion(){
@@ -253,12 +258,11 @@ function showResumeCTA(){
     });
   }
 
+  
   function onPick(idx){
     els.btnNext.disabled = false;
-
     const i = state.index; const q = state.questions[i];
     const correct = (idx === q.answer);
-    if (correct) { try{ els.btnNext.focus(); }catch{} }
     state.answers[i] = {
       id: q.__id,
       pickedIndex: idx,
@@ -266,13 +270,22 @@ function showResumeCTA(){
       correct,
       theme: q.category
     };
+    // Toon feedback meteen (visueel), maar gedrag verschilt per modus
+    markFeedback(idx, q.answer);
     if (state.mode==='practice'){
-      markFeedback(idx, q.answer);
+      // bij goed automatisch door na korte delay
+      if (correct){
+        setTimeout(()=>{ next(); }, 500);
+      } else {
+        // bij fout: wacht op expliciete 'Volgende'
+      }
+      // eventuele uitleg zichtbaar
       if (q.explanation){ els.qExpl.hidden = false; els.qExpl.textContent = q.explanation; }
+    } else {
+      // Examen: geen uitleg; geen score zichtbaar; gebruiker navigeert handmatig
     }
-    updateProgress();
-    saveResumeIfPractice();
   }
+}
 
   function next(){
     if (state.index < state.questions.length - 1){ state.index++; renderQuestion(); }
@@ -314,23 +327,37 @@ function showResumeCTA(){
     });
     perHtml += '</ul>';
 
+    
     if (state.mode==='exam'){
-      perHtml += '<h3>Volledige lijst</h3><ol>';
-      state.questions.forEach((q, i)=>{
-        const a = state.answers[i];
-        const your = a? String.fromCharCode(97 + a.pickedIndex) : '—';
-        const right = String.fromCharCode(97 + q.answer);
-        perHtml += `<li><em>${q.category}</em>: ${q.question}<br>Jouw antwoord: <strong>${your}</strong>; Juist: <strong>${right}</strong>${q.explanation? `<br><small>Uitleg: ${q.explanation}</small>`:''}</li>`;
-      });
-      perHtml += '</ol>';
-    }
-    els.resDetails.innerHTML = perHtml;
+      // Toon alleen fout beantwoorde vragen, gesorteerd per thema
+      const wrong = state.questions.map((q,i)=>({q,i,a:state.answers[i]}))
+        .filter(x=>x.a && !x.a.correct);
+      wrong.sort((x,y)=> x.q.category.localeCompare(y.q.category,'nl') || x.i - y.i);
 
-    if (state.mode==='practice'){
-      els.btnRetrySame.textContent = 'Opnieuw (zelfde selectie)';
-      els.btnRetryNew.textContent = 'Opnieuw (andere selectie)';
-      els.btnRetrySame.classList.remove('hidden');
-      els.btnRetryNew.classList.remove('hidden');
+      let list = '<h3>Fout beantwoorde vragen</h3>';
+      if (wrong.length===0){
+        list += '<p>Alles goed beantwoord. Uitstekend!</p>';
+      } else {
+        let currentTheme = null;
+        list += '<div class="wrong-list">';
+        wrong.forEach(({q,i,a})=>{
+          if (q.category!==currentTheme){
+            if (currentTheme!==null) list += '</ol>';
+            currentTheme = q.category;
+            list += `<h4>${currentTheme}</h4><ol>`;
+          }
+          const yourText = a.pickedIndex!=null ? `${String.fromCharCode(97+a.pickedIndex)}) ${q.choices[a.pickedIndex]}` : '—';
+          const rightText = `${String.fromCharCode(97+q.answer)}) ${q.choices[q.answer]}`;
+          list += `<li><div class="q">${q.question}</div>
+                     <div class="ans"><strong>Jouw antwoord:</strong> ${yourText}</div>
+                     <div class="ans"><strong>Juiste antwoord:</strong> ${rightText}</div>
+                   </li>`;
+        });
+        if (currentTheme!==null) list += '</ol>';
+        list += '</div>';
+      }
+      perHtml += list;
+    } else {
     } else {
       els.btnRetrySame.textContent = 'Start nieuw proefexamen';
       els.btnRetrySame.classList.remove('hidden');
@@ -375,7 +402,28 @@ function showResumeCTA(){
     const bytes = new Uint8Array(6); crypto.getRandomValues(bytes);
     return Array.from(bytes, b=>b.toString(16).padStart(2,'0')).join('');
   }
-  function restoreFooter(){
+  
+  function renderHistory(){
+    if (!els.historyBody) return;
+    const allRaw = localStorage.getItem('imker:sessions');
+    const all = allRaw? JSON.parse(allRaw) : [];
+    els.historyBody.innerHTML = '';
+    if (!all.length){
+      els.historyBody.innerHTML = '<tr><td colspan="3"><span class="muted">Nog geen sessies</span></td></tr>';
+      return;
+    }
+    // Newest first
+    all.slice().reverse().forEach(sess=>{
+      const tr = document.createElement('tr');
+      const type = sess.mode==='exam' ? 'Proefexamen' : 'Oefenen';
+      const res = `${sess.score.correct}/${sess.score.total} (${sess.score.pct}%)`;
+      const dt = new Date(sess.dateISO);
+      const dateStr = dt.toLocaleString('nl-NL', {dateStyle:'medium', timeStyle:'short'});
+      tr.innerHTML = `<td>${type}</td><td>${res}</td><td>${dateStr}</td>`;
+      els.historyBody.appendChild(tr);
+    });
+  }
+function restoreFooter(){
     const last = localStorage.getItem('imker:last');
     els.lastFooter.textContent = last || '';
   }
@@ -458,9 +506,11 @@ if (els.resumeBtn){
   function resetToHome(){
     Object.assign(state, { mode:null, questions:[], index:0, answers:[] });
     show(views.home);
+    renderHistory();
   }
 
   // init
   show(views.home);
   restoreFooter();
+  renderHistory();
 })();

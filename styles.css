@@ -69,3 +69,10 @@ body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-seri
     padding:.75rem .5rem; backdrop-filter:blur(6px);
   }
 }
+
+
+/* History table (light) */
+table.history { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+table.history th, table.history td { padding: .5rem .6rem; border-bottom: 1px solid #eee; text-align: left; }
+table.history th { font-weight: 600; }
+table.history tr:hover { background: #fafafa; }

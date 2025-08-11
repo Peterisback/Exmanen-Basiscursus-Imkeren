@@ -51,3 +51,13 @@ GitHub → New Project → **Other/Static**. Build command: leeg. Output dir: `/
 localStorage.removeItem('imker:last');
 localStorage.removeItem('imker:sessions');
 ```
+
+
+## Nieuw in deze versie
+
+- **Oefenmodus**: Bij een goed antwoord wordt direct feedback getoond en automatisch naar de volgende vraag gegaan (na ±0,5s). Bij een fout antwoord wordt feedback getoond en moet je zelf op *Volgende* klikken om door te gaan.
+- **Proefexamen**: Tijdens het examen wordt geen live score getoond; alleen de vraagnummer-voortgang. Op de resultatenpagina zie je uitsluitend de fout beantwoorde vragen, gesorteerd per thema, inclusief je gegeven antwoord en het juiste antwoord (voluit).
+- **Tijdens het maken van vragen** (in beide modi): Eerdere sessieresultaten worden niet getoond onder de vraagweergave.
+- **Sessiehistorie**: Op het startscherm wordt een overzicht getoond van eerdere sessies (per browser), met type (Oefenen/Proefexamen), score en datum/tijd.
+- **Lichte stijl**: De app gebruikt altijd het lichte thema, geschikt voor gebruik binnen GitHub Pages, Hobby, of Vercel.
+
