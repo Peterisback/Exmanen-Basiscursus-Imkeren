@@ -1,3 +1,5 @@
+console.log('Imkertrainer build 2025-08-11b');
+
 (function(){
   'use strict';
   // ---------- State ----------
