@@ -51,7 +51,7 @@ body{
 .app-footer{position:sticky;bottom:0;padding:.5rem 1rem;background:#fff9;backdrop-filter:blur(8px);display:flex;justify-content:center}
 .hidden{display:none!important}
 
-body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+body{font-family:'Nunito',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
 
 #view-home{background-image:radial-gradient(circle at 1px 1px, rgba(242,193,78,.08) 1px, transparent 0);background-size:24px 24px;}
 
@@ -80,3 +80,94 @@ table.history tr:hover { background: #fafafa; }
 
 /* Zwarte selectiebol voor gekozen antwoord */
 .choices input[type="radio"]{ accent-color:#000; }
+
+
+
+/* ===== Visual refresh (lightweight) ===== */
+
+/* Icon button background to ensure visibility on gradient */
+#btn-home {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+}
+#btn-home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: rgba(255,255,255,.7);
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+#btn-home .icon-beehive { position: relative; z-index: 1; }
+
+/* Title bee visibility */
+.app-header h1 .bee {
+  text-shadow: 0 1px 2px rgba(0,0,0,.25);
+}
+
+/* Buttons & options hover/press */
+.card, .btn, .option {
+  transition: transform .15s ease, box-shadow .15s ease, background-color .2s ease, border-color .2s ease;
+}
+.btn:hover { box-shadow: 0 4px 10px rgba(0,0,0,.12); }
+.btn:active { transform: translateY(1px) scale(.99); }
+.option:hover { border-color: var(--amber); background: #fffbe9; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,.12); }
+
+/* Progress smoother */
+#progress-bar { transition: width .35s ease-in-out, background-color .3s ease; }
+
+/* Typographic rhythm */
+.q-text{ font-size:1.12rem; line-height:1.5; }
+h2, h3 { letter-spacing: .2px; }
+
+/* Option emphasis */
+.option{ box-shadow: 0 1px 4px rgba(0,0,0,.05); border-radius:14px; }
+.option[data-state="correct"]{ box-shadow: 0 0 0 2px var(--green) inset; }
+.option[data-state="wrong"]{ box-shadow: 0 0 0 2px var(--red) inset; }
+
+/* Start screen honeycomb (subtle) */
+#view-home {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(242,193,78,.13) 1.2px, transparent 0);
+  background-size: 20px 20px;
+}
+
+/* Large, very light honeycomb watermark on wide viewports */
+@media (min-width: 900px){
+  .container::after{
+    content:"";
+    position: fixed;
+    right: 2vw;
+    bottom: 6vh;
+    width: 320px; height: 280px;
+    opacity: .06;
+    pointer-events: none;
+    background:
+      linear-gradient(30deg, rgba(0,0,0,.12) 1px, transparent 1px),
+      linear-gradient(150deg, rgba(0,0,0,.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,.12) 1px, transparent 1px);
+    background-size: 22px 12px, 22px 12px, 22px 22px;
+    background-position: 0 0, 0 0, 0 0;
+    mask-image: radial-gradient(closest-side, #000 70%, transparent 100%);
+  }
+}
+
+/* History table refinements */
+table.history tr:hover { background: #faf7ee; }
+table.history td:nth-child(2){
+  font-variant-numeric: tabular-nums;
+}
+
+/* Focus styles explicitly visible */
+:focus-visible { outline: 3px solid rgba(0,0,0,.35); outline-offset: 2px; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  * { transition: none !important; }
+}
+
