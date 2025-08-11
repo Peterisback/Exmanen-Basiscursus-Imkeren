@@ -1,119 +1,110 @@
 <!DOCTYPE html>
+
 <html lang="nl">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>🐝 Imkertrainer 🐝</title>
-  <meta name="description" content="Oefenen en proefexamens voor de NBV basiscursus imkeren"/>
-  <link rel="stylesheet" href="./styles.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 36 36%22><text y=%2232%22 font-size=%2232%22>🐝</text></svg>"/>
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>🐝 Imkertrainer 🐝</title>
+<meta content="Oefenen en proefexamens voor de NBV basiscursus imkeren" name="description"/>
+<link href="./styles.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 36 36%22&gt;&lt;text y=%2232%22 font-size=%2232%22&gt;🐝&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
+<style>
+    /* Extra ruimte tussen vragen in resultatenlijst */
+    .wrong-list li { margin-bottom: 1rem; }
+    </style></head>
 <body>
-  <header class="app-header" role="banner">
-    <button id="btn-home" class="ghost" title="Terug naar start" aria-label="Terug naar start" data-nav="home">🏠</button>
-    <h1 aria-live="polite" aria-atomic="true">🐝 Imkertrainer</h1>
-  </header>
-
-  <main id="app" class="container" role="main">
-    <!-- Startscherm -->
-    <section id="view-home" class="view active" aria-labelledby="home-title">
-      <h2 id="home-title">Start</h2>
-      <p class="intro">Oefen- en proefexamen-tool voor de NBV basiscursus imkeren.</p>
-
-      <div class="btn-grid">
-        <button id="go-practice" class="btn primary" data-nav="practice-settings">Oefenen</button>
-        <button id="go-exam" class="btn" data-nav="exam-settings">Proefexamen</button>
-      </div>
-
-      <!-- Verwijderd: tekst 'laatste resultaat'. Alleen het overzicht blijft -->
-      <div id="history" class="card">
-        <h3>Jouw sessies (dit apparaat)</h3>
-        <div class="btn-row" style="justify-content:flex-end; margin-top:.25rem">
-          <button id="btn-reset-history" class="btn" title="Wis resultatenoverzicht">Reset resultaten</button>
-        </div>
-        <table id="history-table" class="history">
-          <thead><tr><th>Type</th><th>Resultaat</th><th>Datum/tijd</th></tr></thead>
-          <tbody id="history-body"></tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Oefeninstellingen -->
-    <section id="view-practice-settings" class="view" aria-labelledby="practice-settings-title">
-      <h2 id="practice-settings-title">Oefeninstellingen</h2>
-      <p>Maak je themakeuze. Data wordt geladen zodra je deze pagina opent.</p>
-
-      <div id="theme-controls" class="card">
-        <label class="check">
-          <input type="checkbox" id="all-themes"/>
-          <span>Alle thema’s</span>
-        </label>
-        <div id="themes" class="theme-list" aria-live="polite"></div>
-      </div>
-
-      <div id="practice-controls" class="card">
-        <label for="practice-count">Aantal oefenvragen</label>
-        <select id="practice-count" style="margin-left:.5rem">
-          <option>5</option><option selected>10</option><option>15</option><option>20</option>
-          <option>30</option><option>40</option><option>50</option>
-        </select>
-        <p id="practice-availability" class="muted" style="margin-top:.5rem"></p>
-      </div>
-
-      <div class="btn-row">
-        <button class="btn" data-nav="home">Terug</button>
-        <button id="start-practice" class="btn primary">Start Oefenen (10)</button>
-      </div>
-    </section>
-
-    <!-- Exameninstellingen -->
-    <section id="view-exam-settings" class="view" aria-labelledby="exam-settings-title">
-      <h2 id="exam-settings-title">Proefexamen</h2>
-      <p>Het proefexamen bestaat uit 30 vragen uit alle thema's die in de basiscursus aan bod komen.</p>
-      <div class="btn-row">
-        <button class="btn" data-nav="home">Terug</button>
-        <button id="start-exam" class="btn primary">Start Proefexamen (30)</button>
-      </div>
-    </section>
-
-    <!-- Quiz -->
-    <section id="view-quiz" class="view" aria-labelledby="quiz-title">
-      <div class="quiz-header">
-        <h2 id="quiz-title">Vragen</h2>
-        <div class="progress"><div id="progress-bar"></div></div>
-        <div id="status" class="status" aria-live="polite"></div>
-      </div>
-
-      <article id="question-card" class="card" aria-live="polite" aria-atomic="true">
-        <div id="q-meta" class="q-meta"></div>
-        <h3 id="q-text" class="q-text"></h3>
-        <form id="q-form" class="choices" role="radiogroup" aria-label="Antwoordopties"></form>
-        <div id="q-expl" class="explanation" hidden></div>
-      </article>
-
-      <div class="btn-row">
-        <button id="btn-prev" class="btn" aria-label="Vorige vraag">← Vorige</button>
-        <button id="btn-next" class="btn" aria-label="Volgende vraag">Volgende →</button>
-      </div>
-    </section>
-
-    <!-- Resultaten -->
-    <section id="view-results" class="view" aria-labelledby="results-title">
-      <h2 id="results-title">Resultaten</h2>
-      <div id="results-summary" class="card"></div>
-      <div id="results-details" class="card"></div>
-      <div class="btn-grid">
-        <button class="btn" data-nav="home">Terug naar start</button>
-        <button id="btn-retry-same" class="btn">Opnieuw (zelfde selectie)</button>
-        <button id="btn-retry-new" class="btn primary">Opnieuw (andere selectie)</button>
-      </div>
-    </section>
-  </main>
-
-  <!-- Verwijderd: footer met laatste resultaat -->
-  <script defer src="./app.js"></script>
+<header class="app-header" role="banner">
+<button aria-label="Terug naar start" class="ghost" data-nav="home" id="btn-home" title="Terug naar start">🏠</button>
+<h1 aria-atomic="true" aria-live="polite">🐝 Imkertrainer</h1>
+</header>
+<main class="container" id="app" role="main">
+<!-- Startscherm -->
+<section aria-labelledby="home-title" class="view active" id="view-home">
+<h2 id="home-title">Start</h2>
+<p class="intro">Oefen- en proefexamen-tool voor de NBV basiscursus imkeren.</p>
+<div class="btn-grid">
+<button class="btn primary" data-nav="practice-settings" id="go-practice">Oefenen</button>
+<button class="btn" data-nav="exam-settings" id="go-exam">Proefexamen</button>
+</div>
+<!-- Verwijderd: tekst 'laatste resultaat'. Alleen het overzicht blijft -->
+<div class="card" id="history">
+<h3>Jouw sessies (op dit apparaat)</h3>
+<div class="btn-row" style="justify-content:flex-end; margin-top:.25rem">
+<button class="btn" id="btn-reset-history" title="Wis resultatenoverzicht">Reset resultaten</button>
+</div>
+<table class="history" id="history-table">
+<thead><tr><th>Type</th><th>Resultaat</th><th>Datum/tijd</th></tr></thead>
+<tbody id="history-body"></tbody>
+</table>
+</div>
+</section>
+<!-- Oefeninstellingen -->
+<section aria-labelledby="practice-settings-title" class="view" id="view-practice-settings">
+<h2 id="practice-settings-title">Oefeninstellingen</h2>
+<p>Maak je themakeuze. Data wordt geladen zodra je deze pagina opent.</p>
+<div class="card" id="theme-controls">
+<label class="check">
+<input id="all-themes" type="checkbox"/>
+<span>Alle thema’s</span>
+</label>
+<div aria-live="polite" class="theme-list" id="themes"></div>
+</div>
+<div class="card" id="practice-controls">
+<label for="practice-count">Aantal oefenvragen</label>
+<select id="practice-count" style="margin-left:.5rem">
+<option>5</option><option selected="">10</option><option>15</option><option>20</option>
+<option>30</option><option>40</option><option>50</option>
+</select>
+<p class="muted" id="practice-availability" style="margin-top:.5rem"></p>
+</div>
+<div class="btn-row">
+<button class="btn" data-nav="home">Terug</button>
+<button class="btn primary" id="start-practice">Start Oefenen (10)</button>
+</div>
+</section>
+<!-- Exameninstellingen -->
+<section aria-labelledby="exam-settings-title" class="view" id="view-exam-settings">
+<h2 id="exam-settings-title">Proefexamen</h2>
+<p>Het proefexamen bestaat uit 30 vragen uit alle thema's die in de basiscursus aan bod komen.</p>
+<div class="btn-row">
+<button class="btn" data-nav="home">Terug</button>
+<button class="btn primary" id="start-exam">Start Proefexamen (30)</button>
+</div>
+</section>
+<!-- Quiz -->
+<section aria-labelledby="quiz-title" class="view" id="view-quiz">
+<div class="quiz-header">
+<h2 id="quiz-title">Vragen</h2>
+<div class="progress"><div id="progress-bar"></div></div>
+<div aria-live="polite" class="status" id="status"></div>
+</div>
+<article aria-atomic="true" aria-live="polite" class="card" id="question-card">
+<div class="q-meta" id="q-meta"></div>
+<h3 class="q-text" id="q-text"></h3>
+<form aria-label="Antwoordopties" class="choices" id="q-form" role="radiogroup"></form>
+<div class="explanation" hidden="" id="q-expl"></div>
+</article>
+<div class="btn-row">
+<button aria-label="Vorige vraag" class="btn" id="btn-prev">← Vorige</button>
+<button aria-label="Volgende vraag" class="btn" id="btn-next">Volgende →</button>
+</div>
+</section>
+<!-- Resultaten -->
+<section aria-labelledby="results-title" class="view" id="view-results">
+<h2 id="results-title">Resultaten</h2>
+<div class="card" id="results-summary"></div>
+<div class="card" id="results-details"></div>
+<div class="btn-grid">
+<button class="btn" data-nav="home">Terug naar start</button>
+<button class="btn" id="btn-retry-same">Opnieuw (zelfde selectie)</button>
+<button class="btn primary" id="btn-retry-new">Opnieuw (andere selectie)</button>
+</div>
+</section>
+</main>
+<!-- Verwijderd: footer met laatste resultaat -->
+<script defer="" src="./app.js"></script>
 </body>
 </html>
