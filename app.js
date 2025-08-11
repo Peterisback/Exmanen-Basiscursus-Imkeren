@@ -252,7 +252,7 @@
         correctIndex: q.answer,
         correct,
         theme: q.category,
-        locked: !correct // vergrendel bij fout
+        locked: true // altijd vergrendeld na antwoord
       };
       // Feedback direct tonen
       markFeedback(idx, q.answer);
@@ -262,8 +262,7 @@
         // bij fout: vergrendel zodat niet meer aangepast kan worden
         lockOptions();
       } else {
-        // bij goed: korte delay en door
-        setTimeout(()=>{ next(); }, 500);
+        lockOptions();
       }
       return;
     }
