@@ -104,10 +104,7 @@
     if (els.allThemes) els.allThemes.checked = false;
     await ensureDataLoaded();
     renderThemeList();
-    els.themesWrap.querySelectorAll('input[type=\"checkbox\"]').forEach(cb => cb.checked = false);
-  if (els.allThemes) els.allThemes.checked = false;
-  updatePracticeAvailability();
-updatePracticeAvailability();
+    updatePracticeAvailability();
     show(views.practiceSettings);
   }
   async function enterExamSettings(){
@@ -250,39 +247,30 @@ updatePracticeAvailability();
 
     // In oefenmodus: na eerste keuze bij fout, vergrendelen; bij goed auto-door.
     if (state.mode==='practice'){
-  if (existing?.locked) return; // niet meer aanpassen na eerste keuze
+      // voorkomen dat UI niet altijd 'checked' toont: radio zelf ook activeren
+      const input = els.qForm.querySelector(`input[type="radio"][name="q${i}"][value="${idx}"]`);
+      if (input) input.checked = true;
 
-  const correct = (idx === q.answer);
-  state.answers[i] = {
-    id: q.__id,
-    pickedIndex: idx,
-    correctIndex: q.answer,
-    correct,
-    theme: q.category,
-    locked: true  // ALTIJD vergrendelen na eerste antwoord (goed of fout)
-  };
+      if (existing?.locked) return; // niet meer aanpassen
 
-  markFeedback(idx, q.answer);
-  if (q.explanation){ els.qExpl.hidden = false; els.qExpl.textContent = q.explanation; }
+      const correct = (idx === q.answer);
+      state.answers[i] = {
+        id: q.__id,
+        pickedIndex: idx,
+        correctIndex: q.answer,
+        correct,
+        theme: q.category,
+        locked: true // altijd vergrendelen na eerste keuze
+      };
 
-  // UI: opties uitzetten, Volgende aan en gemarkeerd
-  lockOptions();
-  els.btnNext.disabled = false;
-  els.btnNext.classList.add('primary');
-  return;
-};
-      // Feedback direct tonen
+      // Toon feedback en eventuele uitleg
       markFeedback(idx, q.answer);
+      if (q.explanation){ els.qExpl.hidden = false; els.qExpl.textContent = q.explanation; }
+
+      // UI: opties vastzetten en Volgende aan + markeren
+      lockOptions();
       els.btnNext.disabled = false;
       els.btnNext.classList.add('primary');
-      if (q.explanation){ els.qExpl.hidden = false; els.qExpl.textContent = q.explanation; }
-      if (!correct){
-        // bij fout: vergrendel zodat niet meer aangepast kan worden
-        lockOptions();
-      } else {
-        // bij goed: korte delay en door
-        setTimeout(()=>{ next(); }, 500);
-      }
       return;
     }
 
