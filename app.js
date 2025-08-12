@@ -475,12 +475,29 @@ function renderThemeList(){
   }
 
   function renderHistory(){
-    if (!els.historyBody) return;
-    let all = [];
-    try {
-      const allRaw = localStorage.getItem('imker:sessions');
-      all = allRaw? JSON.parse(allRaw) : [];
-    } catch {}
+  if (!els.historyBody) return;
+  const card = document.getElementById('history');
+  let all = [];
+  try {
+    const allRaw = localStorage.getItem('imker:sessions');
+    all = allRaw ? JSON.parse(allRaw) : [];
+  } catch {}
+  els.historyBody.innerHTML = '';
+  if (!all.length){
+    if (card) card.classList.add('hidden');  // verberg het grijze kader
+    return;
+  }
+  if (card) card.classList.remove('hidden'); // toon bij bestaande sessies
+  all.slice().reverse().forEach(sess => {
+    const tr = document.createElement('tr');
+    const type = sess.mode==='exam' ? 'Proefexamen' : 'Oefenen';
+    const res = `${sess.score.correct}/${sess.score.total} (${sess.score.pct}%)`;
+    const dt = new Date(sess.when).toLocaleString();
+    tr.innerHTML = `<td>${type}</td><td>${res}</td><td>${dt}</td>`;
+    els.historyBody.appendChild(tr);
+  });
+}
+catch {}
     els.historyBody.innerHTML = '';
     if (!all.length){
       els.historyBody.innerHTML = '<tr><td colspan="3"><span class="muted">Nog geen sessies</span></td></tr>';
