@@ -98,7 +98,7 @@ table.history tr:hover { background: #fafafa; }
 
 
 @media (min-width: 640px){
-  .icon{ height: 32px; width: auto; vertical-align: -8px; }
+  .icon{ width: 32px; height: 32px; vertical-align: -8px; }
 }
 
 
@@ -107,31 +107,31 @@ table.history tr:hover { background: #fafafa; }
 label.check input[id*="biologie"] + span::before,
 label.check input[id*="biologie-en"] + span::before{
   content: ""; display:inline-block; width:24px; height:24px; margin-right:.4rem;
-  background:  url('assets/image/biologie.webp') no-repeat center/contain !important; vertical-align: middle;
+  background: url('assets/image/biologie.webp') no-repeat center/contain; vertical-align: middle;
 }
 label.check input[id*="jaarcyclus"] + span::before{
   content: ""; display:inline-block; width:24px; height:24px; margin-right:.4rem;
-  background:  url('assets/image/jaarcyclus.webp') no-repeat center/contain !important; vertical-align: middle;
+  background: url('assets/image/jaarcyclus.webp') no-repeat center/contain; vertical-align: middle;
 }
 label.check input[id*="praktisch"] + span::before,
 label.check input[id*="handelingen"] + span::before{
   content: ""; display:inline-block; width:24px; height:24px; margin-right:.4rem;
-  background:  url('assets/image/praktisch.webp') no-repeat center/contain !important; vertical-align: middle;
+  background: url('assets/image/praktisch.webp') no-repeat center/contain; vertical-align: middle;
 }
 label.check input[id*="ziekten"] + span::before,
 label.check input[id*="plagen"] + span::before{
   content: ""; display:inline-block; width:24px; height:24px; margin-right:.4rem;
-  background:  url('assets/image/ziekten.webp') no-repeat center/contain !important; vertical-align: middle;
+  background: url('assets/image/ziekten.webp') no-repeat center/contain; vertical-align: middle;
 }
 label.check input[id*="honing"] + span::before,
 label.check input[id*="producten"] + span::before{
   content: ""; display:inline-block; width:24px; height:24px; margin-right:.4rem;
-  background:  url('assets/image/honing.webp') no-repeat center/contain !important; vertical-align: middle;
+  background: url('assets/image/honing.webp') no-repeat center/contain; vertical-align: middle;
 }
 label.check input[id*="wet"] + span::before,
 label.check input[id*="regel"] + span::before{
   content: ""; display:inline-block; width:24px; height:24px; margin-right:.4rem;
-  background:  url('assets/image/wetgeving.webp') no-repeat center/contain !important; vertical-align: middle;
+  background: url('assets/image/wetgeving.webp') no-repeat center/contain; vertical-align: middle;
 }
 
 
@@ -144,15 +144,16 @@ label.check input[id*="regel"] + span::before{
 
 /* Uniform heading icons */
 .icon{
+  width: 28px;
   height: 28px;
-  width: auto;
+  aspect-ratio: 1 / 1;
   object-fit: contain;
   vertical-align: -6px;
   margin-right: .45rem;
   flex: 0 0 auto;
 }
 @media (min-width: 640px){
-  .icon{ height: 32px; width: auto; vertical-align: -8px; }
+  .icon{ width: 32px; height: 32px; vertical-align: -8px; }
 }
 
 
@@ -162,31 +163,31 @@ label.check input[id*="regel"] + span::before{
 
 label.check input[id*="biologie"] + span::before{
   content:""; width:24px; height:24px; margin-right:.4rem;
-  background:  url('assets/image/biologie.webp') no-repeat center/contain !important;
+  background: url('assets/image/biologie.webp') no-repeat center/contain;
 }
 label.check input[id*="jaarcyclus"] + span::before{
   content:""; width:24px; height:24px; margin-right:.4rem;
-  background:  url('assets/image/jaarcyclus.webp') no-repeat center/contain !important;
+  background: url('assets/image/jaarcyclus.webp') no-repeat center/contain;
 }
 label.check input[id*="praktisch"] + span::before,
 label.check input[id*="handelingen"] + span::before{
   content:""; width:24px; height:24px; margin-right:.4rem;
-  background:  url('assets/image/praktisch.webp') no-repeat center/contain !important;
+  background: url('assets/image/praktisch.webp') no-repeat center/contain;
 }
 label.check input[id*="ziekten"] + span::before,
 label.check input[id*="plagen"] + span::before{
   content:""; width:24px; height:24px; margin-right:.4rem;
-  background:  url('assets/image/ziekten.webp') no-repeat center/contain !important;
+  background: url('assets/image/ziekten.webp') no-repeat center/contain;
 }
 label.check input[id*="honing"] + span::before,
 label.check input[id*="producten"] + span::before{
   content:""; width:24px; height:24px; margin-right:.4rem;
-  background:  url('assets/image/honing.webp') no-repeat center/contain !important;
+  background: url('assets/image/honing.webp') no-repeat center/contain;
 }
 label.check input[id*="wet"] + span::before,
 label.check input[id*="regel"] + span::before{
   content:""; width:24px; height:24px; margin-right:.4rem;
-  background:  url('assets/image/wetgeving.webp') no-repeat center/contain !important;
+  background: url('assets/image/wetgeving.webp') no-repeat center/contain;
 }
 
 
@@ -202,117 +203,18 @@ label.check input[id*="regel"] + span::before{
 /* All themes icon */
 #all-themes + span::before{
   content:""; width:24px; height:24px; margin-right:.4rem;
-  background:  url('assets/image/alle.webp') no-repeat center/contain !important;
+  background: url('assets/image/alle.webp') no-repeat center/contain;
 }
 
 /* Ensure biologie & jaarcyclus always match common variants */
 label.check input[id*="biologie"] + span::before,
 label.check input[id*="gedrag"] + span::before{
   content:""; width:24px; height:24px; margin-right:.4rem;
-  background:  url('assets/image/biologie.webp') no-repeat center/contain !important;
+  background: url('assets/image/biologie.webp') no-repeat center/contain;
 }
 label.check input[id*="jaarcyclus"] + span::before,
 label.check input[id*="seizoenswerk"] + span::before{
   content:""; width:24px; height:24px; margin-right:.4rem;
-  background:  url('assets/image/jaarcyclus.webp') no-repeat center/contain !important;
+  background: url('assets/image/jaarcyclus.webp') no-repeat center/contain;
 }
 
-
-
-/* Responsive header afbeelding */
-header img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-    header img {
-        max-height: 200px; /* Zorgt dat de afbeelding niet te groot wordt op desktop */
-        width: auto;
-    }
-}
-
-
-/* Strakke stijl voor kop met huisje en Imkertrainer */
-header .site-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 1.8rem;
-    color: #5a4632; /* donkerbruin */
-}
-
-header .site-title img {
-    height: 1.8rem;
-    width: auto;
-    filter: brightness(0) saturate(100%) invert(28%) sepia(24%) saturate(405%) hue-rotate(17deg) brightness(95%) contrast(93%);
-}
-
-@media (min-width: 768px) {
-    header .site-title {
-        font-size: 2.2rem;
-    }
-    header .site-title img {
-        height: 2.2rem;
-    }
-}
-
-
-/* === Header & Hero layout fixes === */
-:root { --safe-top: env(safe-area-inset-top); }
-
-.app-header{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding: 1rem 1rem;
-  padding-top: max(1rem, var(--safe-top));
-  background: var(--cream);
-  color: var(--brown);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  border-bottom: 1px solid rgba(0,0,0,.06);
-  box-shadow: none;
-}
-
-.app-header h1{
-  margin: 0;
-  font-weight: 700;
-  letter-spacing: .2px;
-  font-size: 1.6rem; /* mobile prominence */
-}
-
-.hero-img{
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 0;
-}
-
-@media (min-width: 768px){
-  .app-header{
-    padding: 1.25rem 0 1.25rem 0;
-    max-width: 720px;       /* align with .container */
-    margin: 0 auto;         /* center header block */
-  }
-  .app-header h1{
-    font-size: 2rem;        /* clear hierarchy on desktop */
-  }
-  .hero-img{
-    max-width: 720px;       /* align hero with content width */
-    margin: 0 auto;         /* center on desktop */
-  }
-}
-
-
-@media (min-width: 768px){
-  .app-header{
-    margin-bottom: 12px; /* laat de bovenste bij in de hero meer zichtbaar zijn */
-  }
-}
