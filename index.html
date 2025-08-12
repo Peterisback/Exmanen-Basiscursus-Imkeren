@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>🐝 Imkertrainer 🐝</title>
+<title>Imkertrainer</title>
 <meta content="Oefenen en proefexamens voor de NBV basiscursus imkeren" name="description"/>
 <link href="./styles.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -17,8 +17,7 @@
     </style></head>
 <body>
 <header class="app-header" role="banner">
-<button aria-label="Terug naar start" class="ghost" data-nav="home" id="btn-home" title="Terug naar start">🏠</button>
-<h1 aria-atomic="true" aria-live="polite">🐝 Imkertrainer</h1>
+<h1 aria-atomic="true" aria-live="polite"><a href="#" data-nav="home" id="link-home" style="color:inherit;text-decoration:none;">Imkertrainer</a></h1>
 </header><img alt="Illustratie imkeren" class="hero-img" decoding="async" loading="lazy" src="assets/image/hero-beekeeping.webp"/>
 <main class="container" id="app" role="main">
 <!-- Startscherm -->
@@ -46,11 +45,8 @@
 <h2 id="practice-settings-title"><img alt="" aria-hidden="true" class="icon" decoding="async" loading="lazy" src="assets/image/jaarcyclus.webp"/> Oefeninstellingen</h2>
 <p>Maak je themakeuze. Data wordt geladen zodra je deze pagina opent.</p>
 <div class="card" id="theme-controls">
-<label class="check">
-<input id="all-themes" type="checkbox"/>
-<span>Alle thema’s</span>
-</label>
-<div aria-live="polite" class="theme-list" id="themes"></div>
+<div aria-live="polite" class="theme-list" id="themes">
+<label class="check"><input id="all-themes" type="checkbox"/><span>Alle thema’s</span></label></div>
 </div>
 <div class="card" id="practice-controls">
 <label for="practice-count">Aantal oefenvragen</label>
@@ -106,5 +102,63 @@
 </main>
 <!-- Verwijderd: footer met laatste resultaat -->
 <script defer="" src="./app.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  // 1) Header link -> Home via delegated click inside #app
+  const linkHome = document.getElementById('link-home');
+  if (linkHome){
+    linkHome.addEventListener('click', function(e){
+      e.preventDefault();
+      const navHome = document.querySelector('#app [data-nav="home"]');
+      if (navHome){ navHome.click(); }
+    });
+  }
+
+  // 2) Ensure "Alle thema’s" exists in #themes and behaves correctly,
+  //    even after the app re-renders the list.
+  function ensureAllThemes(){
+    const wrap = document.getElementById('themes');
+    if (!wrap) return;
+    if (!wrap.querySelector('#all-themes')){
+      const label = document.createElement('label');
+      label.className = 'check';
+      label.innerHTML = '<input id="all-themes" type="checkbox"/><span>Alle thema’s</span>';
+      wrap.insertBefore(label, wrap.firstChild);
+    }
+    const allToggle = wrap.querySelector('#all-themes');
+    if (allToggle && !allToggle._bound){
+      allToggle._bound = true;
+      allToggle.addEventListener('change', function(){
+        const on = allToggle.checked;
+        wrap.querySelectorAll('input[type="checkbox"][data-theme]').forEach(cb => cb.checked = on);
+        // Probeer practice-availability te updaten als die bestaat
+        try{
+          const evt = new Event('change', {bubbles:true});
+          wrap.dispatchEvent(evt);
+        }catch{}
+      });
+    }
+    // Sync state: als alle losse items aan staan, zet All aan
+    const items = wrap.querySelectorAll('input[type="checkbox"][data-theme]');
+    if (items.length){
+      const allChecked = Array.from(items).every(cb => cb.checked);
+      const at = wrap.querySelector('#all-themes');
+      if (at) at.checked = allChecked;
+    }
+  }
+
+  // run once
+  ensureAllThemes();
+
+  // Observe practice settings view for re-renders
+  const practiceView = document.getElementById('view-practice-settings');
+  if (practiceView){
+    const mo = new MutationObserver(()=> ensureAllThemes());
+    mo.observe(practiceView, {childList:true, subtree:true});
+  }
+});
+</script>
+
 </body>
 </html>
