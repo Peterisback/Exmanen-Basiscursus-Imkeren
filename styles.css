@@ -318,15 +318,8 @@ header .site-title img {
 }
 
 
-[id*="alle"] + span::before{
-  content: ""; display:inline-block; width:24px; height:24px; margin-right:.4rem;
-  background:  url('assets/image/alle.webp') no-repeat center/contain !important; vertical-align: middle;
+.theme-icon {
+  height: 1.5em;
+  vertical-align: middle;
+  margin-right: 0.5em;
 }
-
-
-
-/* Focus handling: geen blijvende grijze rand na klik, wel zichtbare focus voor toetsenbord */
-.btn:focus { outline: none; }
-.btn::-moz-focus-inner { border: 0; }
-.btn:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
-

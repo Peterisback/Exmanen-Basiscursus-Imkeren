@@ -24,6 +24,18 @@
     results: $('#view-results'),
   };
   const els = {
+
+// Mapping thema -> icoon (assets/image/*)
+const themeIcons = {
+  'Biologie & gedrag': 'assets/image/biologie.webp',
+  'Jaarcyclus & seizoenswerk': 'assets/image/jaarcyclus.webp',
+  'Praktische imkerhandelingen': 'assets/image/praktisch.webp',
+  'Ziekten & plagen': 'assets/image/ziekten.webp',
+  'Honing en producten': 'assets/image/honing.webp',
+  'Wet- en regelgeving': 'assets/image/wetgeving.webp',
+  'Alle thema\'s': 'assets/image/alle.webp'
+};
+
     btnHome: $('#btn-home'),
     goPractice: $('#go-practice'),
     goExam: $('#go-exam'),
@@ -348,7 +360,7 @@
           if (q.category!==currentTheme){
             if (currentTheme!==null) list += '</ol>';
             currentTheme = q.category;
-            list += `<h4>${currentTheme}</h4><ol>`;
+            list += `<h4><img src=\"${themeIcons[currentTheme]||''}\" alt=\"\" class=\"theme-icon\"> ${currentTheme}</h4><ol>`;
           }
           const yourText = a.pickedIndex!=null ? `${String.fromCharCode(97+a.pickedIndex)}) ${q.choices[a.pickedIndex]}` : '—';
           const rightText = `${String.fromCharCode(97+q.answer)}) ${q.choices[q.answer]}`;
@@ -521,7 +533,7 @@
   }
 
   if (els.btnResetHistory){
-    els.btnResetHistory.addEventListener('click', (e)=>{ resetHistory(); if (e && e.currentTarget) e.currentTarget.blur(); });
+    els.btnResetHistory.addEventListener('click', resetHistory);
   }
 
   function resetToHome(){
