@@ -15,38 +15,13 @@ body{
   color:#1c160f;
 }
 .app-header{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:.75rem;
-  padding:.75rem 1rem;
-  background:var(--cream);
-  color:var(--brown);
-  position:sticky;
-  top:0;
-  z-index:10;
-  border-bottom:1px solid rgba(0,0,0,.06);
-  box-shadow:none;
+  display:flex;align-items:center;gap:.75rem;
+  padding:.75rem 1rem; background:linear-gradient(90deg,var(--honey),var(--amber));
+  color:#210; position:sticky; top:0; z-index:10;
+  box-shadow:0 2px 8px rgba(0,0,0,.08)
 }
-.app-header h1{
-  font-size:1.125rem;
-  margin:0;
-  font-weight:700;
-  letter-spacing:.2px;
-}
-#btn-home.ghost{
-  background:transparent;
-  border:none;
-  font-size:1.1rem;
-  cursor:pointer;
-  line-height:1;
-  transform: translateY(1px);
-  opacity:.85;
-}
-@media (min-width: 768px){
-  .app-header{padding:1rem 1.25rem}
-  .app-header h1{font-size:1.25rem}
-}
+.app-header h1{font-size:1.25rem;margin:0}
+.ghost{background:transparent;border:none;font-size:1.25rem;cursor:pointer}
 .container{max-width:720px;margin:0 auto;padding:1rem}
 .view{display:none}
 .view.active{display:block}
@@ -285,4 +260,52 @@ header .site-title img {
     header .site-title img {
         height: 2.2rem;
     }
+}
+
+
+/* === Header & Hero layout fixes === */
+:root { --safe-top: env(safe-area-inset-top); }
+
+.app-header{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 1rem 1rem;
+  padding-top: max(1rem, var(--safe-top));
+  background: var(--cream);
+  color: var(--brown);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  box-shadow: none;
+}
+
+.app-header h1{
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: .2px;
+  font-size: 1.6rem; /* mobile prominence */
+}
+
+.hero-img{
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+@media (min-width: 768px){
+  .app-header{
+    padding: 1.25rem 0 1.25rem 0;
+    max-width: 720px;       /* align with .container */
+    margin: 0 auto;         /* center header block */
+  }
+  .app-header h1{
+    font-size: 2rem;        /* clear hierarchy on desktop */
+  }
+  .hero-img{
+    max-width: 720px;       /* align hero with content width */
+    margin: 0 auto;         /* center on desktop */
+  }
 }
