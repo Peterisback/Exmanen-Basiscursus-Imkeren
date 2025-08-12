@@ -346,7 +346,7 @@ header .site-title img {
 
 
 /* Medaille in resultaten */
-.medal-wrap{ display:flex; justify-content:center; margin: .25rem 0 1rem; }
+.medal-wrap{ position: relative; display:flex; justify-content:center; margin: .25rem 0 1rem; }
 .medal{ width: 220px; height: auto; display:block; }
 @media (min-width: 640px){ .medal{ width: 260px; } }
 
@@ -415,11 +415,17 @@ body {
 }
 
 
-#medal-score {
-  position: relative;
-  left: 0.65em;   /* iets naar rechts */
-  top: -0.8em;  /* iets omhoog */
-  fill: #9c4108;   /* match bij-kleur */
-  color: #9c4108;  /* fallback */
+/* Overlay percentage op medaille */
+.medal-score{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-42%, -63%); /* iets naar rechts en omhoog t.o.v. het centrum */
+  color: #9c4108;
   font-weight: 700;
+  line-height: 1;
+  font-size: 2.2rem;
+}
+@media (min-width: 640px){
+  .medal-score{ font-size: 2.5rem; }
 }
