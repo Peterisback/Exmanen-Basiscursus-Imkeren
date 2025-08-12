@@ -100,41 +100,18 @@
   }
 
   async function enterPracticeSettings(){
-  state.mode = 'practice';
-  // Toon de view direct zodat de UI altijd reageert
-  show(views.practiceSettings);
-  try {
+    state.mode = 'practice';
+    if (els.allThemes) els.allThemes.checked = false;
     await ensureDataLoaded();
-    renderThemeList(); updatePracticeAvailability();
-  } catch (e) {
-    console.error(e);
-    const host = document.getElementById('theme-controls') || views.practiceSettings;
-    if (host && !host.querySelector('.data-error')) {
-      const div = document.createElement('div');
-      div.className = 'card data-error';
-      div.textContent = 'Kon vragen niet laden. Controleer /data/oefenvragen_nbv.json';
-      host.appendChild(div);
-    }
+    renderThemeList();
+    updatePracticeAvailability();
+    show(views.practiceSettings);
   }
-}
   async function enterExamSettings(){
-  state.mode = 'exam';
-  // Toon de view direct zodat de UI altijd reageert
-  show(views.examSettings);
-  try {
+    state.mode = 'exam';
     await ensureDataLoaded();
-    
-  } catch (e) {
-    console.error(e);
-    const host = document.getElementById('theme-controls') || views.examSettings;
-    if (host && !host.querySelector('.data-error')) {
-      const div = document.createElement('div');
-      div.className = 'card data-error';
-      div.textContent = 'Kon vragen niet laden. Controleer /data/oefenvragen_nbv.json';
-      host.appendChild(div);
-    }
+    show(views.examSettings);
   }
-}
 
   // ---------- Practice availability ----------
   function updatePracticeAvailability(){
@@ -154,27 +131,19 @@
   }
 
   function renderThemeList(){
-  const wrap = els.themesWrap;
-  // Preserve existing "Alle thema’s" label if present
-  const allLabel = wrap.querySelector('#all-themes')?.closest('label') || null;
-
-  // Reset list and re-attach the 'All themes' control (if it existed)
-  wrap.innerHTML = '';
-  if (allLabel) wrap.appendChild(allLabel);
-
-  state.themes.forEach(theme => {
-    const id = `th-${theme.toLowerCase().replace(/[^a-z0-9]+/gi,'-')}`;
-    const label = document.createElement('label');
-    label.className = 'check';
-    label.innerHTML = `
-      <input type="checkbox" data-theme="${theme}" id="${id}">
-      <span>${theme}</span>
-    `;
-    wrap.appendChild(label);
-  });
-}
-
-function selectedThemes(){
+    const wrap = els.themesWrap; wrap.innerHTML = '';
+    state.themes.forEach(theme => {
+      const id = `th-${theme.replace(/[^a-z0-9]+/gi,'-')}`;
+      const label = document.createElement('label');
+      label.className = 'check';
+      label.innerHTML = `
+        <input type="checkbox" data-theme="${theme}" id="${id}">
+        <span>${theme}</span>
+      `;
+      wrap.appendChild(label);
+    });
+  }
+  function selectedThemes(){
     const all = Array.from(els.themesWrap.querySelectorAll('input[type="checkbox"]'));
     return all.filter(cb=>cb.checked).map(cb=>cb.dataset.theme);
   }
@@ -201,24 +170,15 @@ function selectedThemes(){
   }
 
   function updateProgress(){
-  if (!state.questions.length) {
-    els.progress.style.width = '0%';
-    if (els.status) els.status.textContent = '0 / 0';
-    return;
+    const pct = ((state.index)/state.questions.length)*100;
+    els.progress.style.width = `${pct}%`;
+    const correctSoFar = state.answers.filter(a=>a && a.correct).length;
+    els.status.textContent = (state.mode==='exam')
+      ? `${state.index} / ${state.questions.length}`
+      : `${state.index} / ${state.questions.length} · goed: ${correctSoFar}`;
   }
-  const shown = Math.min(state.index + 1, state.questions.length);
-  const pct = (shown / state.questions.length) * 100;
-  els.progress.style.width = `${pct}%`;
 
-  const correctSoFar = state.answers.filter(a => a && a.correct).length;
-  if (els.status){
-    els.status.textContent = (state.mode === 'exam')
-      ? `${shown} / ${state.questions.length}`
-      : `${shown} / ${state.questions.length} · goed: ${correctSoFar}`;
-  }
-}
-
-function renderQuestion(){
+  function renderQuestion(){
     const i = state.index;
     const q = state.questions[i];
     if (!q){ show(views.results); return; }
@@ -464,40 +424,12 @@ function renderQuestion(){
   }
 
   function renderHistory(){
-  if (!els.historyBody) return;
-  let all = [];
-  try {
-    const allRaw = localStorage.getItem('imker:sessions');
-    all = allRaw ? JSON.parse(allRaw) : [];
-  } catch(e){
-    all = [];
-  }
-
-  const card = document.getElementById('history');
-  els.historyBody.innerHTML = '';
-
-  if (!all.length){
-    if (card) card.classList.add('hidden');
-    return;
-  }
-  if (card) card.classList.remove('hidden');
-
-  all.slice().reverse().forEach(sess => {
-    const row = document.createElement('div');
-    row.className = 'history-row';
-    const date = new Date(sess.ts || Date.now());
-    const total = (sess.total ?? (sess.answers?.length || 0));
-    const correct = (sess.correct ?? (sess.answers?.filter(a=>a.correct).length || 0));
-    const mode = sess.mode || 'practice';
-
-    row.innerHTML = `
-      <div class="history-date">${date.toLocaleString()}</div>
-      <div class="history-mode">${mode}</div>
-      <div class="history-score">${correct} / ${total}</div>
-    `;
-    els.historyBody.appendChild(row);
-  });
-} catch {}
+    if (!els.historyBody) return;
+    let all = [];
+    try {
+      const allRaw = localStorage.getItem('imker:sessions');
+      all = allRaw? JSON.parse(allRaw) : [];
+    } catch {}
     els.historyBody.innerHTML = '';
     if (!all.length){
       els.historyBody.innerHTML = '<tr><td colspan="3"><span class="muted">Nog geen sessies</span></td></tr>';
@@ -589,7 +521,7 @@ function renderQuestion(){
   }
 
   if (els.btnResetHistory){
-    els.btnResetHistory.addEventListener('click', resetHistory);
+    els.btnResetHistory.addEventListener('click', (e)=>{ resetHistory(); if (e && e.currentTarget) e.currentTarget.blur(); });
   }
 
   function resetToHome(){
