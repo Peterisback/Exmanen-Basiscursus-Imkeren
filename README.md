@@ -77,7 +77,7 @@ Evenredig met verdeling in JSON per (geselecteerd) thema via *Largest Remainder*
 GitHub → New Project → **Other/Static**. Build command: leeg. Output dir: `/`.
 
 ## Changelog (relevant)
-- **Oefenmodus**: bij fout antwoord vergrendeling; goed = auto door.
+- **Oefenmodus**: bij goed of fout wordt je keuze vergrendeld; je gaat **handmatig** door met *Volgende*.
 - **Proefexamen**: geen live feedback; spanning pas breekt op resultatenpagina.
 - **Startscherm**: alleen historie zichtbaar; reset-knop toegevoegd.
 - **Opslag**: `imker:last` uitgefaseerd.

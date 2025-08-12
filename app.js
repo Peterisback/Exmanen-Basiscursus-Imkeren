@@ -131,9 +131,25 @@
   }
 
   function renderThemeList(){
-    const wrap = els.themesWrap; wrap.innerHTML = '';
-    state.themes.forEach(theme => {
-      const id = `th-${theme.replace(/[^a-z0-9]+/gi,'-')}`;
+  const wrap = els.themesWrap;
+  // Preserve existing "Alle thema’s" label if present
+  const allLabel = wrap.querySelector('#all-themes')?.closest('label') || null;
+
+  // Reset list and re-attach the 'All themes' control (if it existed)
+  wrap.innerHTML = '';
+  if (allLabel) wrap.appendChild(allLabel);
+
+  state.themes.forEach(theme => {
+    const id = `th-${theme.toLowerCase().replace(/[^a-z0-9]+/gi,'-')}`;
+    const label = document.createElement('label');
+    label.className = 'check';
+    label.innerHTML = `
+      <input type="checkbox" data-theme="\${theme}" id="\${id}">
+      <span>\${theme}</span>
+    `;
+    wrap.appendChild(label);
+  });
+}`;
       const label = document.createElement('label');
       label.className = 'check';
       label.innerHTML = `
@@ -170,8 +186,22 @@
   }
 
   function updateProgress(){
-    const pct = ((state.index)/state.questions.length)*100;
-    els.progress.style.width = `${pct}%`;
+  if (!state.questions.length) {
+    els.progress.style.width = '0%';
+    if (els.status) els.status.textContent = '0 / 0';
+    return;
+  }
+  const shown = Math.min(state.index + 1, state.questions.length);
+  const pct = (shown / state.questions.length) * 100;
+  els.progress.style.width = `${pct}%`;
+
+  const correctSoFar = state.answers.filter(a => a && a.correct).length;
+  if (els.status){
+    els.status.textContent = (state.mode === 'exam')
+      ? `${shown} / ${state.questions.length}`
+      : `${shown} / ${state.questions.length} · goed: ${correctSoFar}`;
+  }
+}%`;
     const correctSoFar = state.answers.filter(a=>a && a.correct).length;
     els.status.textContent = (state.mode==='exam')
       ? `${state.index} / ${state.questions.length}`
@@ -424,12 +454,40 @@
   }
 
   function renderHistory(){
-    if (!els.historyBody) return;
-    let all = [];
-    try {
-      const allRaw = localStorage.getItem('imker:sessions');
-      all = allRaw? JSON.parse(allRaw) : [];
-    } catch {}
+  if (!els.historyBody) return;
+  let all = [];
+  try {
+    const allRaw = localStorage.getItem('imker:sessions');
+    all = allRaw ? JSON.parse(allRaw) : [];
+  } catch(e){
+    all = [];
+  }
+
+  const card = document.getElementById('history');
+  els.historyBody.innerHTML = '';
+
+  if (!all.length){
+    if (card) card.classList.add('hidden');
+    return;
+  }
+  if (card) card.classList.remove('hidden');
+
+  all.slice().reverse().forEach(sess => {
+    const row = document.createElement('div');
+    row.className = 'history-row';
+    const date = new Date(sess.ts || Date.now());
+    const total = (sess.total ?? (sess.answers?.length || 0));
+    const correct = (sess.correct ?? (sess.answers?.filter(a=>a.correct).length || 0));
+    const mode = sess.mode || 'practice';
+
+    row.innerHTML = `
+      <div class="history-date">${date.toLocaleString()}</div>
+      <div class="history-mode">${mode}</div>
+      <div class="history-score">${correct} / ${total}</div>
+    `;
+    els.historyBody.appendChild(row);
+  });
+} catch {}
     els.historyBody.innerHTML = '';
     if (!all.length){
       els.historyBody.innerHTML = '<tr><td colspan="3"><span class="muted">Nog geen sessies</span></td></tr>';
