@@ -17,8 +17,7 @@
     </style></head>
 <body>
 <header class="app-header" role="banner">
-<button aria-label="Terug naar start" class="ghost" data-nav="home" id="btn-home" title="Terug naar start">🏠</button>
-<h1 aria-atomic="true" aria-live="polite">Imkertrainer</h1>
+<h1 aria-atomic="true" aria-live="polite"><a href="#" data-nav="home" id="link-home" style="color:inherit;text-decoration:none;">Imkertrainer</a></h1>
 </header><img alt="Illustratie imkeren" class="hero-img" decoding="async" loading="lazy" src="assets/image/hero-beekeeping.webp"/>
 <main class="container" id="app" role="main">
 <!-- Startscherm -->
@@ -46,11 +45,8 @@
 <h2 id="practice-settings-title"><img alt="" aria-hidden="true" class="icon" decoding="async" loading="lazy" src="assets/image/jaarcyclus.webp"/> Oefeninstellingen</h2>
 <p>Maak je themakeuze. Data wordt geladen zodra je deze pagina opent.</p>
 <div class="card" id="theme-controls">
-<label class="check">
-<input id="all-themes" type="checkbox"/>
-<span>Alle thema’s</span>
-</label>
-<div aria-live="polite" class="theme-list" id="themes"></div>
+<div aria-live="polite" class="theme-list" id="themes">
+<label class="check"><input id="all-themes" type="checkbox"/><span>Alle thema’s</span></label></div>
 </div>
 <div class="card" id="practice-controls">
 <label for="practice-count">Aantal oefenvragen</label>
