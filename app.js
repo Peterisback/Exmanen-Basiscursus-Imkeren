@@ -130,61 +130,10 @@
     try{ localStorage.setItem('imker:practiceCount', String(want)); }catch{}
   }
 
-  
-function renderThemeList(){
-  const wrap = els.themesWrap; 
-  wrap.innerHTML = '';
-
-  // 1) Prepend "Alle thema’s" as first checkbox (same styling)
-  const labelAll = document.createElement('label');
-  labelAll.className = 'check';
-  labelAll.innerHTML = '<input type="checkbox" id="all-themes"><span>Alle thema’s</span>';
-  wrap.appendChild(labelAll);
-
-  // 2) Render individual themes
-  state.themes.forEach(theme => {
-    const id = `th-${theme.toLowerCase().replace(/[^a-z0-9]+/gi, '-')}`;
-    const label = document.createElement('label');
-    label.className = 'check';
-    label.innerHTML = `
-      <input type="checkbox" data-theme="${theme}" id="${id}">
-      <span>${theme}</span>
-    `;
-    wrap.appendChild(label);
-  });
-
-  // 3) Bind and sync "Alle thema’s"
-  els.allThemes = document.getElementById('all-themes');
-  if (els.allThemes){
-    els.allThemes.addEventListener('change', ()=>{
-      const all = els.allThemes.checked;
-      wrap.querySelectorAll('input[type="checkbox"][data-theme]').forEach(cb=> cb.checked = all);
-      updatePracticeAvailability();
-    });
-  }
-
-  // 4) When any theme toggles, update "Alle thema’s" state to reflect if all are checked
-  wrap.addEventListener('change', (e)=>{
-    if (!els.allThemes) return;
-    const items = wrap.querySelectorAll('input[type="checkbox"][data-theme]');
-    const allChecked = Array.from(items).length > 0 && Array.from(items).every(cb => cb.checked);
-    els.allThemes.checked = allChecked;
-  });
-}
-
-
-  // Voeg de thema’s toe
-  state.themes.forEach(theme => {
-    const id = `th-${theme.toLowerCase().replace(/[^a-z0-9]+/gi, '-')}`;
-    const label = document.createElement('label');
-    label.className = 'check';
-    label.innerHTML = `
-      <input type="checkbox" data-theme="${theme}" id="${id}">
-      <span>${theme}</span>
-    `;
-    wrap.appendChild(label);
-  });
-}`;
+  function renderThemeList(){
+    const wrap = els.themesWrap; wrap.innerHTML = '';
+    state.themes.forEach(theme => {
+      const id = `th-${theme.replace(/[^a-z0-9]+/gi,'-')}`;
       const label = document.createElement('label');
       label.className = 'check';
       label.innerHTML = `
@@ -475,29 +424,12 @@ function renderThemeList(){
   }
 
   function renderHistory(){
-  if (!els.historyBody) return;
-  const card = document.getElementById('history');
-  let all = [];
-  try {
-    const allRaw = localStorage.getItem('imker:sessions');
-    all = allRaw ? JSON.parse(allRaw) : [];
-  } catch {}
-  els.historyBody.innerHTML = '';
-  if (!all.length){
-    if (card) card.classList.add('hidden');  // verberg het grijze kader
-    return;
-  }
-  if (card) card.classList.remove('hidden'); // toon bij bestaande sessies
-  all.slice().reverse().forEach(sess => {
-    const tr = document.createElement('tr');
-    const type = sess.mode==='exam' ? 'Proefexamen' : 'Oefenen';
-    const res = `${sess.score.correct}/${sess.score.total} (${sess.score.pct}%)`;
-    const dt = new Date(sess.when).toLocaleString();
-    tr.innerHTML = `<td>${type}</td><td>${res}</td><td>${dt}</td>`;
-    els.historyBody.appendChild(tr);
-  });
-}
-catch {}
+    if (!els.historyBody) return;
+    let all = [];
+    try {
+      const allRaw = localStorage.getItem('imker:sessions');
+      all = allRaw? JSON.parse(allRaw) : [];
+    } catch {}
     els.historyBody.innerHTML = '';
     if (!all.length){
       els.historyBody.innerHTML = '<tr><td colspan="3"><span class="muted">Nog geen sessies</span></td></tr>';
@@ -521,13 +453,7 @@ catch {}
     renderHistory();
   }
 
-  
-  // Klik op "Imkertrainer" in de kop -> home
-  const linkHome = document.getElementById('link-home');
-  if (linkHome){
-    linkHome.addEventListener('click', (e)=>{ e.preventDefault(); resetToHome(); });
-  }
-// ---------- Events ----------
+  // ---------- Events ----------
   app.addEventListener('click', (e)=>{
     const nav = e.target.closest('[data-nav]');
     if (nav){
@@ -608,14 +534,3 @@ catch {}
   show(views.home);
   renderHistory();
 })();
-
-
-// Injecteer "Alle thema's" checkbox als eerste item
-const themeListContainer = document.getElementById('themes');
-if (themeListContainer && !document.getElementById('all-themes')) {
-    const allThemesLabel = document.createElement('label');
-    allThemesLabel.className = 'check';
-    allThemesLabel.innerHTML = '<input id="all-themes" type="checkbox"/><span>Alle thema’s</span>';
-    themeListContainer.insertBefore(allThemesLabel, themeListContainer.firstChild);
-}
-
