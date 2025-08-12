@@ -333,6 +333,11 @@ const themeIcons = {
 
     els.resSummary.innerHTML = `
       <div class="medal-wrap">
+        <img class="medal" src="assets/image/result-medal.webp" alt="Resultaat medaille"/>
+        <div class="medal-score">${pct}%</div>
+      </div>
+    
+      <div class="medal-wrap">
         <svg class="medal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 640" role="img" aria-label="Resultaat medaille">
           <defs>
             <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
