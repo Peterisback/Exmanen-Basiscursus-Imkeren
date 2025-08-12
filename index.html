@@ -102,5 +102,63 @@
 </main>
 <!-- Verwijderd: footer met laatste resultaat -->
 <script defer="" src="./app.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  // 1) Header link -> Home via delegated click inside #app
+  const linkHome = document.getElementById('link-home');
+  if (linkHome){
+    linkHome.addEventListener('click', function(e){
+      e.preventDefault();
+      const navHome = document.querySelector('#app [data-nav="home"]');
+      if (navHome){ navHome.click(); }
+    });
+  }
+
+  // 2) Ensure "Alle thema’s" exists in #themes and behaves correctly,
+  //    even after the app re-renders the list.
+  function ensureAllThemes(){
+    const wrap = document.getElementById('themes');
+    if (!wrap) return;
+    if (!wrap.querySelector('#all-themes')){
+      const label = document.createElement('label');
+      label.className = 'check';
+      label.innerHTML = '<input id="all-themes" type="checkbox"/><span>Alle thema’s</span>';
+      wrap.insertBefore(label, wrap.firstChild);
+    }
+    const allToggle = wrap.querySelector('#all-themes');
+    if (allToggle && !allToggle._bound){
+      allToggle._bound = true;
+      allToggle.addEventListener('change', function(){
+        const on = allToggle.checked;
+        wrap.querySelectorAll('input[type="checkbox"][data-theme]').forEach(cb => cb.checked = on);
+        // Probeer practice-availability te updaten als die bestaat
+        try{
+          const evt = new Event('change', {bubbles:true});
+          wrap.dispatchEvent(evt);
+        }catch{}
+      });
+    }
+    // Sync state: als alle losse items aan staan, zet All aan
+    const items = wrap.querySelectorAll('input[type="checkbox"][data-theme]');
+    if (items.length){
+      const allChecked = Array.from(items).every(cb => cb.checked);
+      const at = wrap.querySelector('#all-themes');
+      if (at) at.checked = allChecked;
+    }
+  }
+
+  // run once
+  ensureAllThemes();
+
+  // Observe practice settings view for re-renders
+  const practiceView = document.getElementById('view-practice-settings');
+  if (practiceView){
+    const mo = new MutationObserver(()=> ensureAllThemes());
+    mo.observe(practiceView, {childList:true, subtree:true});
+  }
+});
+</script>
+
 </body>
 </html>

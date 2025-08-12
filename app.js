@@ -131,19 +131,73 @@
   }
 
   function renderThemeList(){
-    const wrap = els.themesWrap; wrap.innerHTML = '';
-    state.themes.forEach(theme => {
-      const id = `th-${theme.replace(/[^a-z0-9]+/gi,'-')}`;
-      const label = document.createElement('label');
-      label.className = 'check';
-      label.innerHTML = `
-        <input type="checkbox" data-theme="${theme}" id="${id}">
-        <span>${theme}</span>
-      `;
-      wrap.appendChild(label);
+  const wrap = els.themesWrap; 
+  wrap.innerHTML = '';
+
+  // "Alle thema’s" als eerste checkbox (zelfde styling)
+  const labelAll = document.createElement('label');
+  labelAll.className = 'check';
+  labelAll.innerHTML = '<input type="checkbox" id="all-themes"><span>Alle thema’s</span>';
+  wrap.appendChild(labelAll);
+
+  // Thema's
+  state.themes.forEach(theme => {
+    const id = `th-${theme.toLowerCase().replace(/[^a-z0-9]+/gi,'-')}`;
+    const label = document.createElement('label');
+    label.className = 'check';
+    label.innerHTML = `
+      <input type="checkbox" data-theme="${theme}" id="${id}">
+      <span>${theme}</span>
+    `;
+    wrap.appendChild(label);
+  });
+
+  // Toggle "Alle thema’s"
+  els.allThemes = document.getElementById('all-themes');
+  if (els.allThemes){
+    els.allThemes.addEventListener('change', ()=>{
+      const all = els.allThemes.checked;
+      wrap.querySelectorAll('input[type="checkbox"][data-theme]').forEach(cb=> cb.checked = all);
+      updatePracticeAvailability();
     });
   }
-  function selectedThemes(){
+
+  // Sync: als alle losse thema's aanstaan => "Alle thema’s" aan
+  wrap.addEventListener('change', ()=>{
+    if (!els.allThemes) return;
+    const items = wrap.querySelectorAll('input[type="checkbox"][data-theme]');
+    const allChecked = items.length>0 && Array.from(items).every(cb => cb.checked);
+    els.allThemes.checked = allChecked;
+  });
+}
+`;
+    const label = document.createElement('label');
+    label.className = 'check';
+    label.innerHTML = `
+      <input type="checkbox" data-theme="${theme}" id="${id}">
+      <span>${theme}</span>
+    `;
+    wrap.appendChild(label);
+  });
+
+  els.allThemes = document.getElementById('all-themes');
+  if (els.allThemes){
+    els.allThemes.addEventListener('change', ()=>{
+      const all = els.allThemes.checked;
+      wrap.querySelectorAll('input[type="checkbox"][data-theme]').forEach(cb=> cb.checked = all);
+      updatePracticeAvailability();
+    });
+  }
+
+  wrap.addEventListener('change', ()=>{
+    if (!els.allThemes) return;
+    const items = wrap.querySelectorAll('input[type="checkbox"][data-theme]');
+    const allChecked = items.length>0 && Array.from(items).every(cb => cb.checked);
+    els.allThemes.checked = allChecked;
+  });
+}
+
+function selectedThemes(){
     const all = Array.from(els.themesWrap.querySelectorAll('input[type="checkbox"]'));
     return all.filter(cb=>cb.checked).map(cb=>cb.dataset.theme);
   }
@@ -424,18 +478,41 @@
   }
 
   function renderHistory(){
-    if (!els.historyBody) return;
-    let all = [];
-    try {
-      const allRaw = localStorage.getItem('imker:sessions');
-      all = allRaw? JSON.parse(allRaw) : [];
-    } catch {}
-    els.historyBody.innerHTML = '';
-    if (!all.length){
-      els.historyBody.innerHTML = '<tr><td colspan="3"><span class="muted">Nog geen sessies</span></td></tr>';
-      return;
-    }
-    all.slice().reverse().forEach(sess=>{
+  if (!els.historyBody) return;
+  const card = document.getElementById('history');
+  let all = [];
+  try {
+    const allRaw = localStorage.getItem('imker:sessions');
+    all = allRaw ? JSON.parse(allRaw) : [];
+  } catch {}
+  els.historyBody.innerHTML = '';
+  if (!all.length){
+    if (card) card.classList.add('hidden');
+    return;
+  }
+  if (card) card.classList.remove('hidden');
+  all.slice().reverse().forEach(sess=>{
+    const tr = document.createElement('tr');
+    const type = sess.mode==='exam' ? 'Proefexamen' : 'Oefenen';
+    const res = `${sess.score.correct}/${sess.score.total} (${sess.score.pct}%)`;
+    const dt = new Date(sess.dateISO);
+    const dateStr = dt.toLocaleString('nl-NL', {dateStyle:'medium', timeStyle:'short'});
+    tr.innerHTML = `<td>${type}</td><td>${res}</td><td>${dateStr}</td>`;
+    els.historyBody.appendChild(tr);
+  });
+}
+if (card) card.classList.remove('hidden');
+  all.slice().reverse().forEach(sess=>{
+    const tr = document.createElement('tr');
+    const type = sess.mode==='exam' ? 'Proefexamen' : 'Oefenen';
+    const res = `${sess.score.correct}/${sess.score.total} (${sess.score.pct}%)`;
+    const dt = new Date(sess.dateISO);
+    const dateStr = dt.toLocaleString('nl-NL', {dateStyle:'medium', timeStyle:'short'});
+    tr.innerHTML = `<td>${type}</td><td>${res}</td><td>${dateStr}</td>`;
+    els.historyBody.appendChild(tr);
+  });
+}
+all.slice().reverse().forEach(sess=>{
       const tr = document.createElement('tr');
       const type = sess.mode==='exam' ? 'Proefexamen' : 'Oefenen';
       const res = `${sess.score.correct}/${sess.score.total} (${sess.score.pct}%)`;
@@ -453,7 +530,18 @@
     renderHistory();
   }
 
-  // ---------- Events ----------
+  
+  // Header-link "Imkertrainer" (buiten #app) => Home
+  (function(){
+    const linkHome = document.getElementById('link-home');
+    if (linkHome){
+      linkHome.addEventListener('click', function(e){
+        e.preventDefault();
+        resetToHome();
+      });
+    }
+  })();
+// ---------- Events ----------
   app.addEventListener('click', (e)=>{
     const nav = e.target.closest('[data-nav]');
     if (nav){
@@ -533,4 +621,4 @@
   // init
   show(views.home);
   renderHistory();
-})();
+})()
