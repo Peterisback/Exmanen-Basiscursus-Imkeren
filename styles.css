@@ -1,43 +1,22 @@
-/* Patch voor styles.css */
+/* SAFE PATCH — alleen voor resultatenview */
 
-/* Medaille + overlay */
-.medal-wrap {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: .25rem 0 1rem;
+/* Scope alle regels op #view-results om lekken te voorkomen */
+#view-results .medal-wrap{
+  position:relative; display:flex; justify-content:center; align-items:center; margin:.25rem 0 1rem;
 }
-.medal {
-  width: 240px;
-  height: auto;
-  display: block;
+#view-results .medal{ width:240px; height:auto; display:block; }
+#view-results .medal-score{
+  position:absolute; bottom:18%; left:50%; transform:translateX(-50%);
+  font-weight:800; font-size:44px; color:#3b2a1d; text-shadow:0 1px 1px rgba(255,255,255,.25);
 }
-.medal-score {
-  position: absolute;
-  bottom: 18%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: 800;
-  font-size: 44px;
-  color: #3b2a1d;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, .25);
-}
-@media (min-width: 640px) {
-  .medal {
-    width: 280px;
-  }
-  .medal-score {
-    font-size: 52px;
-    bottom: 17%;
-  }
+@media (min-width:640px){
+  #view-results .medal{ width:280px; }
+  #view-results .medal-score{ font-size:52px; bottom:17%; }
 }
 
-/* Icoon bij themakoppen in resultaten */
-.theme-icon {
-  height: 1.4em;
-  width: 1.4em;
-  vertical-align: -.2em;
-  margin-right: .4em;
-  object-fit: contain;
+/* Icoon bij themakoppen in het fout-overzicht (alleen in resultaten) */
+#view-results .theme-icon{
+  height:1.4em; width:1.4em; vertical-align:-.2em; margin-right:.4em; object-fit:contain;
 }
+
+/* Niets anders wordt hier gestyled. Geen globale resets. */
