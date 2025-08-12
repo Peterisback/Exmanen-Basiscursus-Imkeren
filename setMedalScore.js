@@ -5,3 +5,6 @@ export function setMedalScore(root, value){ // value als '85%'
     if (el) el.textContent = value;
   }catch(e){/* noop */}
 }
+
+
+// medal-score positioning handled in styles.css via #medal-score
