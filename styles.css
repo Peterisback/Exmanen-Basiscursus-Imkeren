@@ -309,3 +309,10 @@ header .site-title img {
     margin: 0 auto;         /* center on desktop */
   }
 }
+
+
+@media (min-width: 768px){
+  .app-header{
+    margin-bottom: 12px; /* laat de bovenste bij in de hero meer zichtbaar zijn */
+  }
+}
