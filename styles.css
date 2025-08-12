@@ -420,7 +420,7 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-42%, -0%); /* iets naar rechts en omhoog t.o.v. het centrum */
+  transform: translate(-42%, 40%); /* iets naar rechts en omhoog t.o.v. het centrum */
   color: #9c4108;
   font-weight: 700;
   line-height: 1;
