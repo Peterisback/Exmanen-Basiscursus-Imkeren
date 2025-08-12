@@ -18,7 +18,7 @@ body{
   display:flex;align-items:center;gap:.75rem;
   padding:.75rem 1rem; background:linear-gradient(90deg,var(--honey),var(--amber));
   color:#210; position:sticky; top:0; z-index:10;
-  box-shadow:0 2px 8px rgba(0,0,0,.08)
+  box-shadow:0 2px 8px rgba(0,0,0,.03)
 }
 .app-header h1{font-size:1.25rem;margin:0}
 .ghost{background:transparent;border:none;font-size:1.25rem;cursor:pointer}
