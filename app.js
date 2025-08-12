@@ -114,15 +114,39 @@ const themeIcons = {
   async function enterPracticeSettings(){
     state.mode = 'practice';
     if (els.allThemes) els.allThemes.checked = false;
-    await ensureDataLoaded();
-    renderThemeList();
-    updatePracticeAvailability();
+    // Toon eerst de view zodat de UI reageert
     show(views.practiceSettings);
+    try{
+      await ensureDataLoaded();
+      renderThemeList();
+      updatePracticeAvailability();
+    }catch(e){
+      console.error(e);
+      // Toon melding binnen practice settings
+      const host = document.getElementById('theme-controls') || views.practiceSettings;
+      if (host && !host.querySelector('.data-error')){
+        const div = document.createElement('div');
+        div.className = 'card data-error';
+        div.textContent = 'Kon vragen niet laden. Controleer /data/oefenvragen_nbv.json';
+        host.appendChild(div);
+      }
+    }
   }
   async function enterExamSettings(){
     state.mode = 'exam';
-    await ensureDataLoaded();
     show(views.examSettings);
+    try{
+      await ensureDataLoaded();
+    }catch(e){
+      console.error(e);
+      const host = views.examSettings;
+      if (host && !host.querySelector('.data-error')){
+        const div = document.createElement('div');
+        div.className = 'card data-error';
+        div.textContent = 'Kon vragen niet laden. Controleer /data/oefenvragen_nbv.json';
+        host.appendChild(div);
+      }
+    }
   }
 
   // ---------- Practice availability ----------
