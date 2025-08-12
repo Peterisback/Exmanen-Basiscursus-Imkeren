@@ -144,22 +144,14 @@
     const label = document.createElement('label');
     label.className = 'check';
     label.innerHTML = `
-      <input type="checkbox" data-theme="\${theme}" id="\${id}">
-      <span>\${theme}</span>
+      <input type="checkbox" data-theme="${theme}" id="${id}">
+      <span>${theme}</span>
     `;
     wrap.appendChild(label);
   });
-}`;
-      const label = document.createElement('label');
-      label.className = 'check';
-      label.innerHTML = `
-        <input type="checkbox" data-theme="${theme}" id="${id}">
-        <span>${theme}</span>
-      `;
-      wrap.appendChild(label);
-    });
-  }
-  function selectedThemes(){
+}
+
+function selectedThemes(){
     const all = Array.from(els.themesWrap.querySelectorAll('input[type="checkbox"]'));
     return all.filter(cb=>cb.checked).map(cb=>cb.dataset.theme);
   }
