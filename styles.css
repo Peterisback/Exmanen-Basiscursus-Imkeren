@@ -413,3 +413,12 @@ body {
   background-size: 400px auto;
   background-attachment: fixed;
 }
+
+
+#medal-score {
+  position: relative;
+  left: 0.5em; /* halve cijferbreedte naar rechts */
+  top: -0.5em; /* halve cijferhoogte omhoog */
+  fill: #8B5E3C; /* kleur aanpassen */
+  color: #8B5E3C; /* fallback voor tekst */
+}
