@@ -417,8 +417,8 @@ body {
 
 #medal-score {
   position: relative;
-  left: 0.6em;   /* iets naar rechts */
-  top: -0.55em;  /* iets omhoog */
+  left: 0.65em;   /* iets naar rechts */
+  top: -0.8em;  /* iets omhoog */
   fill: #9c4108;   /* match bij-kleur */
   color: #9c4108;  /* fallback */
   font-weight: 700;
