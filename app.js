@@ -332,6 +332,40 @@ const themeIcons = {
       .map(x=>x.theme);
 
     els.resSummary.innerHTML = `
+      <div class="medal-wrap">
+        <svg class="medal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 640" role="img" aria-label="Resultaat medaille">
+          <defs>
+            <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#F9E79F"/>
+              <stop offset="50%" stop-color="#F4D03F"/>
+              <stop offset="100%" stop-color="#D4AC0D"/>
+            </linearGradient>
+            <radialGradient id="shine" cx="35%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="#FFFDE7" stop-opacity="0.95"/>
+              <stop offset="60%" stop-color="#FFFDE7" stop-opacity="0.0"/>
+            </radialGradient>
+            <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="6" stdDeviation="14" flood-color="#000" flood-opacity="0.15"/>
+            </filter>
+          </defs>
+          <g transform="translate(0,0)">
+            <path d="M170,40 L256,200 L342,40 L380,40 L256,260 L132,40 Z" fill="#2E7D32"/>
+            <path d="M194,40 L256,166 L318,40 Z" fill="#66BB6A"/>
+          </g>
+          <g filter="url(#softShadow)" transform="translate(0,40)">
+            <circle cx="256" cy="280" r="170" fill="url(#gold)"/>
+            <circle cx="256" cy="280" r="150" fill="none" stroke="#B8860B" stroke-width="12"/>
+            <circle cx="226" cy="250" r="140" fill="url(#shine)"/>
+            <g fill="none" stroke="#B8860B" stroke-width="6" opacity="0.6">
+              <path d="M156,280c0-64,52-116,116-116" stroke-linecap="round"/>
+              <path d="M356,280c0-64-52-116-116-116" stroke-linecap="round" transform="scale(-1,1) translate(-512,0)"/>
+            </g>
+            <text x="256" y="290" text-anchor="middle" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-weight="700" font-size="92" fill="#3b2a1d">${pct}%</text>
+            <text x="256" y="340" text-anchor="middle" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-weight="600" font-size="28" fill="#5A3E2B" opacity="0.85">Resultaat</text>
+          </g>
+        </svg>
+      </div>
+
       <h3>Samenvatting</h3>
       <p><strong>Score:</strong> ${correct}/${total} (${pct}%)</p>
       <p><strong>Advies:</strong> ${weak.length? `oefen extra met ${weak.join(', ')}` : 'ga zo door' }.</p>

@@ -323,3 +323,43 @@ header .site-title img {
   vertical-align: middle;
   margin-right: 0.5em;
 }
+
+
+/* Medaille in resultaten */
+.result-medal {
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
+}
+.result-medal .medal {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Achtergrond op startscherm */
+.start-screen {
+  background-image: var(--app-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+/* Medaille in resultaten */
+.medal-wrap{ display:flex; justify-content:center; margin: .25rem 0 1rem; }
+.medal{ width: 220px; height: auto; display:block; }
+@media (min-width: 640px){ .medal{ width: 260px; } }
+
+/* ▼ Achtergrond: inline data-URI, geen extra requests */
+:root{ --app-bg-image: url("data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201600%20900%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20preserveAspectRatio%3D%22xMidYMid%20slice%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3CradialGradient%20id%3D%22blob%22%20cx%3D%2250%25%22%20cy%3D%2250%25%22%20r%3D%2250%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23F2C14E%22%20stop-opacity%3D%220.22%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23F2C14E%22%20stop-opacity%3D%220%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%20%20%3CradialGradient%20id%3D%22blob2%22%20cx%3D%2250%25%22%20cy%3D%2250%25%22%20r%3D%2250%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23E08A14%22%20stop-opacity%3D%220.10%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23E08A14%22%20stop-opacity%3D%220%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%20%20%3Cfilter%20id%3D%22grain%22%3E%0A%20%20%20%20%20%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.9%22%20numOctaves%3D%222%22%20stitchTiles%3D%22stitch%22%20/%3E%0A%20%20%20%20%20%20%3CfeColorMatrix%20type%3D%22saturate%22%20values%3D%220%22/%3E%0A%20%20%20%20%20%20%3CfeComponentTransfer%3E%0A%20%20%20%20%20%20%20%20%3CfeFuncA%20type%3D%22table%22%20tableValues%3D%220%200.06%22/%3E%0A%20%20%20%20%20%20%3C/feComponentTransfer%3E%0A%20%20%20%20%3C/filter%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23FFF8E6%22/%3E%0A%20%20%3C%21--%20blobs%20--%3E%0A%20%20%3Cg%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22350%22%20cy%3D%22200%22%20rx%3D%22380%22%20ry%3D%22220%22%20fill%3D%22url%28%23blob%29%22/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%221300%22%20cy%3D%22180%22%20rx%3D%22420%22%20ry%3D%22250%22%20fill%3D%22url%28%23blob2%29%22/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%221200%22%20cy%3D%22700%22%20rx%3D%22480%22%20ry%3D%22260%22%20fill%3D%22url%28%23blob%29%22/%3E%0A%20%20%20%20%3Cellipse%20cx%3D%22260%22%20cy%3D%22720%22%20rx%3D%22420%22%20ry%3D%22240%22%20fill%3D%22url%28%23blob2%29%22/%3E%0A%20%20%3C/g%3E%0A%20%20%3C%21--%20faint%20honeycomb%20hint%20--%3E%0A%20%20%3Cg%20opacity%3D%220.045%22%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3Cpattern%20id%3D%22honey%22%20width%3D%2224%22%20height%3D%2220.784%22%20patternUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M6%200%20L18%200%20L24%2010.392%20L18%2020.784%20L6%2020.784%20L0%2010.392%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23F2C14E%22%20stroke-width%3D%221%22/%3E%0A%20%20%20%20%20%20%3C/pattern%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url%28%23honey%29%22/%3E%0A%20%20%3C/g%3E%0A%20%20%3C%21--%20subtle%20grain%20--%3E%0A%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url%28%23grain%29%22%20opacity%3D%220.12%22/%3E%0A%3C/svg%3E%0A"); }
+
+.bg-amber-vignette {
+  background-image: var(--app-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* fijne diepte op desktop */
+}
+
+/* Voor de app: gebruik bij views of body */
+body { background-image: var(--app-bg-image); background-size: cover; background-position: center; }
+
