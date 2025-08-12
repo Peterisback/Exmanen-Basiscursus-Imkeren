@@ -64,7 +64,7 @@
   }
 
   // ---------- Data Load & Normalize ----------
-  async function ensureDataLoaded(){
+  async async function ensureDataLoaded(){
     if (state.dataset) return;
     const res = await fetch('./data/oefenvragen_nbv.json');
     const raw = await res.json();
@@ -99,7 +99,7 @@
     window.scrollTo({top:0,behavior:'instant'});
   }
 
-  async function enterPracticeSettings(){
+  async async function enterPracticeSettings(){
     state.mode = 'practice';
     if (els.allThemes) els.allThemes.checked = false;
     await ensureDataLoaded();
@@ -107,7 +107,7 @@
     updatePracticeAvailability();
     show(views.practiceSettings);
   }
-  async function enterExamSettings(){
+  async async function enterExamSettings(){
     state.mode = 'exam';
     await ensureDataLoaded();
     show(views.examSettings);
