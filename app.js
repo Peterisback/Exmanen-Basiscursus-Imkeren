@@ -100,18 +100,41 @@
   }
 
   async function enterPracticeSettings(){
-    state.mode = 'practice';
-    if (els.allThemes) els.allThemes.checked = false;
+  state.mode = 'practice';
+  // Toon de view direct zodat de UI altijd reageert
+  show(views.practiceSettings);
+  try {
     await ensureDataLoaded();
-    renderThemeList();
-    updatePracticeAvailability();
-    show(views.practiceSettings);
+    renderThemeList(); updatePracticeAvailability();
+  } catch (e) {
+    console.error(e);
+    const host = document.getElementById('theme-controls') || views.practiceSettings;
+    if (host && !host.querySelector('.data-error')) {
+      const div = document.createElement('div');
+      div.className = 'card data-error';
+      div.textContent = 'Kon vragen niet laden. Controleer /data/oefenvragen_nbv.json';
+      host.appendChild(div);
+    }
   }
+}
   async function enterExamSettings(){
-    state.mode = 'exam';
+  state.mode = 'exam';
+  // Toon de view direct zodat de UI altijd reageert
+  show(views.examSettings);
+  try {
     await ensureDataLoaded();
-    show(views.examSettings);
+    
+  } catch (e) {
+    console.error(e);
+    const host = document.getElementById('theme-controls') || views.examSettings;
+    if (host && !host.querySelector('.data-error')) {
+      const div = document.createElement('div');
+      div.className = 'card data-error';
+      div.textContent = 'Kon vragen niet laden. Controleer /data/oefenvragen_nbv.json';
+      host.appendChild(div);
+    }
   }
+}
 
   // ---------- Practice availability ----------
   function updatePracticeAvailability(){
@@ -193,14 +216,9 @@ function selectedThemes(){
       ? `${shown} / ${state.questions.length}`
       : `${shown} / ${state.questions.length} · goed: ${correctSoFar}`;
   }
-}%`;
-    const correctSoFar = state.answers.filter(a=>a && a.correct).length;
-    els.status.textContent = (state.mode==='exam')
-      ? `${state.index} / ${state.questions.length}`
-      : `${state.index} / ${state.questions.length} · goed: ${correctSoFar}`;
-  }
+}
 
-  function renderQuestion(){
+function renderQuestion(){
     const i = state.index;
     const q = state.questions[i];
     if (!q){ show(views.results); return; }
