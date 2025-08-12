@@ -1,4 +1,3 @@
-
 (function(){
   'use strict';
 
@@ -24,18 +23,6 @@
     results: $('#view-results'),
   };
   const els = {
-
-// Mapping thema -> icoon (assets/image/*)
-const themeIcons = {
-  'Biologie & gedrag': 'assets/image/biologie.webp',
-  'Jaarcyclus & seizoenswerk': 'assets/image/jaarcyclus.webp',
-  'Praktische imkerhandelingen': 'assets/image/praktisch.webp',
-  'Ziekten & plagen': 'assets/image/ziekten.webp',
-  'Honing en producten': 'assets/image/honing.webp',
-  'Wet- en regelgeving': 'assets/image/wetgeving.webp',
-  'Alle thema\'s': 'assets/image/alle.webp'
-};
-
     btnHome: $('#btn-home'),
     goPractice: $('#go-practice'),
     goExam: $('#go-exam'),
@@ -59,6 +46,17 @@ const themeIcons = {
     btnRetrySame: $('#btn-retry-same'),
     btnRetryNew: $('#btn-retry-new'),
     btnResetHistory: $('#btn-reset-history'),
+  };
+
+  // Mapping thema -> icoon (assets/image/*)
+  const themeIcons = {
+    'Biologie & gedrag': 'assets/image/biologie.webp',
+    'Jaarcyclus & seizoenswerk': 'assets/image/jaarcyclus.webp',
+    'Praktische imkerhandelingen': 'assets/image/praktisch.webp',
+    'Ziekten & plagen': 'assets/image/ziekten.webp',
+    'Honing en producten': 'assets/image/honing.webp',
+    'Wet- en regelgeving': 'assets/image/wetgeving.webp',
+    "Alle thema's": 'assets/image/alle.webp'
   };
 
   // ---------- Utilities ----------
@@ -114,39 +112,15 @@ const themeIcons = {
   async function enterPracticeSettings(){
     state.mode = 'practice';
     if (els.allThemes) els.allThemes.checked = false;
-    // Toon eerst de view zodat de UI reageert
+    await ensureDataLoaded();
+    renderThemeList();
+    updatePracticeAvailability();
     show(views.practiceSettings);
-    try{
-      await ensureDataLoaded();
-      renderThemeList();
-      updatePracticeAvailability();
-    }catch(e){
-      console.error(e);
-      // Toon melding binnen practice settings
-      const host = document.getElementById('theme-controls') || views.practiceSettings;
-      if (host && !host.querySelector('.data-error')){
-        const div = document.createElement('div');
-        div.className = 'card data-error';
-        div.textContent = 'Kon vragen niet laden. Controleer /data/oefenvragen_nbv.json';
-        host.appendChild(div);
-      }
-    }
   }
   async function enterExamSettings(){
     state.mode = 'exam';
+    await ensureDataLoaded();
     show(views.examSettings);
-    try{
-      await ensureDataLoaded();
-    }catch(e){
-      console.error(e);
-      const host = views.examSettings;
-      if (host && !host.querySelector('.data-error')){
-        const div = document.createElement('div');
-        div.className = 'card data-error';
-        div.textContent = 'Kon vragen niet laden. Controleer /data/oefenvragen_nbv.json';
-        host.appendChild(div);
-      }
-    }
   }
 
   // ---------- Practice availability ----------
@@ -169,7 +143,7 @@ const themeIcons = {
   function renderThemeList(){
     const wrap = els.themesWrap; wrap.innerHTML = '';
     state.themes.forEach(theme => {
-      const id = `th-${theme.replace(/[^a-z0-9]+/gi,'-')}`;
+      const id = `th-${theme.toLowerCase().replace(/[^a-z0-9]+/gi,'-')}`;
       const label = document.createElement('label');
       label.className = 'check';
       label.innerHTML = `
@@ -249,7 +223,7 @@ const themeIcons = {
       if (ans.locked){
         lockOptions();
         els.btnNext.disabled = false;
-      els.btnNext.classList.add('primary');
+        els.btnNext.classList.add('primary');
       }
     }
 
@@ -281,13 +255,12 @@ const themeIcons = {
     const i = state.index; const q = state.questions[i];
     const existing = state.answers[i];
 
-    // In oefenmodus: na eerste keuze bij fout, vergrendelen; bij goed auto-door.
+    // In oefenmodus: na eerste keuze vergrendelen; feedback tonen
     if (state.mode==='practice'){
-      // voorkomen dat UI niet altijd 'checked' toont: radio zelf ook activeren
       const input = els.qForm.querySelector(`input[type="radio"][name="q${i}"][value="${idx}"]`);
       if (input) input.checked = true;
 
-      if (existing?.locked) return; // niet meer aanpassen
+      if (existing?.locked) return;
 
       const correct = (idx === q.answer);
       state.answers[i] = {
@@ -296,22 +269,19 @@ const themeIcons = {
         correctIndex: q.answer,
         correct,
         theme: q.category,
-        locked: true // altijd vergrendelen na eerste keuze
+        locked: true
       };
 
-      // Toon feedback en eventuele uitleg
       markFeedback(idx, q.answer);
       if (q.explanation){ els.qExpl.hidden = false; els.qExpl.textContent = q.explanation; }
 
-      // UI: opties vastzetten en Volgende aan + markeren
       lockOptions();
       els.btnNext.disabled = false;
       els.btnNext.classList.add('primary');
       return;
     }
 
-    // In examenmodus: geen feedback tonen, geen vergrendeling; wel keuze registreren
-    const wasSelected = (existing && existing.pickedIndex === idx);
+    // Examenmodus: geen feedback, wel registreren
     state.answers[i] = {
       id: q.__id,
       pickedIndex: idx,
@@ -320,10 +290,9 @@ const themeIcons = {
       theme: q.category,
       locked: false
     };
-    // UI: geen markFeedback, geen uitleg
     els.qExpl.hidden = true;
     els.btnNext.disabled = false;
-      els.btnNext.classList.add('primary');
+    els.btnNext.classList.add('primary');
   }
 
   function next(){
@@ -360,41 +329,6 @@ const themeIcons = {
         <img class="medal" src="assets/image/result-medal.webp" alt="Resultaat medaille"/>
         <div class="medal-score">${pct}%</div>
       </div>
-    
-      <div class="medal-wrap">
-        <svg class="medal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 640" role="img" aria-label="Resultaat medaille">
-          <defs>
-            <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#F9E79F"/>
-              <stop offset="50%" stop-color="#F4D03F"/>
-              <stop offset="100%" stop-color="#D4AC0D"/>
-            </linearGradient>
-            <radialGradient id="shine" cx="35%" cy="30%" r="70%">
-              <stop offset="0%" stop-color="#FFFDE7" stop-opacity="0.95"/>
-              <stop offset="60%" stop-color="#FFFDE7" stop-opacity="0.0"/>
-            </radialGradient>
-            <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="6" stdDeviation="14" flood-color="#000" flood-opacity="0.15"/>
-            </filter>
-          </defs>
-          <g transform="translate(0,0)">
-            <path d="M170,40 L256,200 L342,40 L380,40 L256,260 L132,40 Z" fill="#2E7D32"/>
-            <path d="M194,40 L256,166 L318,40 Z" fill="#66BB6A"/>
-          </g>
-          <g filter="url(#softShadow)" transform="translate(0,40)">
-            <circle cx="256" cy="280" r="170" fill="url(#gold)"/>
-            <circle cx="256" cy="280" r="150" fill="none" stroke="#B8860B" stroke-width="12"/>
-            <circle cx="226" cy="250" r="140" fill="url(#shine)"/>
-            <g fill="none" stroke="#B8860B" stroke-width="6" opacity="0.6">
-              <path d="M156,280c0-64,52-116,116-116" stroke-linecap="round"/>
-              <path d="M356,280c0-64-52-116-116-116" stroke-linecap="round" transform="scale(-1,1) translate(-512,0)"/>
-            </g>
-            <text x="256" y="290" text-anchor="middle" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-weight="700" font-size="92" fill="#3b2a1d">${pct}%</text>
-            <text x="256" y="340" text-anchor="middle" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-weight="600" font-size="28" fill="#5A3E2B" opacity="0.85">Resultaat</text>
-          </g>
-        </svg>
-      </div>
-
       <h3>Samenvatting</h3>
       <p><strong>Score:</strong> ${correct}/${total} (${pct}%)</p>
       <p><strong>Advies:</strong> ${weak.length? `oefen extra met ${weak.join(', ')}` : 'ga zo door' }.</p>
@@ -408,7 +342,6 @@ const themeIcons = {
     perHtml += '</ul>';
 
     if (state.mode==='exam'){
-      // Tijdens examen geen feedback; hier na afloop: alleen fout beantwoorde vragen per thema
       const wrong = state.questions.map((q,i)=>({q,i,a:state.answers[i]}))
         .filter(x=>x.a && !x.a.correct);
       wrong.sort((x,y)=> x.q.category.localeCompare(y.q.category,'nl') || x.i - y.i);
@@ -423,7 +356,7 @@ const themeIcons = {
           if (q.category!==currentTheme){
             if (currentTheme!==null) list += '</ol>';
             currentTheme = q.category;
-            list += `<h4><img src=\"${themeIcons[currentTheme]||''}\" alt=\"\" class=\"theme-icon\"> ${currentTheme}</h4><ol>`;
+            list += `<h4><img src="${themeIcons[currentTheme]||''}" alt="" class="theme-icon"> ${currentTheme}</h4><ol>`;
           }
           const yourText = a.pickedIndex!=null ? `${String.fromCharCode(97+a.pickedIndex)}) ${q.choices[a.pickedIndex]}` : '—';
           const rightText = `${String.fromCharCode(97+q.answer)}) ${q.choices[q.answer]}`;
@@ -596,7 +529,7 @@ const themeIcons = {
   }
 
   if (els.btnResetHistory){
-    els.btnResetHistory.addEventListener('click', resetHistory);
+    els.btnResetHistory.addEventListener('click', (e)=>{ resetHistory(); if (e && e.currentTarget) e.currentTarget.blur(); });
   }
 
   function resetToHome(){
