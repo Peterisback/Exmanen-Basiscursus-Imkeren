@@ -15,13 +15,38 @@ body{
   color:#1c160f;
 }
 .app-header{
-  display:flex;align-items:center;gap:.75rem;
-  padding:.75rem 1rem; background:linear-gradient(90deg,var(--honey),var(--amber));
-  color:#210; position:sticky; top:0; z-index:10;
-  box-shadow:0 2px 8px rgba(0,0,0,.08)
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.75rem;
+  padding:.75rem 1rem;
+  background:var(--cream);
+  color:var(--brown);
+  position:sticky;
+  top:0;
+  z-index:10;
+  border-bottom:1px solid rgba(0,0,0,.06);
+  box-shadow:none;
 }
-.app-header h1{font-size:1.25rem;margin:0}
-.ghost{background:transparent;border:none;font-size:1.25rem;cursor:pointer}
+.app-header h1{
+  font-size:1.125rem;
+  margin:0;
+  font-weight:700;
+  letter-spacing:.2px;
+}
+#btn-home.ghost{
+  background:transparent;
+  border:none;
+  font-size:1.1rem;
+  cursor:pointer;
+  line-height:1;
+  transform: translateY(1px);
+  opacity:.85;
+}
+@media (min-width: 768px){
+  .app-header{padding:1rem 1.25rem}
+  .app-header h1{font-size:1.25rem}
+}
 .container{max-width:720px;margin:0 auto;padding:1rem}
 .view{display:none}
 .view.active{display:block}
@@ -217,3 +242,47 @@ label.check input[id*="seizoenswerk"] + span::before{
   background:  url('assets/image/jaarcyclus.webp') no-repeat center/contain !important;
 }
 
+
+
+/* Responsive header afbeelding */
+header img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    header img {
+        max-height: 200px; /* Zorgt dat de afbeelding niet te groot wordt op desktop */
+        width: auto;
+    }
+}
+
+
+/* Strakke stijl voor kop met huisje en Imkertrainer */
+header .site-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #5a4632; /* donkerbruin */
+}
+
+header .site-title img {
+    height: 1.8rem;
+    width: auto;
+    filter: brightness(0) saturate(100%) invert(28%) sepia(24%) saturate(405%) hue-rotate(17deg) brightness(95%) contrast(93%);
+}
+
+@media (min-width: 768px) {
+    header .site-title {
+        font-size: 2.2rem;
+    }
+    header .site-title img {
+        height: 2.2rem;
+    }
+}
