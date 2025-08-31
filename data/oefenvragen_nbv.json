@@ -1,1 +1,2202 @@
-[]
+[
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Uit welke drie hoofdsegmenten bestaat het lichaam van de honingbij?",
+    "opties": [
+      "a) Kop, borststuk en achterlijf",
+      "b) Kop, romp en achterlijf",
+      "c) Kop, middenlijf en achterlijf",
+      "d) Kop, borstkas en achterpoten"
+    ],
+    "antwoord": "a"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Welke vijf ogen heeft een werkbij en wat is de primaire functie van de twee typen?",
+    "opties": [
+      "a) Vijf facetogen; ze meten vooral lichtintensiteit",
+      "b) Twee facetogen en drie ocelli; facetogen vormen beeld en kleur, ocelli meten lichtintensiteit/oriëntatie",
+      "c) Drie facetogen en twee ocelli; ocelli zijn voor scherp beeld",
+      "d) Twee ocelli en drie facetogen; ocelli geven richting t.o.v. geuren"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Welke functie heeft de glossa (tong) van de honingbij tijdens nectaropname?",
+    "opties": [
+      "a) Het verdampen van water uit honing",
+      "b) Het opnemen/‘likken’ van nectar en water en doorgeven aan de honingmaag",
+      "c) Het persen van pollen tot korrels",
+      "d) Het verspreiden van alarmferomoon bij de ingang"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Waar bevindt zich de honingmaag en waarvoor dient die?",
+    "opties": [
+      "a) In de kop; hier start de vertering van nectar",
+      "b) In het borststuk; voor zuurstofopslag tijdens vlucht",
+      "c) In het achterlijf (vooraan in het spijsverteringskanaal); voor tijdelijke opslag en transport van nectar/water",
+      "d) In het achterlijf; voor de vertering van pollen"
+    ],
+    "antwoord": "c"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Wat is de functie van hemolymfe bij bijen?",
+    "opties": [
+      "a) Zuurstoftransport naar de spieren",
+      "b) Transport van voedingsstoffen/hormonen en afvoer van afvalstoffen in een open bloedsomloop",
+      "c) Opslag van stuifmeeleiwitten voor de winter",
+      "d) Regulatie van vleugelklappen tijdens vlucht"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Wat is de bijenruimte (bee space) en waarom is die biologisch/gedragstechnisch relevant?",
+    "opties": [
+      "a) Een ruimte van 1–2 mm die ze altijd vrijlaten; anders propolis",
+      "b) Een ruimte van ca. 6–9 mm die de bijen als gangruimte vrijhouden; kleiner wordt dichtgepropoliseerd, groter volgebouwd",
+      "c) Een ruimte van 2–3 cm die nodig is voor ventilatie",
+      "d) De afstand tussen twee kasten om drift te voorkomen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Welke klieren produceren was en in welk levensstadium zijn ze het actiefst?",
+    "opties": [
+      "a) Hypofarynxklieren; bij oude haalbijen",
+      "b) Kaakklieren; bij darren",
+      "c) Wasklieren op buikplaten (sternieten); maximaal actief bij midden-aged ‘bouwbijen’ (± dag 12–18)",
+      "d) Wasklieren op de poten; bij jonge poetsbijen (dag 1–3)"
+    ],
+    "antwoord": "c"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Welke verschillen bestaan er tussen het steekorgaan van werkster en koningin?",
+    "opties": [
+      "a) Werkster: glad; koningin: sterk gehaakt",
+      "b) Werkster: met weerhaken (blijft in zoogdierhuid, leidt vaak tot dood); koningin: relatief glad, kan herhaald steken (vooral tegen andere koninginnen)",
+      "c) Beide zijn identiek; gebruik verschilt alleen in hoeveelheid gif",
+      "d) Koningin prikt niet; ze verliest altijd haar angel"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Hoe ademen bijen (noem het systeem en de openingen)?",
+    "opties": [
+      "a) Via longblaasjes die uitmonden in de antennen",
+      "b) Via kieuwen in het achterlijf",
+      "c) Via een tracheeënsysteem met ademopeningen (spiracula/stigmata) op borststuk en achterlijf",
+      "d) Door diffusie via de raatcellen"
+    ],
+    "antwoord": "c"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Welke rol speelt het Nasanov-feromoon in het gedrag van werkbijen?",
+    "opties": [
+      "a) Alarm en aanval coördineren",
+      "b) Oriëntatie en aggregatie: nest-/standplaats markeren en soortgenoten lokken (ook bij zwerm en waterbron)",
+      "c) Voedselbronkwaliteit aangeven in de dans",
+      "d) Zwermdrift onderdrukken in de hoofddracht"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Welke invloed heeft het koninginnenferomoon op zwermdrift en broedontwikkeling?",
+    "opties": [
+      "a) Sterk QMP verhoogt zwermdrift en stopt broed",
+      "b) Afwezig QMP stimuleert poetsgedrag maar remt zwermen",
+      "c) Sterk QMP houdt het volk samen, onderdrukt dopaanzet/zwermdrift en ondersteunt stabiele broedzorg; afnemend QMP werkt het omgekeerde",
+      "d) QMP heeft alleen effect op darren en niet op werksters"
+    ],
+    "antwoord": "c"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Wat is broedferomoon en welke taakverdeling roept het op bij werksters?",
+    "opties": [
+      "a) Feromoon van poppen; zet aan tot bewaking",
+      "b) Feromoon van larven; stimuleert verpleeggedrag en verhoogt stuifmeelhalen",
+      "c) Feromoon van de koningin; triggert waterhalen",
+      "d) Feromoon van haalbijen; zet aan tot wasbouw"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Welke dans gebruiken bijen om bronnen op >100 m aan te geven en hoe wordt richting gecodeerd?",
+    "opties": [
+      "a) Rondedans; richting via geur",
+      "b) Kwispeldans (waggle dance); richting via de hoek t.o.v. de verticale raat (zon-azimut)",
+      "c) Trildans; richting via de lengte van de tril",
+      "d) Pijpendans; richting via het aantal piepjes"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Hoe geeft de rondedans informatie door en wanneer wordt hij gebruikt?",
+    "opties": [
+      "a) Richting en afstand exact; voor verre bronnen",
+      "b) Alleen aanwezigheid en geur/smaak; voor nabijgelegen bronnen (globaal < ~100 m)",
+      "c) Alleen afstand; voor waterbronnen",
+      "d) Kwaliteit; voor propolisbronnen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Wat is de rol van vibratiesignalen (trillingen) in het bijenvolk?",
+    "opties": [
+      "a) Ze vervangen dansen volledig",
+      "b) Ze wekken/alarmen alleen darren",
+      "c) Ze moduleren activiteit en taakafstemming (o.a. tremble voor meer nectarontvangers, ‘piping’ rond (na)zwermen)",
+      "d) Ze zijn vooral voor thermoregulatie in de wintertros"
+    ],
+    "antwoord": "c"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Wat wordt bedoeld met hygiënisch gedrag bij bijen?",
+    "opties": [
+      "a) Het poetsen van raten om honing witter te maken",
+      "b) Het uit ventileren van overtollig vocht",
+      "c) Het openen (ontdekselen) en verwijderen van ziek/dood broed om ziekteverspreiding te beperken",
+      "d) Het dichten van kieren met propolis"
+    ],
+    "antwoord": "c"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Welke rol heeft vitellogenine bij winterbijen?",
+    "opties": [
+      "a) Het is een gifcomponent dat steken pijnlijker maakt",
+      "b) Het is een opslag-/transporteiwit dat levensduur verlengt, antioxidatief werkt en vroege broedzorg ondersteunt",
+      "c) Het is een hormoon dat zwermdrift triggert",
+      "d) Het is een enzym dat nectar omzet in honing"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Welke relatie bestaat er tussen juveniel hormoon (JH) en taakverdeling bij werksters?",
+    "opties": [
+      "a) Hoog JH bij verpleegsters; laag bij haalbijen",
+      "b) JH is constant en taakonafhankelijk",
+      "c) JH stijgt met de leeftijd; laag JH = verpleeggedrag, hoog JH = haalgedrag",
+      "d) Alleen darren hebben JH-schommelingen"
+    ],
+    "antwoord": "c"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Noem de vier ontwikkelingsstadia van de honingbij in de juiste volgorde.",
+    "opties": [
+      "a) Ei – pop – larve – imago",
+      "b) Ei – larve – pop – imago",
+      "c) Larve – ei – pop – imago",
+      "d) Ei – larve – imago – pop"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Hoeveel dagen duren de totale ontwikkeling van koningin, werkster en dar (elk apart)?",
+    "opties": [
+      "a) Koningin 21, werkster 16, dar 24",
+      "b) Koningin 16, werkster 21, dar 24",
+      "c) Koningin 15, werkster 20, dar 22",
+      "d) Koningin 18, werkster 21, dar 26"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Welke temperatuur en luchtvochtigheid zijn optimaal voor broedontwikkeling?",
+    "opties": [
+      "a) 30–31 °C en 80–90% RV",
+      "b) 32–33 °C en 30–40% RV",
+      "c) ~35 °C en ca. 50–60% RV",
+      "d) 38–39 °C en 10–20% RV"
+    ],
+    "antwoord": "c"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Welke structuur gebruiken werksters om stuifmeel te vervoeren en waar zit die?",
+    "opties": [
+      "a) Scopa op de voorpoten",
+      "b) Corbicula (pollenkorfje) op de achtertibia",
+      "c) Pollenbuis in de antennen",
+      "d) Krop in het borststuk"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Waarom halen bijen water en wat doen ze ermee in het volk?",
+    "opties": [
+      "a) Alleen om honing te verdunnen tot siroop",
+      "b) Voor larvenvoeding en voor verdampingskoeling/klimaatregeling in de kast",
+      "c) Voor propolisproductie",
+      "d) Om de wasklieren te activeren"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Welke taken vervullen werksters in hun eerste levensweek?",
+    "opties": [
+      "a) Voornamelijk halen (nectar/water) en waken",
+      "b) Poetsen van cellen, warm houden van broed en vanaf dag 3–4 verpleegwerk (jelly voeden)",
+      "c) Doppen breken en wasbouw",
+      "d) Voornamelijk vliegen op oriëntatie en dracht"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Welke taken vervullen werksters rond dag 12–18 en waarom juist dan?",
+    "opties": [
+      "a) Alleen broed verzorgen; omdat hypofarynxklieren dan maximaal zijn",
+      "b) Wasbouw, nectar ontvangen/indikken en ventileren; wasklieren zijn dan op piek en fysiologie geschikt",
+      "c) Vooral oriëntatievluchten; omdat vitellogenine dan het hoogst is",
+      "d) Alleen bewaken; door lage JH-spiegels"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Vanaf welke leeftijd worden werksters meestal haalbijen en welke fysiologische verandering hoort daarbij?",
+    "opties": [
+      "a) Rond dag 7–10; vitellogenine stijgt",
+      "b) Rond dag 21 (± 18–22); JH stijgt en vliegspieren/oriëntatie zijn gereed",
+      "c) Rond dag 3–5; wasklieren pieken",
+      "d) Rond dag 28–30; vitellogenine bereikt minimum bij verpleegsters"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Hoe herken je darrenraat en waarom is die anders gebouwd dan werksterraat?",
+    "opties": [
+      "a) Kleinere cellen en vlak deksel; drones zijn kleiner",
+      "b) Grotere cellen met bolle verzegeling (‘bollen’); darren zijn groter en hebben meer ruimte nodig",
+      "c) Donkerdere raat; darren ontwikkelen in propolis",
+      "d) Geen verschil; darren groeien in gewone werkstercellen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Hoe ziet een koninginnencel eruit en waar hangt die doorgaans aan de raat?",
+    "opties": [
+      "a) Platte cel met witte kap; midden op een honingraam",
+      "b) Pinda-vormige, naar beneden gerichte cel; vaak aan onderrand/zijde van het broednest (zwermcellen)",
+      "c) Cilindrische cel naar boven gericht; boven in de honingkamer",
+      "d) Kleine ronde cel; altijd midden in gesloten broed"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Wat is de functie van de spermatheek bij de koningin?",
+    "opties": [
+      "a) Productie van feromonen",
+      "b) Opslag van sperma van meerdere darren voor levenslange bevruchting van eieren",
+      "c) Opslag van nectar voor noodgevallen",
+      "d) Rijping van darren"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Hoeveel paringen gaat een koningin gemiddeld aan en waarom?",
+    "opties": [
+      "a) 1–2; om inteelt te beperken",
+      "b) 3–5; meer is schadelijk",
+      "c) 10–20; voor genetische diversiteit en koloniestabiliteit",
+      "d) >30; om zwermdrift te remmen"
+    ],
+    "antwoord": "c"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Leg uit wat haplodiploidie is bij bijen.",
+    "opties": [
+      "a) Beiden (♂/♀) ontstaan uit bevruchte eieren",
+      "b) Vrouwtjes (koningin/werksters) uit bevruchte (diploïde) eieren; darren uit onbevruchte (haploïde) eieren",
+      "c) Drones uit diploïde eieren; werksters uit haploïde",
+      "d) Alleen de koningin is haploïd"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Wat is de primaire rol van darren in het bijenvolk?",
+    "opties": [
+      "a) Honing rijpen",
+      "b) Broed verzorgen",
+      "c) Paren met jonge koninginnen tijdens bruidsvluchten",
+      "d) Ventileren van de kast bij hitte"
+    ],
+    "antwoord": "c"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Welke signalen in het volk duiden op een afnemende kwaliteit van de koningin?",
+    "opties": [
+      "a) Strakke, egale broedpatronen en veel open larven",
+      "b) ‘Gatenkaas’ in het broedpatroon, meer darrenbroed, dopaanzet/redcellen en onrust",
+      "c) Meer nectar binnen en rustige bijen",
+      "d) Veel propolis en weinig wasbouw"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Hoe regelen bijen hun nesttemperatuur bij kou en bij hitte?",
+    "opties": [
+      "a) Kou: water verdampen; hitte: samenklonteren",
+      "b) Kou: trillen met vliegspieren/klonteren; hitte: waaieren en water verdampen op raat",
+      "c) Kou: doppen openen; hitte: raten uit de kast dragen",
+      "d) Kou: propolis smeren; hitte: koninginnenferomoon verhogen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Biologie & gedrag",
+    "vraag": "Welke kenmerken onderscheid je bij open vs. gesloten broed (biologisch/visueel)?",
+    "opties": [
+      "a) Open broed: poppen met donkere ogen; gesloten broed: larven in gelei",
+      "b) Open broed: eieren/larven in open cellen met voedersap; gesloten broed: vlakke (werkster) of bolle (dar) deksels over poppen",
+      "c) Open broed: witte verzegeling; gesloten broed: glanzend open oppervlak",
+      "d) Er is visueel geen verschil; alleen geur verschilt"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Noem de vier hoofdperioden van de jaarcyclus van het bijenvolk.",
+    "opties": [
+      "a) Overwinteren – Voorjaar – Zomer – Najaar",
+      "b) Winterrust – Broedpauze – Zomer – Herfst",
+      "c) Opbouw – Rust – Dracht – Raatvernieuwing",
+      "d) Oriëntatie – Zwerm – Oogst – Inwintering"
+    ],
+    "antwoord": "a"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Wanneer starten de voortplantingsactiviteiten t.o.v. het begin van de voorjaarsontwikkeling en waarom?",
+    "opties": [
+      "a) Direct na de eerste reinigingsvlucht; omdat darren meteen beschikbaar zijn",
+      "b) Enkele weken later; er moeten eerst voldoende broed, voedsel en darren zijn",
+      "c) Pas in de zomer; vanwege de hogere temperaturen",
+      "d) Alleen in de herfst; omdat koninginnen dan sterker zijn"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "In welke periode van het jaar is de kans op zwermen het grootst en waardoor?",
+    "opties": [
+      "a) Winter; door gebrek aan ruimte",
+      "b) Voorjaar/voorzomer; door snelle broedgroei en ruimtegebrek",
+      "c) Najaar; door voorbereiding op de winter",
+      "d) Zomer; door hoge temperaturen alleen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Wat zijn de vroegste signalen van opkomende zwermdrift tijdens het voorjaarswerk?",
+    "opties": [
+      "a) Meer stuifmeel in de cellen",
+      "b) Aanwezigheid van speeldoppen en veel bijen op de vliegplank",
+      "c) Een rustig broednest zonder doppen",
+      "d) Een afname van propolis"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Met welke koningin verlaat een voorzwerm het volk en waarom?",
+    "opties": [
+      "a) Met een jonge koningin; omdat die sterker is",
+      "b) Met de oude koningin; omdat die bevrucht en legklaar is",
+      "c) Met een onbevruchte dar; om genetische spreiding te bevorderen",
+      "d) Met de sterkste werkbij; om zwermdrift te beperken"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Hoeveel dagen na het vertrek van een zwerm loopt doorgaans de eerste jonge koningin uit?",
+    "opties": [
+      "a) Ongeveer 1–2 dagen",
+      "b) Ongeveer 7–8 dagen",
+      "c) Ongeveer 14–16 dagen",
+      "d) Ongeveer 21 dagen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Hoeveel tijd na uitlopen heeft een jonge koningin gemiddeld nodig om te gaan leggen?",
+    "opties": [
+      "a) 1–2 dagen",
+      "b) 3–5 dagen",
+      "c) 7–14 dagen (afhankelijk van weer en bevruchting)",
+      "d) 21 dagen"
+    ],
+    "antwoord": "c"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Welke doelen heeft de eerste voorjaarsinspectie na de reinigingsvlucht?",
+    "opties": [
+      "a) Honing oogsten en ramen vervangen",
+      "b) Controleren op voer, broedaanzet, volksterkte en ziekteverschijnselen",
+      "c) Direct een honingkamer plaatsen",
+      "d) De kast volledig leeg maken voor schoonmaak"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Welke ingreep hoort bij het creëren van ruimte in mei/juni en waarom?",
+    "opties": [
+      "a) Ramen dichter op elkaar schuiven om warmte vast te houden",
+      "b) Honingkamer(s) plaatsen om zwermdrift te beperken en dracht te benutten",
+      "c) Broednest inkrimpen om bijen te concentreren",
+      "d) Kast volpropoliseren tegen tocht"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Hoe vaak en wanneer plan je raatvernieuwing in de jaarcyclus?",
+    "opties": [
+      "a) Nooit; oude raat werkt beter",
+      "b) Jaarlijks een deel (bijv. 1/3) vervangen, liefst in voor- en voorzomer tijdens wasbouw",
+      "c) Alleen bij zwakke volken",
+      "d) Alleen bij sterke dracht"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Welke drachtbronnen zijn typisch voor het vroege voorjaar in Nederland?",
+    "opties": [
+      "a) Heide en tamme kastanje",
+      "b) Wilg, krokus, hazelaar en vroeg bloeiende fruitbomen",
+      "c) Zonnebloem en lindeboom",
+      "d) Goudenregen en heide"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Welke criteria gebruik je om te beslissen of een honingkamer geplaatst moet worden?",
+    "opties": [
+      "a) Alleen de buitentemperatuur",
+      "b) Sterk volk, voldoende dracht en bezet broednest/ramen (ruimtegebrek voorkomen)",
+      "c) Alleen het kalenderdatum",
+      "d) Alleen kleur van de bijen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Wat zijn de aandachtspunten bij het slingeren midden in de zomer?",
+    "opties": [
+      "a) Slinger bij voorkeur op regenachtige dagen in de open lucht",
+      "b) Slinger bij stabiel weer, geef na het oogsten snel weer ruimte en werk schoon om roven te voorkomen",
+      "c) Altijd alles in één keer oogsten, ongeacht verzegeling",
+      "d) Ramen direct terughangen zonder bijen af te slaan"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Hoeveel kilo wintervoer streef je aan voor een gemiddeld volk en waar hangt dat van af?",
+    "opties": [
+      "a) 5–8 kg; ongeacht kasttype",
+      "b) 10–12 kg; alleen bij zwakke volken",
+      "c) 14–18 kg; afhankelijk van kasttype/raatformaat, volkgrootte en winterduur",
+      "d) 25–30 kg; standaard voor elk volk"
+    ],
+    "antwoord": "c"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Wanneer starten de inwinteringshandelingen en waarom juist dan?",
+    "opties": [
+      "a) Direct na de eerste lentedracht; dan is voer beschikbaar",
+      "b) Vlak na de hoofddracht (juli/aug), zodat bijen tijdig wintervoer verwerken en winterbijen gezond opgroeien",
+      "c) Pas in oktober, als het koud wordt",
+      "d) Alleen als de honingkamer vol is"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Welke niet-invasieve wintercontroles kun je doen zonder het volk te openen?",
+    "opties": [
+      "a) De kast schudden om geluid te horen",
+      "b) Gewicht/voerinschatting (tillen), uitwerpselen op vliegplank, activiteit bij zachte dagen en eventuele mijtenval op bodemschuif",
+      "c) Alle ramen lichten",
+      "d) Broedramen verwarmen met een föhn"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Waarom is een waterbron nabij de stand vooral in het vroege voorjaar belangrijk?",
+    "opties": [
+      "a) Voor propolisproductie",
+      "b) Voor larvenvoeding en verdampingskoeling bij temperatuurschommelingen",
+      "c) Voor wasproductie",
+      "d) Voor darrenontwikkeling"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Wat zijn “drachtgaten” en hoe beïnvloeden die je seizoensplanning?",
+    "opties": [
+      "a) Periodes met extreme dracht waardoor overvolle kasten ontstaan",
+      "b) Periodes met weinig/nauwelijks nectar/pollen; je anticipeert met ruimtebeheer/voer en varroamonitoring",
+      "c) Gaten onder in de raat voor ventilatie",
+      "d) Openingen in de kast tegen roven"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Waarom is de broedloze periode cruciaal voor winterbehandeling tegen varroa?",
+    "opties": [
+      "a) Omdat mijten dan in honingcellen zitten",
+      "b) Omdat alle mijten op de bijen zitten en dus maximaal bereikbaar zijn",
+      "c) Omdat varroa dan verdwenen is",
+      "d) Omdat oxaalzuur alleen op raat werkt"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Hoe beheer je het broednest in het voorjaar om klemgroei te voorkomen?",
+    "opties": [
+      "a) Broedramen ver uit elkaar hangen",
+      "b) Tijdig ruimte geven (HK plaatsen), bouwramen inzetten en dichte honingkransen verbreken",
+      "c) Het broednest inkrimpen tot twee ramen",
+      "d) Alleen speeldoppen breken"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Welke zwermpreventieve maatregelen horen bij “ruimte geven”?",
+    "opties": [
+      "a) In de zomer de vliegopening verkleinen",
+      "b) Tijdig honingkamer(s) plaatsen, broednest niet laten vollopen met nectar, eventueel ramen omhangen",
+      "c) Steeds meer voer bijgeven",
+      "d) Koningin opsluiten in een kooitje"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Wanneer breek je speeldoppen wel en wanneer juist niet?",
+    "opties": [
+      "a) Altijd breken; ze hebben geen functie",
+      "b) Breken als zwermsignalen toenemen; niet breken bij stille moerwissel of bij twijfel aan moerkwaliteit",
+      "c) Nooit breken; het zijn koninginnencellen",
+      "d) Alleen breken in de winter"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Wat is een koninginnenaflegger (veger) en in welke fase van het seizoen pas je die toe?",
+    "opties": [
+      "a) Een volk zonder broed; toepassen in de winter",
+      "b) Een kunstzwerm/aflegger met moer en bijen; toepassen in het zwermseizoen voor zwermbeheersing of moerwisseling",
+      "c) Een aflegger met alleen darren; toepassen in de herfst",
+      "d) Een veger is het samenvoegen van twee volken; toepassen in de zomer"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Wanneer start je met varroamonitoring na de hoofddracht en waarom?",
+    "opties": [
+      "a) Nooit in de zomer; alleen in de winter",
+      "b) Direct na de hoofddracht, om tijdig te kunnen ingrijpen en winterbijen te beschermen",
+      "c) Pas in oktober; dan zie je alles",
+      "d) Alleen bij sterke volken"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Welk verzegelingspercentage gebruik je als praktische grens voor het oogsten van honingraten?",
+    "opties": [
+      "a) 30–40%",
+      "b) 50–60%",
+      "c) Circa 80–90%, of vochtgehalte ≤ ~18–20%",
+      "d) 100% verplicht"
+    ],
+    "antwoord": "c"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Welke maatregelen beperken wintercondensatie zonder het volk te koelen?",
+    "opties": [
+      "a) Alle ventilatie openen zodat warmte weg kan",
+      "b) Goede afvoer van vocht (bovenventilatie/absorberend materiaal) en tocht beperken",
+      "c) Kast open laten staan in zachte periodes",
+      "d) Extra water aanbieden binnenin"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Wat check je bij de eerste reinigingsvlucht in het voorjaar vanaf de vliegplank?",
+    "opties": [
+      "a) Alleen de kleur van de bijen",
+      "b) Activiteit, richting, stuifmeelvluchten, eventuele diarree/vuilsporen en dode bijen",
+      "c) Alleen of darren vliegen",
+      "d) Alleen de temperatuur buiten"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Waarom leven winterbijen aanzienlijk langer dan zomerbijen en wat betekent dat voor je planning?",
+    "opties": [
+      "a) Ze worden minder gejaagd; dus later inwinteren",
+      "b) Ze hebben hogere vitellogeninevoorraad en minder vliegwerk; dus tijdig behandelen en voeren voor gezonde aanmaak",
+      "c) Ze zijn groter; dus meer honing oogsten",
+      "d) Ze hebben dunnere chitine; dus sneller vervangen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "In welke periode tref je het meeste darrenbroed aan en waarom?",
+    "opties": [
+      "a) Winter; voor warmte",
+      "b) Voorjaar/voorzomer; voorbereiding op voortplanting (bruidsvluchten)",
+      "c) Najaar; voor inwintering",
+      "d) Zomer; door hitte"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Wanneer en waar plaats je een bouwraam in de jaarcyclus?",
+    "opties": [
+      "a) In de winter, buiten het broednest",
+      "b) In het voorjaar naast het broednest, om wasbouw en darrenraat te sturen",
+      "c) In de herfst midden in het broednest",
+      "d) Alleen in de honingkamer"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Wanneer kies je voor siroop en wanneer voor suikerdeeg als voer?",
+    "opties": [
+      "a) Siroop in koude winter, deeg in warme zomer",
+      "b) Siroop voor snel inwinteren of stimulatie in warmere perioden; deeg voor langzaam bijvoeren of bij kou/kortdurend noodvoer",
+      "c) Altijd siroop; deeg is ongeschikt",
+      "d) Altijd deeg; siroop is risicovol"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Welke risico’s spelen rond bloesembespuitingen in de fruitteelt en wat doe je preventief?",
+    "opties": [
+      "a) Geen risico; bijen ontwijken spuitnevel",
+      "b) Vergiftiging; overleg met teler, afsluiten of verplaatsen bij risicomomenten en water/voer aanbieden indien nodig",
+      "c) Alleen smaakbederf van honing",
+      "d) Alleen roven neemt toe"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Wat betekent de “3‑km‑regel” bij het verplaatsen van volken en wanneer pas je die toe?",
+    "opties": [
+      "a) Volken altijd binnen 3 km houden",
+      "b) Ofwel <3 m ofwel >3 km verplaatsen om terugvliegen te voorkomen; toepassen bij standwissels of tijdelijke verhuizing",
+      "c) Minimaal 3 km tussen kasten i.v.m. drift",
+      "d) Alleen bij drachtpauzes toepassen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Hoe ga je om met drachtarme periodes (bijv. juni-dip) om terugval te voorkomen?",
+    "opties": [
+      "a) Kast openzetten tegen warmte",
+      "b) Tijdig ruimte wegnemen en zo nodig bijvoeren/stimuleren; zwermdrift monitoren en varroadruk controleren",
+      "c) Geen actie nodig",
+      "d) Alleen darrenraam plaatsen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Jaarcyclus & seizoenswerk",
+    "vraag": "Welke seizoensfactoren bepalen of je een volk samenvoegt of juist opsplitst?",
+    "opties": [
+      "a) De kleur van de bijen en de vorm van de kast",
+      "b) Volkgrootte/koningin-kwaliteit, drachtverwachting, ziektedruk en je bedrijfsdoel (honing, afleggers, zwermbeheersing)",
+      "c) Alleen het weer",
+      "d) Alleen de leeftijd van de imker"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Wat is het primaire effect van rook op bijen en waarom werkt het kalmerend?",
+    "opties": [
+      "a) Het verdunt de zuurstof, waardoor bijen slomer worden",
+      "b) Het maskeert alarmferomoon en triggert honingopname (voedselreflex), waardoor ze minder defensief zijn",
+      "c) Het koelt de kast snel af, waardoor bijen samenklonteren",
+      "d) Het droogt de raat, waardoor bijen in de honingkamer blijven"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke brandstoffen zijn geschikt voor de rookpijp en waarom?",
+    "opties": [
+      "a) Droog hout en benzine; deze geven constante vlam",
+      "b) Vochtig gras en natte bladeren; dit geeft veel rook zonder hitte",
+      "c) Natuurlijke materialen zoals houtspaanders, jute, karton; ze branden rustig en geven koele rook",
+      "d) Plastic en rubber; dit brandt langzaam en geeft veel rook"
+    ],
+    "antwoord": "c"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "In welke volgorde open je een kast om onrust te beperken?",
+    "opties": [
+      "a) Eerst het broednest, daarna de honingkamers",
+      "b) Eerst de honingkamer(s), dan naar beneden naar het broednest",
+      "c) Direct het dak afnemen en ramen lostrekken",
+      "d) Van onder naar boven om lucht te laten ontsnappen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke eerste handeling doe je vóór je een raam optilt en waarom?",
+    "opties": [
+      "a) Hard tikken tegen de kast; om bijen weg te jagen",
+      "b) Kast schuin zetten; voor ventilatie",
+      "c) Rook geven bij de toplatten; zodat bijen zich terugtrekken en rustiger worden",
+      "d) Direct de koningin zoeken; zodat je weet waar ze zit"
+    ],
+    "antwoord": "c"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Wat is het risico van het negeren van de bijenruimte in de kast?",
+    "opties": [
+      "a) Bijen gaan roven",
+      "b) Bijen bouwen raten aan elkaar of kitten ruimte dicht met propolis, waardoor werken moeilijk wordt",
+      "c) Bijen verlaten de kast",
+      "d) De koningin stopt met leggen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Hoe herken je en voorkom je brugbouw tussen ramen?",
+    "opties": [
+      "a) Brugbouw is witte raat boven de toplatten; voorkomen door ramen dichter tegen elkaar te zetten",
+      "b) Brugbouw is was tussen ramen/latten; voorkomen door juiste bijenruimte aan te houden en tijdig ruimte te geven",
+      "c) Brugbouw is propolis aan de zijkanten; voorkomen door extra rook te geven",
+      "d) Brugbouw is schimmel op raat; voorkomen door ventilatie te sluiten"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Hoe plaats je een raam terug zonder de koningin of bijen te beschadigen?",
+    "opties": [
+      "a) Snel neerdrukken zodat bijen wegschieten",
+      "b) Schuin inzetten op de zijlatten en langzaam laten zakken, bijen laten wegkruipen",
+      "c) Eerst alle bijen eraf blazen en dan recht naar beneden duwen",
+      "d) Het raam altijd draaien tijdens het terugzetten"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke gedragssignalen helpen bij het opsporen van de koningin?",
+    "opties": [
+      "a) Bijen rennen paniekerig door elkaar",
+      "b) Hofstaat met dichte kring rustige bijen, meer gepoets en bijen met kop naar de koningin",
+      "c) Veel darren rondom één cel",
+      "d) Bijen die met vleugels trillen op de vliegplank"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Hoe herken je eitjes van 1–3 dagen en waarom is dat voor de diagnose belangrijk?",
+    "opties": [
+      "a) Glanzende larven in gelei; belangrijk om voedselstatus te zien",
+      "b) Staand/half liggend/liggend wit staafje; toont recente legactiviteit en aanwezigheid/kwaliteit van de moer",
+      "c) Donkere poppen; belangrijk om zwermdrift te bepalen",
+      "d) Gedekte cellen; toont dat de koningin afwezig is"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke verschillen zie je tussen open en gesloten broedramen tijdens een inspectie?",
+    "opties": [
+      "a) Open broed: vlakke deksels; gesloten broed: glanzende larven",
+      "b) Open broed: eieren/larven met voedersap; gesloten broed: gelijkmatig gedekt (werkster vlak, dar bol)",
+      "c) Open broed: donkere raat; gesloten broed: lichte raat",
+      "d) Er is geen verschil zichtbaar"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Wat is het doel van een koninginnenkooitje en wanneer gebruik je het?",
+    "opties": [
+      "a) Om de koningin te voeren tijdens winterrust",
+      "b) Tijdelijk beschermen/vastzetten van de koningin bij ingrepen of introductie in een nieuw volk",
+      "c) Om de koningin te merken met verf",
+      "d) Om de koningin sneller te laten leggen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Waarom markeer je een koningin en welke voordelen geeft dat in het seizoen?",
+    "opties": [
+      "a) Zodat darren haar kunnen vinden; het verhoogt de bevruchting",
+      "b) Gemakkelijker terugvinden, jaartal/herkomst herkennen en snellere inspecties/diagnose",
+      "c) Het remt zwermdrift direct",
+      "d) Het verhoogt de honingopbrengst automatisch"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Beschrijf de stappen bij het scheppen van een zwerm in een lage tak.",
+    "opties": [
+      "a) Met blote handen in de emmer scheppen en direct in de kast gooien",
+      "b) Emmer/mand onder de tros, tak een stevige tik, bijen laten vallen, koel en donker laten “indalen”, daarna voor de kast uitstorten met lokgeur",
+      "c) Eerst de tak zagen en in de kast leggen zonder bijen af te slaan",
+      "d) De zwerm met water besproeien en wachten tot ze wegvliegen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Waar moet je op letten bij het vervoeren van een gevangen zwerm?",
+    "opties": [
+      "a) Altijd luchtdicht afsluiten tegen warmteverlies",
+      "b) Ventilatie, koele schaduwrijke plek, stevige afsluiting én ’s avonds plaatsen op definitieve stand",
+      "c) In de zon zetten om bijen actief te houden",
+      "d) Open laten zodat ze kunnen ventileren"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Wanneer is doppen breken zinvol en wanneer schadelijk?",
+    "opties": [
+      "a) Altijd zinvol; doppen zijn overbodig",
+      "b) Zinvol bij zwermdrift met meerdere zwermcellen; schadelijk bij stille moerwissel of als er kans is dat je de moer verliest",
+      "c) Alleen zinvol in de winter",
+      "d) Nooit zinvol; volken regelen dat zelf"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke ramen horen minimaal in een koninginnenaflegger (veger) en waarom?",
+    "opties": [
+      "a) Alleen voerraam; anders gaan ze zwermen",
+      "b) Minstens 1–2 ramen gesloten/open broed en 1–2 voer-/pollenramen met voldoende bijen voor warmte en broedzorg",
+      "c) Alleen darrenraat; dat geeft rust",
+      "d) Alleen waswafels; dat stimuleert bouw"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Wat is het verschil tussen een broedaflegger en een veger in doel en samenstelling?",
+    "opties": [
+      "a) Er is geen verschil",
+      "b) Broedaflegger: met broedramen en jonge bijen; Veger: vooral vliegbijen zonder broed voor tijdelijke opvang/moerzetting",
+      "c) Broedaflegger: zonder voer; Veger: alleen voer",
+      "d) Broedaflegger: met darren; Veger: zonder darren"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Waar in het broednest plaats je een bouwraam en waarom?",
+    "opties": [
+      "a) Helemaal aan de buitenkant; daar bouwen ze het snelst",
+      "b) Tegen het broednest aan (rand), zodat bijen graag bouwen en je darrenraat kunt sturen/uitsnijden",
+      "c) Midden in het broednest; dan blijft het warm",
+      "d) In de honingkamer; daar groeien darren"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Wanneer kies je voor suikerdeeg i.p.v. siroop en waarom?",
+    "opties": [
+      "a) Bij warm weer; deeg smelt dan beter",
+      "b) Bij koud weer of korte nood, omdat deeg niet lekt en langzamer wordt opgenomen",
+      "c) Altijd; siroop is onveilig",
+      "d) Nooit; deeg is niet geschikt"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Hoe richt je een waterpunt in zodat bijen het veilig kunnen gebruiken?",
+    "opties": [
+      "a) Diepe emmer met gladde wanden",
+      "b) Ondiep water met drijfmateriaal/steentjes of druppelende bron, zonnig en windluw geplaatst",
+      "c) Grote bak met chloor tegen algengroei",
+      "d) Water alleen in de kast aanbieden"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke eisen stel je aan de standplaats (zon, wind, beschutting, bodem)?",
+    "opties": [
+      "a) Volle schaduw, natte bodem, open vlakke wind",
+      "b) Ochtendzon, lichte beschutting tegen wind/regen, droge stabiele ondergrond en vrij in-/uitvliegen",
+      "c) Volle middagzon zonder ventilatie",
+      "d) Windtunnel-effect voor koeling"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Hoe positioneer je vliegopeningen bij meerdere kasten om drift te beperken?",
+    "opties": [
+      "a) Alle vliegopeningen exact naast elkaar in één lijn",
+      "b) Variëren in richting/kleurmarkering en kasten niet strak in een rij; ook hoogte/oriëntatie afwisselen",
+      "c) Alle kasten naar het noorden",
+      "d) Vliegopeningen zo klein mogelijk maken"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke materialen en methoden gebruik je om imkermateriaal te ontsmetten?",
+    "opties": [
+      "a) Alleen koud water",
+      "b) Schrapen + heet sodabad/loog, branden met vlam bij hout; messen/potten met heet water en voedselveilige middelen",
+      "c) Afwasmiddel met parfum",
+      "d) Zandstralen van ramen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke handschoenen en kleding beperken steken zonder het werkgevoel te verliezen?",
+    "opties": [
+      "a) Dikke leren handschoenen en een winterjas",
+      "b) Dunne nitril/latex of soepel leer voor gevoel, plus imkerjas met sluier; rustig werken is belangrijker dan dikte",
+      "c) Geen handschoenen; dat kalmeert bijen",
+      "d) Alleen blote handen voor maximale controle"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Hoe verwijder je bijen van honingramen zonder de raat te beschadigen?",
+    "opties": [
+      "a) Hevig schudden aan het oor tot de was breekt",
+      "b) Een paar korte schudden en zacht afvegen met bijenveger of bijenafkeerplaat gebruiken",
+      "c) Met water afspoelen voor het slingeren",
+      "d) Met rook de bijen verbranden"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke stappen doorloop je bij ontzegelen vóór het slingeren?",
+    "opties": [
+      "a) Direct in de slinger zetten met deksels erop",
+      "b) Deksels verwijderen met ontzegelvork/mes, ontzegelwas opvangen en ramen in lekbak laten uitlekken",
+      "c) Ramen in de zon leggen tot deksels smelten",
+      "d) Deksels wegbranden met de rookpijp"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Hoe voorkom je onbalans en breuk in de slinger bij zware ramen?",
+    "opties": [
+      "a) Slinger zo snel mogelijk om tijd te besparen",
+      "b) Ramen symmetrisch verdelen per korf, langzaam op toeren komen en zo nodig keren tussen de slingerbeurten",
+      "c) Alleen lichte ramen slingeren",
+      "d) De slinger op een zachte mat zetten"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Waarom laat je geslingerde honing bezinken en hoe lang ongeveer?",
+    "opties": [
+      "a) Om suikers te laten kristalliseren; 1–2 dagen",
+      "b) Om luchtbellen, schuim en deeltjes te laten opstijgen; meestal 1–3 dagen afhankelijk van temperatuur",
+      "c) Om water te laten verdampen; 7 dagen",
+      "d) Om geurstoffen toe te voegen; 12 uur"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welk instrument gebruik je om het vochtgehalte van honing te meten en hoe?",
+    "opties": [
+      "a) Thermometer; door de temperatuur te meten",
+      "b) Refractometer; druppel honing op prisma en aflezen van Brix/waterpercentage",
+      "c) pH-meter; zuurgraad is vochtgehalte",
+      "d) Hygrometer; in de honingpot steken"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke criteria gebruik je om te beslissen of honing “rijp” genoeg is om te potten?",
+    "opties": [
+      "a) Als de raat mooi geel is",
+      "b) Bij voldoende verzegeling (±80–90%) of vochtgehalte ≤ ~18–20%",
+      "c) Zodra de honingkamer vol aanvoelt",
+      "d) Als de bijen rustig zijn"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Hoe oogst en smelt je was op een veilige en schone manier?",
+    "opties": [
+      "a) Was in een pan op het fornuis zonder toezicht",
+      "b) Zonne-wassmelter of stoomwassmelter gebruiken, geen open vlam bij gesmolten was, en filtreren",
+      "c) Was direct met benzine oplossen",
+      "d) Was in de magnetron tot het kookt"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Wanneer en hoe verwijder je oude, zwarte raat uit het volk?",
+    "opties": [
+      "a) Nooit; oude raat is sterker",
+      "b) Gefaseerd tijdens het seizoen (bijv. jaarlijks 1/3) vervangen via bouwraam/kunstraat, om residuen/ziektedruk te verlagen",
+      "c) Alleen als er schimmel is; anders laten hangen",
+      "d) Alles in één keer midden in de winter"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke aandachtspunten zijn er bij het inbouwen van kunstraat?",
+    "opties": [
+      "a) Altijd in koude periodes plaatsen",
+      "b) Plaatsen bij bouwdrift/dracht, recht uitlijnen, voldoende warmte/ruimte en geen scheve afstandhouders",
+      "c) Kunstraat in de honingkamer alleen",
+      "d) Kunstraat zonder draad gebruiken bij zware ramen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Hoe zet je de darrenraammethode in als onderdeel van je bedrijfsvoering?",
+    "opties": [
+      "a) Nooit; darren zijn nutteloos",
+      "b) Darrenraam naast het broednest plaatsen, verzegelde darrenraat regelmatig uitsnijden en afvoeren om varroa te reduceren",
+      "c) Darrenraam midden in het broednest laten zitten tot de winter",
+      "d) Alleen in de honingkamer darrenraat wegsnijden"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Hoe voer je de krantmethode uit bij het verenigen van twee volken?",
+    "opties": [
+      "a) Beide moeren laten en meteen op elkaar zetten zonder scheiding",
+      "b) Eén moer verwijderen, krantenlaag tussen kasten/rompen leggen, kleine openingen prikken en volken langzaam laten samenruiken",
+      "c) Gewoon bijen bij elkaar kiepen zonder voorbereiding",
+      "d) Alleen ’s winters samenvoegen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke voorzorgen neem je bij transport van volken over langere afstand?",
+    "opties": [
+      "a) Vliegopeningen open laten voor frisse lucht",
+      "b) Goede ventilatie-doorlatende gaasvoorzijde, vastzetten van ramen, transport in koele uren en kasten fixeren",
+      "c) In de volle zon vervoeren zodat bijen actief blijven",
+      "d) Volken vooraf met water besproeien"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke vaste inspectieroutine doorloop je bij elk kastbezoek?",
+    "opties": [
+      "a) Direct alle ramen lichten en honingoogst plannen",
+      "b) Vliegplank observatie, rustig openen met rook, beoordelen van voer, broed, ziekte, ruimte en moerstatus, daarna gericht ingrijpen",
+      "c) Eerst de koningin zoeken en vangen",
+      "d) Alleen kijken naar het gewicht van de kast"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke observaties op de vliegplank geven je informatie zonder te openen?",
+    "opties": [
+      "a) Alleen de kleur van de bijen",
+      "b) Aankomend stuifmeel, ventileren, sterfte, onrust/roven, oriëntatievluchten, diarree/vuilsporen",
+      "c) Of de honingkamer vol is",
+      "d) Of de moer gemerkt is"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke signalen wijzen op een slecht leggende koningin en welke acties horen daarbij?",
+    "opties": [
+      "a) Strak gesloten broed; direct afvoeren",
+      "b) Gatenkaas-broed, veel darrenbroed, redcellen; overwegen te vervangen/samenvoegen of jonge moer in te voeren",
+      "c) Veel honing; koningin vervangen",
+      "d) Weinig propolis; nieuwe moer bestellen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Hoe ga je praktisch om met een opvallend agressief volk?",
+    "opties": [
+      "a) Altijd direct ruimen",
+      "b) Alleen zonder rook werken",
+      "c) Oorzaak nagaan (dracht, weer, moerwissel), rustiger tijdstip kiezen, beschermende kleding, en zo nodig moer vervangen of volk verplaatsen",
+      "d) Kast permanent open laten voor ventilatie"
+    ],
+    "antwoord": "c"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke basisgereedschappen heeft een imker nodig en waarvoor gebruik je ze?",
+    "opties": [
+      "a) Tang en schroevendraaier; voor ramen",
+      "b) Imkerbeitel, rookpijp en bijenveger; lossteken/lichten, kalmeren en voorzichtig afvegen van bijen",
+      "c) Boormachine; om ramen te draaien",
+      "d) Tang en lijm; voor wasbouw"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke weersomstandigheden en tijdstippen zijn het meest geschikt voor inspecties?",
+    "opties": [
+      "a) Koud en winderig, in de vroege ochtend",
+      "b) Zacht/droog weer met weinig wind, midden op de dag als haalbijen vliegen",
+      "c) In de regen, dan zitten alle bijen thuis",
+      "d) Bij storm, voor extra ventilatie"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Wat doe je direct na een bijensteek en wat vermijd je?",
+    "opties": [
+      "a) Angel laten zitten en wrijven voor pijnreductie",
+      "b) Angel snel wegschrapen (niet knijpen) en plek koelen; niet wrijven vanwege extra gif",
+      "c) Angel met de vingers uitknijpen",
+      "d) Direct alcohol aanbrengen op de steekplek"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Hoe zorg je voor voldoende ventilatie/koeling bij warm weer tijdens handelingen?",
+    "opties": [
+      "a) Dak volledig verwijderen en kasten in de zon zetten",
+      "b) Snel en doelgericht werken, ramen niet lang uit de kast, afstandblokjes/kleine opening en zo nodig schaduw/ventilatie bieden",
+      "c) Rook vol in de kast blazen",
+      "d) Honingkamers verwijderen tot na de zomer"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Praktische imkerhandelingen",
+    "vraag": "Welke maatregelen beperken roven tijdens en na het werken met open kasten?",
+    "opties": [
+      "a) Veel honing morsen zodat alle bijen wat krijgen",
+      "b) Snel en schoon werken, vliegopening verkleinen bij zwakke volken, geen open honing buiten laten staan, ramen afdekken",
+      "c) Alle kasten open laten voor gelijkheid",
+      "d) Alleen in de avond werken zonder bescherming"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Beschrijf de levenscyclus van varroa in de gesloten broedcel.",
+    "opties": [
+      "a) Varroa leeft alleen op volwassen bijen, zonder broedstadium",
+      "b) Moedermijt kruipt in cel vlak voor verzegelen, legt eitjes; nakomelingen ontwikkelen op pop en paren in cel",
+      "c) Varroa legt eitjes in nectar; larven groeien uit in honing",
+      "d) Varroa leeft enkel op darren buiten het broed"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Waarom verkiest varroa darrenbroed boven werksterbroed?",
+    "opties": [
+      "a) Omdat darren groter zijn en meer ruimte bieden",
+      "b) Omdat darren langer in verzegeld broed verblijven, waardoor meer mijten nakomelingen krijgen",
+      "c) Omdat darren feromonen afscheiden die mijten aantrekken",
+      "d) Omdat werksterbroed giftig is voor varroa"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Welke monitoringmethoden voor varroa ken je en wat meten ze?",
+    "opties": [
+      "a) Alleen oxaalzuurtesten; meten voeropname",
+      "b) Natuurlijke mijtenval op schuiflade, suikerpoedertest of alcoholwash; geven indicatie van besmettingsgraad",
+      "c) Alleen kijken naar vleugels; meten DWV",
+      "d) Alle methoden meten drachtbronnen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Welke indicatoren gebruik je om te besluiten dat behandeling noodzakelijk is?",
+    "opties": [
+      "a) Alleen gewichtstoename van het volk",
+      "b) Hoog aantal mijtenval per dag/seizoen, ziektebeelden in broed of bijen en de fase in het jaar",
+      "c) Alleen agressief gedrag van bijen",
+      "d) Kleur van de honing"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Waarom is de winterse broedloze periode geschikt voor oxaalzuurbehandeling?",
+    "opties": [
+      "a) Omdat oxaalzuur dan honing verdunt",
+      "b) Omdat alle mijten zich dan op de bijen bevinden en niet beschermd zijn in broedcellen",
+      "c) Omdat oxaalzuur alleen werkt bij hoge temperatuur",
+      "d) Omdat bijen dan meer voer opnemen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Wat is het werkingsprincipe en voordeel van mierenzuur t.o.v. varroa onder verzegeld broed?",
+    "opties": [
+      "a) Het stimuleert poetsgedrag; voordeel is meer hygiëne",
+      "b) De damp dringt door verzegeling en doodt mijten ook onder gesloten broed",
+      "c) Het verlaagt honingproductie; voordeel is minder broed",
+      "d) Het voedt larven; voordeel is sterkere bijen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Welke zichtbare symptomen duiden op Deformed Wing Virus (DWV)?",
+    "opties": [
+      "a) Bijen met kromme poten",
+      "b) Bijen met vervormde, gekrulde vleugels en verkorte levensduur",
+      "c) Bijen die te groot zijn",
+      "d) Alleen honing die kristalliseert"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Noem drie kenmerken die passen bij Amerikaans vuilbroed (AVB).",
+    "opties": [
+      "a) Slijmerige inhoud, rottingsgeur, taaie draden bij lucifertest",
+      "b) Droge schubben, lichte geur, snel herstel",
+      "c) Geen geur, larven blijven wit, cellen bol gesloten",
+      "d) Altijd beperkt tot honingkamer"
+    ],
+    "antwoord": "a"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Noem drie kenmerken die passen bij Europees vuilbroed (EVB).",
+    "opties": [
+      "a) Larven kronkelen in de cel, bruine verkleuring, broze restanten met zure geur",
+      "b) Larven glanzen, honing ruikt zoet, snelle verzegeling",
+      "c) Larven blijven wit, geen geur, honing verdwijnt",
+      "d) Alleen poppen aangetast met zwarte koppen"
+    ],
+    "antwoord": "a"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Welke verschijnselen horen bij kalkbroed en waar zie je die?",
+    "opties": [
+      "a) Larven drogen in en worden witte/grijze brokjes, zichtbaar in cellen of voor de kast",
+      "b) Larven worden slijmerig en zwart, zichtbaar bij verzegelde doppen",
+      "c) Alleen volwassen bijen hebben witte stippen",
+      "d) Kalkbroed is onzichtbaar in het volk"
+    ],
+    "antwoord": "a"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Welk deel van de bij wordt aangetast door Nosema en welke gevolgen heeft dat?",
+    "opties": [
+      "a) Vleugels; bijen vliegen sneller",
+      "b) Middendarm; diarree, verminderde levensduur en verzwakking van het volk",
+      "c) Antennen; bijen raken gedesoriënteerd",
+      "d) Gifklier; steken worden minder pijnlijk"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Waarom kun je beter geen honing van onbekende herkomst aan bijen voeren?",
+    "opties": [
+      "a) Het kan ziekten zoals AVB overbrengen",
+      "b) Het maakt honing dunner",
+      "c) Het stimuleert zwermen",
+      "d) Het trekt varroa aan"
+    ],
+    "antwoord": "a"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Welke routine-handelingen verlagen de infectiedruk in een bedrijfsmatige zin?",
+    "opties": [
+      "a) Ramen nooit vervangen",
+      "b) Raten regelmatig vernieuwen, materiaal ontsmetten, volken sterk houden",
+      "c) Alleen met rook werken",
+      "d) Nooit verenigen van volken"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Hoe test je hygiënisch gedrag op volk-niveau en waarom is dat nuttig?",
+    "opties": [
+      "a) Door alle bijen te tellen; zo zie je de hygiëne",
+      "b) Door geperforeerd of bevroren broed te testen en herstel te observeren; nuttig voor selectie/weerbaarheid",
+      "c) Door honing te proeven; zo meet je gezondheid",
+      "d) Door de koningin te merken"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Welke meldingsplicht geldt bij een verdenking van AVB en wie informeer je?",
+    "opties": [
+      "a) Geen plicht; alleen melden bij vereniging",
+      "b) Verplicht melden bij NVWA; daarnaast je vereniging informeren",
+      "c) Alleen melden bij gemeente",
+      "d) Alleen melden bij collega-imkers"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Wat betekenen quarantainemaatregelen bij een AVB-uitbraak voor je stand?",
+    "opties": [
+      "a) Geen betekenis",
+      "b) Beperkingen in verplaatsen van kasten/ramen, toezicht door NVWA, vaak een straal rondom besmette stand",
+      "c) Alleen extra voer geven",
+      "d) Alleen varroabehandelingen stoppen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Hoe herken je en voorkom je roven in drachtarme periodes?",
+    "opties": [
+      "a) Veel bijen dansen vrolijk",
+      "b) Onrust, vechten op de vliegplank, bijen in naden; voorkomen door vliegopening te verkleinen, schoon te werken en geen honing te morsen",
+      "c) Meer nectaropslag",
+      "d) Bijen vliegen in rustige lijnen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Hoe beveilig je opgeslagen raten tegen de wasmot?",
+    "opties": [
+      "a) Door in plastic te sluiten zonder ventilatie",
+      "b) Door koel/droog op te slaan, invriezen of (indien toegestaan) chemische bestrijding bij ernstige besmetting",
+      "c) Door in honing te dompelen",
+      "d) Door er water op te spuiten"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Wat is de ‘kleine bijenkastkever’ en waarom is waakzaamheid geboden?",
+    "opties": [
+      "a) Een varroavorm; gevaar door resistentie",
+      "b) Een exotische plaagkever die honingraten aantast, met risico op verspreiding in Europa",
+      "c) Een bacterie die broed aantast",
+      "d) Een virus in nectar"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Welke geuren/kenmerken kunnen bij AVB opvallen aan broed en doppen?",
+    "opties": [
+      "a) Zure/rottingsgeur, ingezakte deksels met gaatjes",
+      "b) Zoete geur, gesloten gladde doppen",
+      "c) Geen geur, open doppen",
+      "d) Groene kleur doppen"
+    ],
+    "antwoord": "a"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Waarom is rotatie van bestrijdingsmiddelen tegen varroa belangrijk?",
+    "opties": [
+      "a) Om honingopbrengst te verhogen",
+      "b) Om resistentieontwikkeling bij mijten te voorkomen",
+      "c) Om bijen groter te maken",
+      "d) Om zwermen te stimuleren"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Hoe draagt een broedonderbreking bij aan varroareductie?",
+    "opties": [
+      "a) Mijten kunnen zich dan niet voortplanten, populatie neemt af",
+      "b) Bijen worden groter en sterker",
+      "c) Honingproductie verdubbelt",
+      "d) Het remt drachtplanten"
+    ],
+    "antwoord": "a"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Hoe zet je de darrenraammethode systematisch in ter varroabeperking?",
+    "opties": [
+      "a) Darrenraam plaatsen, verzegelde darrenraat wegsnijden voor mijtreductie en herhalen in voorjaar/zomer",
+      "b) Darrenraam plaatsen en laten zitten voor honingopslag",
+      "c) Alleen in winter toepassen",
+      "d) Altijd midden in het broednest laten staan"
+    ],
+    "antwoord": "a"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Welke besmettingsroutes bestaan er via imkermateriaal en hoe doorbreek je die?",
+    "opties": [
+      "a) Via schone ramen; door deze vaker te gebruiken",
+      "b) Via besmette ramen/voerraten, kasten en gereedschap; door schoonmaken/ontsmetten en raten niet uitwisselen zonder controle",
+      "c) Alleen via varroa; door behandelen",
+      "d) Via drachtplanten; door maaien"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Welke rol speelt voldoende eiwitrijk stuifmeel in de ziekteresistentie van volken?",
+    "opties": [
+      "a) Geen rol",
+      "b) Verhoogt weerstand door goede voeding, stimuleert broed en immuunsysteem",
+      "c) Stuifmeel verlaagt weerstand",
+      "d) Alleen belangrijk voor darren"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Welke omgeving/stressfactoren ondermijnen de bijengezondheid het meest?",
+    "opties": [
+      "a) Voedseltekort, pesticiden, hoge ziektedruk, klimaatstress en slechte huisvesting",
+      "b) Alleen koude winters",
+      "c) Alleen hitte",
+      "d) Alleen veel nectar"
+    ],
+    "antwoord": "a"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Hoe interpreteer je natuurlijke mijtenval op een bodemschuif door het jaar heen?",
+    "opties": [
+      "a) Altijd constant laag, ongeacht seizoen",
+      "b) Als maat voor besmettingsdruk; hoger in nazomer/herfst is vaak zorgwekkend",
+      "c) Het zegt niets over besmetting",
+      "d) Alleen hoog in winter is zorgelijk"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Welke relatie bestaat tussen grote voerramen in najaar en nosema-problemen in voorjaar?",
+    "opties": [
+      "a) Grote voerramen vergroten kans op vocht/schimmel en daarmee nosema-risico in voorjaar",
+      "b) Er is geen verband",
+      "c) Grote voerramen verhogen honingopbrengst en daardoor gezonder volk",
+      "d) Kleine voerramen veroorzaken nosema"
+    ],
+    "antwoord": "a"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Wat zijn typische veldsignalen bij acute pesticidenvergiftiging?",
+    "opties": [
+      "a) Bijen vliegen trager",
+      "b) Massale sterfte voor de kast, trillende/verlammende bijen, plotselinge leegte",
+      "c) Alleen propolisgebrek",
+      "d) Alleen kristalliserende honing"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Hoe borg je dat behandeling tegen varroa de voedselveiligheid van honing niet schaadt?",
+    "opties": [
+      "a) Altijd direct na het slingeren behandelen",
+      "b) Alleen toegestane middelen/organische zuren gebruiken, volgens voorschrift, buiten honingoogst",
+      "c) Onbeperkt middelen mengen",
+      "d) Nooit behandelen in zomer"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Welke schoonmaak-/ontsmettingsmiddelen zijn effectief voor houten kasten/ramen?",
+    "opties": [
+      "a) Afwasmiddel met parfum",
+      "b) Loogoplossing (soda/NaOH), hitte en vlam",
+      "c) Alleen koud water",
+      "d) Olie en vet"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Wat doe je met besmette materialen bij een bevestigde AVB-besmetting?",
+    "opties": [
+      "a) Reinigen met lauw water",
+      "b) Verbranden of volgens NVWA‑protocol vernietigen",
+      "c) Bewaren voor later gebruik",
+      "d) Alleen in de zon leggen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Welke veiligheidsmaatregelen neem je bij het werken met organische zuren?",
+    "opties": [
+      "a) Geen maatregelen nodig",
+      "b) Handschoenen, bril, ventilatie en juiste dosering",
+      "c) Alleen mondkapje",
+      "d) Alleen dikke jas"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Hoe voorkom je herbesmetting na succesvolle varroabehandeling?",
+    "opties": [
+      "a) Door nooit meer varroa te monitoren",
+      "b) Door herbesmetting (drift/roverij/herinvasie) te beperken en tijdig vervolgcontrole/behandeling te doen",
+      "c) Door volken te isoleren in een donkere ruimte",
+      "d) Door alle volken samen te voegen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Ziekten & plagen",
+    "vraag": "Welke rol kunnen selectief fokken en lokale aanpassing spelen in ziekte‑resistentie?",
+    "opties": [
+      "a) Geen rol",
+      "b) Belangrijk: selecteer volken met hygiënisch gedrag/weerbaarheid en werk met lokaal aangepaste bijen",
+      "c) Alle volken kruisen met darren van willekeurige herkomst",
+      "d) Alleen moeren zonder hofstaat gebruiken"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Hoe wordt nectar door bijen omgezet in honing (enzymen + waterreductie)?",
+    "opties": [
+      "a) Door direct indikken in de honingkamer",
+      "b) Door toevoeging van enzymen (o.a. invertase) en verdamping van water door ventilatie",
+      "c) Door fermentatie door gisten",
+      "d) Door verhitting van nectar door de bijen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Welke criteria gebruik je om te beoordelen of honing ‘rijp’ is?",
+    "opties": [
+      "a) Kleur en smaak van de honing",
+      "b) Het percentage verzegelde cellen (80–90%) en/of vochtgehalte ≤ 18–20%",
+      "c) De hoeveelheid nectar in de kast",
+      "d) De temperatuur van de honing"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Waarom kristalliseert de ene honing snel en de andere langzaam?",
+    "opties": [
+      "a) Door het soort bijenras",
+      "b) Afhankelijk van glucose/fructose-verhouding in nectar",
+      "c) Door de hoeveelheid pollen",
+      "d) Door ventilatie tijdens de oogst"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Waarom roer je honing en wat beoog je met ‘roomhoning’?",
+    "opties": [
+      "a) Om gisten te doden; roomhoning wordt steriel",
+      "b) Om kristallen klein/homogeen te houden; resultaat is smeuïge honing",
+      "c) Om water te verwijderen; roomhoning is droger",
+      "d) Om lucht in te brengen; roomhoning is lichter"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Wat is bijenbrood en hoe ontstaat het in de cel?",
+    "opties": [
+      "a) Een mengsel van nectar en propolis",
+      "b) Ingestampt stuifmeel met honing/enzymen, melkzuurfermentatie in de cel",
+      "c) Onverwerkte nectar met pollen",
+      "d) Stuifmeel dat opdroogt zonder bijenactiviteit"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Welke functies heeft propolis in de kast en welke toepassingen heeft het voor imkers?",
+    "opties": [
+      "a) Geen functie; alleen afval",
+      "b) Dichtmaken van kieren, antibacterieel, harsachtig; imkers gebruiken het o.a. als tinctuur",
+      "c) Verlagen van de temperatuur; toepassing als verf",
+      "d) Aanvulling op honing; toepassing als zoetstof"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Hoe ontstaat bijenwas en welke kwaliteitskenmerken zijn belangrijk?",
+    "opties": [
+      "a) Uit nectar direct; helderheid is belangrijkste",
+      "b) Uitscheiding door wasklieren; zuiverheid en smeltpunt zijn kwaliteitskenmerken",
+      "c) Uit pollen; geur is belangrijkste",
+      "d) Door verhitting van honing; hardheid is belangrijkste"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Wat is het effect van te sterk verwarmen van honing op HMF-vorming en kwaliteit?",
+    "opties": [
+      "a) Geen effect; honing blijft hetzelfde",
+      "b) HMF neemt toe, enzymactiviteit neemt af → kwaliteitsverlies",
+      "c) HMF neemt af, enzymactiviteit neemt toe",
+      "d) Alleen de kleur verandert, verder niets"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Welke bewaarcondities bevorderen het behoud van smaak en enzymactiviteit van honing?",
+    "opties": [
+      "a) Warm (25–30 °C), licht en vochtig",
+      "b) Koel (≤ 15 °C), donker en droog",
+      "c) Buiten in de zon",
+      "d) In de koelkast, open pot"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Wat is het verschil tussen uniflorale en multiflorale honing en hoe toon je herkomst aan?",
+    "opties": [
+      "a) Uniflorale: nectar van meerdere planten; multiflorale: van één plant",
+      "b) Uniflorale: hoofdzakelijk van één plantensoort, aantoonbaar via pollenanalyse; multiflorale: gemengd van meerdere",
+      "c) Multiflorale honing is altijd lichter van kleur",
+      "d) Er is geen verschil"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Welke stappen horen bij zeven/filtreren en welke invloed heeft dat op pollen?",
+    "opties": [
+      "a) Grof en fijn zeven; verwijdert wasdeeltjes maar laat pollen grotendeels aanwezig",
+      "b) Alleen centrifugeren; verwijdert alle pollen",
+      "c) Pollen wordt volledig uitgefilterd bij zeven",
+      "d) Filtratie gebeurt pas bij de consument"
+    ],
+    "antwoord": "a"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Hoe maak je roomhoning met de ‘zaaimethode’?",
+    "opties": [
+      "a) Door honing te verhitten en snel af te koelen",
+      "b) Door fijne gekristalliseerde honing toe te voegen en regelmatig te roeren tijdens kristallisatie",
+      "c) Door lucht in te kloppen",
+      "d) Door honing te mengen met suiker"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Welke technische eisen stel je aan voedselveilige emmers en kranen voor honing?",
+    "opties": [
+      "a) Dat ze er mooi uitzien",
+      "b) Dat ze van kunststof/roestvrijstaal geschikt voor levensmiddelen zijn, goed reinigbaar en afsluitbaar",
+      "c) Dat ze lichtdoorlatend zijn",
+      "d) Dat ze verwarmd kunnen worden"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Waarom is een refractometer onmisbaar bij het potten van honing?",
+    "opties": [
+      "a) Voor het meten van de viscositeit",
+      "b) Voor het meten van het vochtgehalte om gisting te voorkomen",
+      "c) Voor het meten van de kleur",
+      "d) Voor het meten van de smaak"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Wat is de rol van bezinken en afschuimen vóór het potten?",
+    "opties": [
+      "a) Om smaakstoffen toe te voegen",
+      "b) Om luchtbellen, schuim en wasdeeltjes te verwijderen voor helder product",
+      "c) Om kristallisatie te versnellen",
+      "d) Om enzymen toe te voegen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Welke verschillen in smaak/structuur verwacht je tussen koolzaad- en acaciahoning en waarom?",
+    "opties": [
+      "a) Koolzaad kristalliseert snel, fijne structuur; acacia blijft lang vloeibaar door hoog fructosegehalte",
+      "b) Koolzaad blijft vloeibaar; acacia kristalliseert snel",
+      "c) Beide kristalliseren even snel",
+      "d) Koolzaad smaakt altijd bitter, acacia altijd zuur"
+    ],
+    "antwoord": "a"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Wat zijn de kenmerken en aandachtspunten van raathoning?",
+    "opties": [
+      "a) Honing geslingerd zonder raat; makkelijk te verwerken",
+      "b) Verkocht inclusief raat; vraagt zuivere was en juiste verzegeling",
+      "c) Altijd vloeibaar; geen risico’s",
+      "d) Wordt gemaakt door darren"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Welke invloed heeft drachtpauze of honingdauw op smaak en verwerking?",
+    "opties": [
+      "a) Geen invloed",
+      "b) Honingdauw geeft donkere honing met hogere mineralen, drachtpauze beïnvloedt kristallisatie en smaak",
+      "c) Drachtpauze maakt honing altijd bitter",
+      "d) Honingdauw is lichter en dunner"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Welke etiketteringsinformatie is productinhoudelijk (niet juridisch) nuttig voor de consument?",
+    "opties": [
+      "a) Voedingswaarde, smaaknotities, oogstlocatie",
+      "b) Kleur van de pot",
+      "c) Naam van de imker",
+      "d) Altijd het oogstjaar (wettelijk verplicht)"
+    ],
+    "antwoord": "a"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Welke kwaliteitsafwijkingen kun je proeven/zien bij gefermenteerde of overrijpe honing?",
+    "opties": [
+      "a) Schuimvorming, gistgeur, zure smaak",
+      "b) Kristallisatie",
+      "c) Donkere kleur",
+      "d) Geen afwijkingen waarneembaar"
+    ],
+    "antwoord": "a"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Welke maatregelen voorkomen herhaaldelijk vochtopname in aangebroken potten bij klanten?",
+    "opties": [
+      "a) Honing niet in potten doen",
+      "b) Goede afsluiting, droog bewaren, kleine porties",
+      "c) Pot altijd open laten staan",
+      "d) Honing verwarmen tot boven 50 °C"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Hoe ga je om met kristallen in potten bij herverkoop (verwarmen/roeren – grenzen)?",
+    "opties": [
+      "a) Potten verhitten tot 80 °C",
+      "b) Honing au bain-marie max. 40 °C verwarmen en evt. opnieuw roeren; niet te heet i.v.m. kwaliteitsverlies",
+      "c) Honing invriezen en daarna verwarmen",
+      "d) Altijd roeren bij kamertemperatuur"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Welke bijenproducten naast honing kun je als imker winnen en wat zijn de basics per product?",
+    "opties": [
+      "a) Alleen honing is bruikbaar",
+      "b) Was, propolis, stuifmeel, koninginnengelei; ieder met eigen verzamel-/verwerkingsmethode",
+      "c) Alleen was; smelten is voldoende",
+      "d) Alleen stuifmeel; altijd invriezen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Waar let je op bij het verzamelen en verkopen van stuifmeelkorrels?",
+    "opties": [
+      "a) Dat ze gekleurd zijn",
+      "b) Verzamelen met pollenval, goed drogen/invriezen en hygiënisch verpakken",
+      "c) Alleen dat ze in de zomer worden geoogst",
+      "d) Ze moeten altijd vloeibaar blijven"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Honing en producten",
+    "vraag": "Welke factoren bepalen de THT-datum die je op een pot honing zet (kwaliteitsperspectief)?",
+    "opties": [
+      "a) Wettelijk altijd 1 jaar",
+      "b) Vochtgehalte, enzymactiviteit, bewaarmethode (koel/donker) en productiewijze",
+      "c) De kleur van de honing",
+      "d) Het type pot"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke algemene zorgplicht heeft de imker voor het welzijn van bijen (kern van dierenwelzijn)?",
+    "opties": [
+      "a) Alleen voldoende honing laten staan",
+      "b) Zorgen voor adequate voeding, huisvesting, gezondheid en voorkomen van onnodig lijden, passend bij seizoen en volkgrootte",
+      "c) Alleen behandelen tegen varroa",
+      "d) Jaarlijks raat vervangen is voldoende"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke bijenziekten zijn meldingsplichtig in Nederland en bij wie meld je die?",
+    "opties": [
+      "a) Alleen varroa; melden bij de gemeente",
+      "b) Amerikaans vuilbroed, kleine bijenkastkever en Tropilaelaps-mijten; melden bij NVWA (meldpunt dierziekten)",
+      "c) Europees vuilbroed en kalkbroed; melden bij de huisarts",
+      "d) Alleen DWV; melden bij de imkervereniging"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke stappen zet je bij een AVB-verdenking voordat je zelf ingrijpt?",
+    "opties": [
+      "a) Meteen alle besmette ramen uitsmelten en kast verplaatsen",
+      "b) Niet rommelen: kast sluiten, stand afschermen tegen roven, direct NVWA/gezondheidscoördinator melden en verder handelen volgens instructie",
+      "c) Honing oogsten om besmetting te verminderen",
+      "d) Alleen de doppen doorprikken en afwachten"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke verplicht aan te brengen gegevens horen op een honingetiket voor verkoop aan consumenten?",
+    "opties": [
+      "a) Productnaam, THT, voedingswaardetabel, barcode",
+      "b) Benaming ‘honing’, netto-inhoud, THT-datum, naam/adres exploitant, land van herkomst (of EU/ niet-EU-mix), partij/batch (traceerbaar)",
+      "c) Alleen benaming en merknaam",
+      "d) Benaming, kleur en kristallisatiegraad"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke regels in de lokale APV kunnen van invloed zijn op het plaatsen van bijenkasten?",
+    "opties": [
+      "a) APV regelt alleen autoverkeer; niet relevant voor bijen",
+      "b) Regels over dierenhouderij, afstand tot erfgrenzen/openbare weg, vergunning/meldplicht en veiligheid voor omwonenden",
+      "c) Alleen geluidsoverlast; bijen maken geen geluid",
+      "d) Enkel parkeerplaatsen voor imkers"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Wat is het doel van de Hygiënecode voor imkers en hoe pas je die toe?",
+    "opties": [
+      "a) Alleen bedoeld voor bijenartsen",
+      "b) Borging voedselveiligheid; volgen van richtlijnen bij oogst, verwerking, opslag en hygiëne",
+      "c) Alleen regels voor etiketten",
+      "d) Alleen regels voor varroabestrijding"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke eisen rond traceerbaarheid gelden bij het verhandelen van honing (batch/lot)?",
+    "opties": [
+      "a) Geen; alleen potten nummeren",
+      "b) Elke partij/batch moet herleidbaar zijn naar oorsprong, datum en verwerking",
+      "c) Alleen etiketten met kleurcode",
+      "d) Enkel voor export van toepassing"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Waarom bewaar je productmonsters en welke informatie registreer je daarbij?",
+    "opties": [
+      "a) Voor promotie; alleen smaaknotities",
+      "b) Voor terugroep/controle: batchnummer, oogstdatum, bewaarcondities",
+      "c) Alleen voor eigen administratie",
+      "d) Alleen om kleur te vergelijken"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke regels gelden voor de benaming ‘honing’ t.o.v. producten met toevoegingen?",
+    "opties": [
+      "a) Honing mag gemengd met suiker nog steeds ‘honing’ heten",
+      "b) Honing is wettelijk puur product zonder toevoegingen; anders andere benaming",
+      "c) Alle zoetstoffen mogen honing genoemd worden",
+      "d) Alleen buitenlandse honing mag gemengd zijn"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Onder welke voorwaarden mag je ‘land van herkomst’ vermelden en hoe bepaal je dat?",
+    "opties": [
+      "a) Altijd verplicht",
+      "b) Alleen als honing geheel of grotendeels uit dat land komt; bepalen via herkomst nectar/pollen",
+      "c) Je mag zelf een land kiezen",
+      "d) Alleen voor export verplicht"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke verantwoordelijkheid heb je bij terugroep/klachtafhandeling als hobby-verkooppunt?",
+    "opties": [
+      "a) Geen, NVWA doet dit altijd",
+      "b) Je moet klanten informeren, traceerbaarheid kunnen aantonen en NVWA inschakelen bij voedselveiligheidsrisico",
+      "c) Alleen klanten een nieuwe pot geven",
+      "d) Geen administratie nodig"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke basisvoorwaarden gelden voor de ruimte waarin je slingert en pot?",
+    "opties": [
+      "a) Het mag in een stal met dieren",
+      "b) Schoon, afsluitbaar, goed te reinigen en vrij van dieren en verontreiniging",
+      "c) Alleen in open lucht toegestaan",
+      "d) Alleen in de kelder toegestaan"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke etiketteringsclaims zijn niet toegestaan zonder certificering (bijv. ‘biologisch’)?",
+    "opties": [
+      "a) Biologisch, streekproduct, gezondheidsclaims zonder bewijs",
+      "b) Alleen ‘zoet’ en ‘natuurlijk’",
+      "c) Kleur- en smaakbeschrijvingen",
+      "d) Altijd verboden"
+    ],
+    "antwoord": "a"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke regels gelden voor het gebruik van diergeneesmiddelen/zuurbehandelingen i.r.t. voedselveiligheid?",
+    "opties": [
+      "a) Geen regels",
+      "b) Alleen toegelaten middelen volgens voorschrift, niet tijdens honingoogst",
+      "c) Altijd toegestaan zolang imker hygiënisch werkt",
+      "d) Alleen in winter toegestaan"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke informatie geef je aan afnemers over allergenen en waarom?",
+    "opties": [
+      "a) Geen info nodig",
+      "b) Honing kan sporen van pollen bevatten; nuttig voor allergische consumenten",
+      "c) Alleen kleurinfo",
+      "d) Alleen smaakbeschrijving"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Wat zijn de eisen voor nettogewicht-aanduiding en fouttoleranties op etiketten?",
+    "opties": [
+      "a) Altijd exact wegen, geen afwijking toegestaan",
+      "b) Wettelijke tolerantie (gemiddeld gewicht ≥ aangegeven; enkele potten mogen beperkt afwijken)",
+      "c) Alleen per liter aangeven",
+      "d) Geen eisen"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke informatie moet je beschikbaar hebben voor NVWA-inspectie bij verkoop?",
+    "opties": [
+      "a) Alleen eigen naam",
+      "b) Hygiënecode, traceerbaarheid, batchadministratie en etiketten",
+      "c) Alleen aantal volken",
+      "d) Geen informatie nodig"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke regels gelden voor het hergebruiken van potten/afsluiters en voedselveiligheid?",
+    "opties": [
+      "a) Altijd toegestaan",
+      "b) Alleen na goed reinigen/desinfecteren; afsluiters doorgaans niet hergebruiken",
+      "c) Altijd verboden",
+      "d) Alleen toegestaan voor eigen consumptie"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Wat zijn je plichten bij verkoop via markten/boerderijwinkels t.o.v. verkoop aan huis?",
+    "opties": [
+      "a) Geen verschil",
+      "b) Zelfde voedselveiligheidseisen; soms extra lokale vergunning/registratie nodig",
+      "c) Alleen etiketten verplicht",
+      "d) Alleen belastingplichtig"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke afspraken maak je met landeigenaar/omwonenden over standplaats (juridisch/praktisch)?",
+    "opties": [
+      "a) Geen afspraken nodig",
+      "b) Over toegang, aansprakelijkheid, duur en eventuele vergoeding",
+      "c) Alleen over oogstdatum",
+      "d) Alleen over bijenras"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke instructies horen op het etiket m.b.t. bewaring en gebruik (niet voor <1 jaar e.d.)?",
+    "opties": [
+      "a) Geen instructies nodig",
+      "b) Bewaren op kamertemperatuur, droog en donker; niet geschikt voor kinderen <1 jaar",
+      "c) Altijd in koelkast bewaren",
+      "d) Alleen buiten bewaren"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke grenswaarden/criteria gelden wettelijk voor het vochtgehalte van honing en waarom?",
+    "opties": [
+      "a) Geen grenswaarde",
+      "b) Maximaal 20% (voor heidehoning 23%), om gisting te voorkomen",
+      "c) Minimaal 10%",
+      "d) Altijd exact 15%"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke regels gelden voor het vermelden van oogstjaar/partij en is dat verplicht?",
+    "opties": [
+      "a) Altijd verplicht",
+      "b) Niet verplicht, wel nuttig voor traceerbaarheid",
+      "c) Alleen bij export",
+      "d) Alleen bij biologische honing"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Wat is de rol van de bijengezondheidscoördinator binnen de vereniging/regio (juridische schakel)?",
+    "opties": [
+      "a) Geen rol",
+      "b) Contactpersoon bij ziekte-uitbraken, schakel met NVWA en ondersteuning bij maatregelen",
+      "c) Alleen aanspreekpunt voor honingafzet",
+      "d) Geeft vergunningen af"
+    ],
+    "antwoord": "b"
+  },
+  {
+    "thema": "Wet- en regelgeving",
+    "vraag": "Welke verantwoordelijkheden heb je bij het transport van volken (ventilatie, bescherming, duur) i.r.t. welzijnsregels?",
+    "opties": [
+      "a) Geen verantwoordelijkheid",
+      "b) Zorgen voor voldoende ventilatie, bescherming tegen hitte/kou, beperking transportduur en veilig vastzetten",
+      "c) Alleen zorgen voor honing tijdens transport",
+      "d) Alleen zorgen voor water tijdens transport"
+    ],
+    "antwoord": "b"
+  }
+]
